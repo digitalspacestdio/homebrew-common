@@ -8,7 +8,7 @@ class Libpam < Formula
   revision 1
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", "--prefix=#{prefix}", "--enable-static-modules", "--disable-pie"
     system "make", "install"
   end
 end
