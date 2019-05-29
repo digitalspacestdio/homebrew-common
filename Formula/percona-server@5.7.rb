@@ -3,6 +3,7 @@ class PerconaServerAT57 < Formula
   homepage "https://www.percona.com"
   url "https://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-5.7.26-29/source/tarball/percona-server-5.7.26-29.tar.gz"
   sha256 "0deb6d8a6eb910286a585c60beecd5fb8ce38fc2a5134adf45e418efbe4ed6b5"
+  revision 1
 
 #   bottle do
 #     sha256 "79938125efb509b03ae247a23198c65fb6684eb49be9336860b5a92b56931b5b" => :mojave
@@ -49,7 +50,14 @@ class PerconaServerAT57 < Formula
     # https://bugs.launchpad.net/percona-server/+bug/1741647
     if OS.mac?
         ENV.prepend "CPPFLAGS", "-DHAVE_MEMSET_S=1"
+        # dialog.so dynamic linking is broken on Mac OS X
+        # https://bugs.launchpad.net/percona-server/+bug/1671357
+        inreplace "plugin/percona-pam-for-mysql/src/dialog.c",
+          "#include <stdlib.h>",
+          "#include <stdlib.h>\n#include <../strings/my_stpnmov.c>"
     end
+
+
 
     # https://dev.mysql.com/doc/refman/5.7/en/source-configuration-options.html
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
@@ -67,9 +75,8 @@ class PerconaServerAT57 < Formula
       -DSYSCONFDIR=#{etc}
       -DWITH_EDITLINE=system
       -DWITH_SSL=yes
-      -DWITHOUT_AUTH_PAM=1
-      -DWITHOUT_AUTH_PAM_COMPAT=1
-      -DWITHOUT_DIALOG=1
+      -DWITH_PAM=yes
+      -DHAVE_STRUCT_IFREQ_IFR_NAME=yes
     ]
 
     # MySQL >5.7.x mandates Boost as a requirement to build & has a strict
@@ -118,10 +125,6 @@ class PerconaServerAT57 < Formula
     EOS
     etc.install "my.cnf"
   end
-
-#   def patches
-#     "https://gist.githubusercontent.com/sergeycherepanov/e22cd49c4e4488be7a2dbac3518bfcda/raw/099505b20afd364f963e5319dcf39864c4adf851/percona-server-57-patches-10-memset_s.patch"
-#   end
 
   def post_install
     # Make sure the datadir exists
