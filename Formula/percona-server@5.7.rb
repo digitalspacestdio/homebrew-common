@@ -22,6 +22,7 @@ class PerconaServerAT57 < Formula
   # Note: MySQL themselves don't support anything below El Capitan.
   depends_on "openssl"
   unless OS.mac?
+    depends_on "libpam"
     depends_on "libedit"
     depends_on "readline"
   end
