@@ -67,6 +67,9 @@ class PerconaServerAT57 < Formula
       -DSYSCONFDIR=#{etc}
       -DWITH_EDITLINE=system
       -DWITH_SSL=yes
+      -DWITHOUT_AUTH_PAM=1
+      -DWITHOUT_AUTH_PAM_COMPAT=1
+      -DWITHOUT_DIALOG=1
     ]
 
     # MySQL >5.7.x mandates Boost as a requirement to build & has a strict
