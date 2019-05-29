@@ -25,6 +25,8 @@ class PerconaServerAT57 < Formula
     depends_on "libpam"
     depends_on "libedit"
     depends_on "readline"
+    ENV['CFLAGS'] = '-I$(brew --prefix libpam)/include'
+    ENV['LDFLAGS'] = '-L$(brew --prefix libpam)/lib'
   end
 
   conflicts_with "mariadb", "mysql", "mysql-cluster",
