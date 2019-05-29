@@ -16,6 +16,7 @@ class PerconaServerAT57 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "libedit" unless OS.mac?
   # https://github.com/Homebrew/homebrew-core/issues/1475
   # Needs at least Clang 3.3, which shipped alongside Lion.
   # Note: MySQL themselves don't support anything below El Capitan.
