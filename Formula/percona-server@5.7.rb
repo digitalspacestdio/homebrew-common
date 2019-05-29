@@ -47,7 +47,9 @@ class PerconaServerAT57 < Formula
   def install
     # Set HAVE_MEMSET_S flag to fix compilation
     # https://bugs.launchpad.net/percona-server/+bug/1741647
-    ENV.prepend "CPPFLAGS", "-DHAVE_MEMSET_S=1"
+    if OS.mac?
+        ENV.prepend "CPPFLAGS", "-DHAVE_MEMSET_S=1"
+    end
 
     # https://dev.mysql.com/doc/refman/5.7/en/source-configuration-options.html
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
