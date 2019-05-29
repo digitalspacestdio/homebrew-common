@@ -20,7 +20,6 @@ class PerconaServerAT56 < Formula
   keg_only :versioned_formula
 
   depends_on "cmake" => :build
-  depends_on "libedit" unless OS.mac?
   if OS.mac?
     depends_on "pidof" unless MacOS.version >= :mountain_lion
   end

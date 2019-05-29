@@ -1,14 +1,14 @@
 class PerconaServerAT57 < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-5.7.24-27/source/tarball/percona-server-5.7.24-27.tar.gz"
-  sha256 "999593afa241660bc7860264b46a826faf97d80d411966fade24084f47b249a0"
+  url "https://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-5.7.26-29/source/tarball/percona-server-5.7.26-29.tar.gz"
+  sha256 "0deb6d8a6eb910286a585c60beecd5fb8ce38fc2a5134adf45e418efbe4ed6b5"
 
-  bottle do
-    sha256 "79938125efb509b03ae247a23198c65fb6684eb49be9336860b5a92b56931b5b" => :mojave
-    sha256 "31d1745e94bc82f5fc8d2c677052a323f1dc76fdebe2369a6e23e583e48cc9ad" => :high_sierra
-    sha256 "1d6ad1ff891982cee38d7886df5dc99f907a802287a6bddb56c55c552dfcb430" => :sierra
-  end
+#   bottle do
+#     sha256 "79938125efb509b03ae247a23198c65fb6684eb49be9336860b5a92b56931b5b" => :mojave
+#     sha256 "31d1745e94bc82f5fc8d2c677052a323f1dc76fdebe2369a6e23e583e48cc9ad" => :high_sierra
+#     sha256 "1d6ad1ff891982cee38d7886df5dc99f907a802287a6bddb56c55c552dfcb430" => :sierra
+#   end
 
   pour_bottle? do
     reason "The bottle needs a var/mysql datadir (yours is var/percona)."
@@ -16,11 +16,14 @@ class PerconaServerAT57 < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "libedit" unless OS.mac?
   # https://github.com/Homebrew/homebrew-core/issues/1475
   # Needs at least Clang 3.3, which shipped alongside Lion.
   # Note: MySQL themselves don't support anything below El Capitan.
   depends_on "openssl"
+  unless OS.mac?
+    depends_on "libedit"
+    depends_on "readline"
+  end
 
   conflicts_with "mariadb", "mysql", "mysql-cluster",
     :because => "percona, mariadb, and mysql install the same binaries."
