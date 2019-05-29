@@ -115,13 +115,8 @@ class PerconaServerAT57 < Formula
   end
 
   def patches
-      list = super
-      if OS.mac?
-          list
-      else
-          [list].compact << "https://gist.githubusercontent.com/sergeycherepanov/e22cd49c4e4488be7a2dbac3518bfcda/raw/099505b20afd364f963e5319dcf39864c4adf851/percona-server-57-patches-10-memset_s.patch"
-      end
-    end
+    "https://gist.githubusercontent.com/sergeycherepanov/e22cd49c4e4488be7a2dbac3518bfcda/raw/099505b20afd364f963e5319dcf39864c4adf851/percona-server-57-patches-10-memset_s.patch"
+  end
 
   def post_install
     # Make sure the datadir exists
