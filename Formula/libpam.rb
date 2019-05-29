@@ -8,7 +8,7 @@ class Libpam < Formula
   revision 1
 
   def install
-    system "./configure", "--prefix=#{prefix}", "--enable-static-modules", "--disable-pie"
+    system "./configure", "--prefix=#{prefix}", "--includedir=#{prefix}/include/security" "--enable-static-modules", "--disable-pie"
     system "make", "install"
   end
 end
