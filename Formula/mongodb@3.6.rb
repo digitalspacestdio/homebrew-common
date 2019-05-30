@@ -47,6 +47,10 @@ class MongodbAT36 < Formula
     ENV.prepend_path "PATH", Formula["python@2"].opt_bin
     ENV.libcxx
 
+    (buildpath/".brew_home/Library/Python/2.7/lib/python/site-packages/vendor.pth").write <<~EOS
+        import site; site.addsitedir("#{buildpath}/vendor/lib/python2.7/site-packages")
+    EOS
+    
     venv = virtualenv_create(libexec)
     venv.pip_install "Cheetah"
     venv.pip_install "PyYAML"
@@ -57,9 +61,7 @@ class MongodbAT36 < Formula
 #         system "python", *Language::Python.setup_install_args(buildpath/"vendor")
 #       end
 #     end
-#     (buildpath/".brew_home/Library/Python/2.7/lib/python/site-packages/vendor.pth").write <<~EOS
-#       import site; site.addsitedir("#{buildpath}/vendor/lib/python2.7/site-packages")
-#     EOS
+
 
     # New Go tools have their own build script but the server scons "install"
     # target is still responsible for installing them.
