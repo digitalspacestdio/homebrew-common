@@ -1,4 +1,5 @@
 class MongodbAT36 < Formula
+  include Language::Python::Virtualenv
   desc "High-performance, schema-free, document-oriented database"
   homepage "https://www.mongodb.org/"
   # do not upgrade to versions >3.6.8 as they are under the SSPL which is not
