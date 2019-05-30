@@ -103,7 +103,7 @@ class PerconaServerAT57 < Formula
     system "make", "install"
 
     (prefix/"mysql-test").cd do
-      system "./mysql-test-run.pl", "status", "--vardir=#{Dir.mktmpdir}"
+      system "./mysql-test-run.pl", "status", "--vardir=#{Dir.mktmpdir}", "--nowarnings"
     end
 
     # Remove the tests directory
