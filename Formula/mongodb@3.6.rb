@@ -43,6 +43,7 @@ class MongodbAT36 < Formula
 #   end
 
   def install
+    ENV['PYTHONPATH'] = Formula["python@2"].opt_prefix
     ENV.prepend_path "PATH", Formula["python@2"].opt_bin
     ENV.libcxx
 
