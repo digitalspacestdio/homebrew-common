@@ -16,7 +16,7 @@ class MongodbAT36 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "go" => :build
+  depends_on "go@1.11" => :build
   depends_on "pkg-config" => :build
   depends_on "scons" => :build
   if OS.mac?
