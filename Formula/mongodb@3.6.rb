@@ -42,7 +42,7 @@ class MongodbAT36 < Formula
   end
 
   def install
-    ENV.prepend_path "PATH", Formula["python@2"].opt_libexec/"bin"
+    ENV.prepend_path "PATH", Formula["python@2"].opt_bin
     ENV.libcxx
 
     ["Cheetah", "PyYAML", "typing"].each do |r|
