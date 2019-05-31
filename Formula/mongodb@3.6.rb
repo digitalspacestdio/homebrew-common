@@ -27,20 +27,20 @@ class MongodbAT36 < Formula
   depends_on "openssl"
   depends_on "python@2"
 
-#   resource "Cheetah" do
-#     url "https://files.pythonhosted.org/packages/cd/b0/c2d700252fc251e91c08639ff41a8a5203b627f4e0a2ae18a6b662ab32ea/Cheetah-2.4.4.tar.gz"
-#     sha256 "be308229f0c1e5e5af4f27d7ee06d90bb19e6af3059794e5fd536a6f29a9b550"
-#   end
-#
-#   resource "PyYAML" do
-#     url "https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz"
-#     sha256 "3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf"
-#   end
-#
-#   resource "typing" do
-#     url "https://files.pythonhosted.org/packages/bf/9b/2bf84e841575b633d8d91ad923e198a415e3901f228715524689495b4317/typing-3.6.6.tar.gz"
-#     sha256 "4027c5f6127a6267a435201981ba156de91ad0d1d98e9ddc2aa173453453492d"
-#   end
+   resource "Cheetah" do
+     url "https://files.pythonhosted.org/packages/cd/b0/c2d700252fc251e91c08639ff41a8a5203b627f4e0a2ae18a6b662ab32ea/Cheetah-2.4.4.tar.gz"
+     sha256 "be308229f0c1e5e5af4f27d7ee06d90bb19e6af3059794e5fd536a6f29a9b550"
+   end
+
+   resource "PyYAML" do
+     url "https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz"
+     sha256 "3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf"
+   end
+
+   resource "typing" do
+     url "https://files.pythonhosted.org/packages/bf/9b/2bf84e841575b633d8d91ad923e198a415e3901f228715524689495b4317/typing-3.6.6.tar.gz"
+     sha256 "4027c5f6127a6267a435201981ba156de91ad0d1d98e9ddc2aa173453453492d"
+   end
 
   def install
     ENV['PYTHONPATH'] = Formula["python@2"].opt_prefix
@@ -50,17 +50,17 @@ class MongodbAT36 < Formula
     (buildpath/".brew_home/Library/Python/2.7/lib/python/site-packages/vendor.pth").write <<~EOS
         import site; site.addsitedir("#{buildpath}/vendor/lib/python2.7/site-packages")
     EOS
-    
-    venv = virtualenv_create(libexec)
-    venv.pip_install "Cheetah"
-    venv.pip_install "PyYAML"
-    venv.pip_install "typing"
 
-#     ["Cheetah", "PyYAML", "typing"].each do |r|
-#       resource(r).stage do
-#         system "python", *Language::Python.setup_install_args(buildpath/"vendor")
-#       end
-#     end
+#     venv = virtualenv_create(libexec)
+#     venv.pip_install "Cheetah"
+#     venv.pip_install "PyYAML"
+#     venv.pip_install "typing"
+
+     ["Cheetah", "PyYAML", "typing"].each do |r|
+       resource(r).stage do
+         system "python", *Language::Python.setup_install_args(buildpath/"vendor")
+       end
+     end
 
 
     # New Go tools have their own build script but the server scons "install"
