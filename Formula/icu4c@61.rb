@@ -5,7 +5,7 @@ class Icu4cAT61 < Formula
   mirror "https://downloads.sourceforge.net/project/icu/ICU4C/61.1/icu4c-61_1-src.tgz"
   version "61.1"
   sha256 "d007f89ae8a2543a53525c74359b65b36412fa84b3349f1400be6dcf409fafef"
-  revision 1
+  revision 2
 
   bottle do
     cellar :any
