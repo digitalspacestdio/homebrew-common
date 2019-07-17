@@ -1,4 +1,4 @@
-class Icu4cAT64 < Formula
+class Icu4c < Formula
   desc "C/C++ and Java libraries for Unicode and globalization"
   homepage "https://ssl.icu-project.org/"
   url "https://ssl.icu-project.org/files/icu4c/64.2/icu4c-64_2-src.tgz"
