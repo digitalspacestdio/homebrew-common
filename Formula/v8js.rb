@@ -1,4 +1,4 @@
-class V8 < Formula
+class V8js < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
