@@ -92,7 +92,7 @@ class V8js < Formula
     system "ninja", "-j", ENV.make_jobs, "-C", "out.gn", "-v", "d8"
 
     lib.install Dir["out.gn/lib*.dylib"] # back compatibility fix
-    lib.install Dir["include/*"] # back compatibility fix
+    include.install Dir["include/*"] # back compatibility fix
 
     # Install all the things
     (libexec/"include").install Dir["include/*"]
