@@ -20,7 +20,6 @@ class Curl < Formula
 
   head do
     url "https://github.com/curl/curl.git"
-
     depends_on "openssl" => :build
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -40,15 +39,7 @@ class Curl < Formula
   deprecated_option "with-ssh" => "with-libssh2"
   deprecated_option "with-ares" => "with-c-ares"
 
-  # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
-  # which is currently not supported by Secure Transport (DarwinSSL).
-  if MacOS.version < :mountain_lion && OS.mac? || build.with?("nghttp2")
-    depends_on "openssl"
-  else
-    option "with-openssl", "Build with OpenSSL instead of Secure Transport"
-    depends_on "openssl" => :optional
-  end
-
+  depends_on "openssl"
   depends_on "pkg-config" => :build
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
