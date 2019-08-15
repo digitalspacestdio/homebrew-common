@@ -1,19 +1,19 @@
-class MongodbAT36 < Formula
+class Mongodb36 < Formula
   include Language::Python::Virtualenv
   desc "High-performance, schema-free, document-oriented database"
   homepage "https://www.mongodb.org/"
   # do not upgrade to versions >3.6.8 as they are under the SSPL which is not
   # an open-source license.
-  url "https://fastdl.mongodb.org/src/mongodb-src-r3.6.8.tar.gz"
-  sha256 "cbb6bedd8963db2abf87cdb6dcceffaa5ee86729d19f4dcbeefb6e0dba0a2d7d"
+  url "https://fastdl.mongodb.org/src/mongodb-src-r3.6.13.tar.gz"
+  sha256 "e4f1ea19dd22446d0348dde39fd229f8cae759d75a06509be43a2f5517997bd5"
   revision 1
 
-  bottle do
-    cellar :any
-    sha256 "17700a35d1ae69422747abea85cbc9a5cb6c162f75ca00e5e74512e412a15d23" => :mojave
-    sha256 "cd334cae4a0c939b7e39f3e0fc26c05e8f0807d406ec190d4140baeb1e084b38" => :high_sierra
-    sha256 "f3cc1d1f566dcf6a0fbd2b355496e2adb6bba2a98fafde11b345db407e0d3b1f" => :sierra
-  end
+#   bottle do
+#     cellar :any
+#     sha256 "17700a35d1ae69422747abea85cbc9a5cb6c162f75ca00e5e74512e412a15d23" => :mojave
+#     sha256 "cd334cae4a0c939b7e39f3e0fc26c05e8f0807d406ec190d4140baeb1e084b38" => :high_sierra
+#     sha256 "f3cc1d1f566dcf6a0fbd2b355496e2adb6bba2a98fafde11b345db407e0d3b1f" => :sierra
+#   end
 
   keg_only :versioned_formula
 
