@@ -74,7 +74,7 @@ class Mongodb36 < Formula
 
       ENV["LIBRARY_PATH"] = Formula["openssl"].opt_lib
       ENV["CPATH"] = Formula["openssl"].opt_include
-      ENV["GOROOT"] = Formula["go"].opt_libexec
+      ENV["GOROOT"] = Formula["go@1.11"].opt_libexec
 
       system "./build.sh", "ssl"
     end
