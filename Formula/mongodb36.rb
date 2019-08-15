@@ -67,10 +67,10 @@ class Mongodb36 < Formula
     # target is still responsible for installing them.
 
     cd "src/mongo/gotools/src/github.com/mongodb/mongo-tools" do
-      inreplace "build.sh" do |s|
-        s.gsub! "$(git describe)", version.to_s
-        s.gsub! "$(git rev-parse HEAD)", "homebrew"
-      end
+#       inreplace "build.sh" do |s|
+#         s.gsub! "$(git describe)", version.to_s
+#         s.gsub! "$(git rev-parse HEAD)", "homebrew"
+#       end
 
       ENV["LIBRARY_PATH"] = Formula["openssl"].opt_lib
       ENV["CPATH"] = Formula["openssl"].opt_include
