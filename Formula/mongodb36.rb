@@ -66,7 +66,7 @@ class Mongodb36 < Formula
     # New Go tools have their own build script but the server scons "install"
     # target is still responsible for installing them.
 
-    cd "src/mongo/gotools" do
+    cd "src/mongo/gotools/src/github.com/mongodb/mongo-tools" do
       inreplace "build.sh" do |s|
         s.gsub! "$(git describe)", version.to_s
         s.gsub! "$(git rev-parse HEAD)", "homebrew"
@@ -78,7 +78,7 @@ class Mongodb36 < Formula
       system "./build.sh", "ssl"
     end
 
-    (buildpath/"src/mongo-tools").install Dir["src/mongo/gotools/bin/*"]
+    (buildpath/"src/mongo/gotools/src/github.com/mongodb/mongo-tools").install Dir["src/mongo/gotools/bin/*"]
 
     args = %W[
       -j#{ENV.make_jobs}
