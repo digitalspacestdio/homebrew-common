@@ -2,8 +2,6 @@ class Mongodb36 < Formula
   include Language::Python::Virtualenv
   desc "High-performance, schema-free, document-oriented database"
   homepage "https://www.mongodb.org/"
-  # do not upgrade to versions >3.6.8 as they are under the SSPL which is not
-  # an open-source license.
   url "https://fastdl.mongodb.org/src/mongodb-src-r3.6.13.tar.gz"
   sha256 "e4f1ea19dd22446d0348dde39fd229f8cae759d75a06509be43a2f5517997bd5"
   revision 1
@@ -67,10 +65,11 @@ class Mongodb36 < Formula
     # target is still responsible for installing them.
 
     cd "src/mongo/gotools/src/github.com/mongodb/mongo-tools" do
-#       inreplace "build.sh" do |s|
-#         s.gsub! "$(git describe)", version.to_s
-#         s.gsub! "$(git rev-parse HEAD)", "homebrew"
-#       end
+      inreplace "set_goenv.sh" do |s|
+        s.gsub! "$(git describe)", version.to_s
+        s.gsub! "$(git rev-parse HEAD)", "homebrew"
+      end
+      inreplace "build.sh", "#!/bin/sh", "#!/bin/bash"
 
       ENV["LIBRARY_PATH"] = Formula["openssl"].opt_lib
       ENV["CPATH"] = Formula["openssl"].opt_include
