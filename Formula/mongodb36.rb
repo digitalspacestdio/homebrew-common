@@ -23,6 +23,7 @@ class Mongodb36 < Formula
   end
 
   depends_on "openssl"
+  depends_on "libpcap"
   depends_on "python@2"
 
    resource "Cheetah" do
@@ -41,24 +42,24 @@ class Mongodb36 < Formula
    end
 
   def install
-    ENV['PYTHONPATH'] = Formula["python@2"].opt_prefix
-    ENV.prepend_path "PATH", Formula["python@2"].opt_bin
     ENV.libcxx
 
-    (buildpath/".brew_home/Library/Python/2.7/lib/python/site-packages/vendor.pth").write <<~EOS
-        import site; site.addsitedir("#{buildpath}/vendor/lib/python2.7/site-packages")
-    EOS
-
-#     venv = virtualenv_create(libexec)
-#     venv.pip_install "Cheetah"
-#     venv.pip_install "PyYAML"
-#     venv.pip_install "typing"
-
-     ["Cheetah", "PyYAML", "typing"].each do |r|
-       resource(r).stage do
-         system "python", *Language::Python.setup_install_args(buildpath/"vendor")
-       end
-     end
+    ["Cheetah", "PyYAML", "typing"].each do |r|
+      resource(r).stage do
+        system "python", *Language::Python.setup_install_args(buildpath/"vendor")
+      end
+    end
+    if OS.mac?
+        mkdir_p "#{buildpath}/.brew_home/Library/Python/2.7/lib/python/site-packages"
+        (buildpath/".brew_home/Library/Python/2.7/lib/python/site-packages/vendor.pth").write <<~EOS
+          import site; site.addsitedir("#{buildpath}/vendor/lib/python2.7/site-packages")
+        EOS
+    else
+        mkdir_p "#{buildpath}/.brew_home/.local/lib/python2.7/site-packages"
+        (buildpath/".brew_home/.local/lib/python2.7/site-packages/vendor.pth").write <<~EOS
+          import site; site.addsitedir("#{buildpath}/vendor/lib/python2.7/site-packages")
+        EOS
+    end
 
 
     # New Go tools have their own build script but the server scons "install"
@@ -71,14 +72,14 @@ class Mongodb36 < Formula
       end
       inreplace "build.sh", "#!/bin/sh", "#!/bin/bash"
 
-      ENV["LIBRARY_PATH"] = Formula["openssl"].opt_lib
-      ENV["CPATH"] = Formula["openssl"].opt_include
+      ENV["LIBRARY_PATH"] = [Formula["openssl"].opt_lib, Formula["libpcap"].opt_lib].join(':')
+      ENV["CPATH"] = [Formula["openssl"].opt_include, Formula["libpcap"].opt_include].join(':')
       ENV["GOROOT"] = Formula["go@1.11"].opt_libexec
 
       system "./build.sh", "ssl"
     end
 
-    (buildpath/"src/mongo/gotools/src/github.com/mongodb/mongo-tools").install Dir["src/mongo/gotools/bin/*"]
+    (buildpath/"src/mongo-tools").install Dir["src/mongo/gotools/src/github.com/mongodb/mongo-tools/bin/*"]
 
     args = %W[
       -j#{ENV.make_jobs}
