@@ -15,3 +15,8 @@ brew install percona-server@5.6
 ```
 brew install percona-server@5.7
 ```
+
+Run docker container for testing and development
+```
+bash run_dev.sh
+```
