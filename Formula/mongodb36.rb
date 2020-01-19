@@ -22,7 +22,7 @@ class Mongodb36 < Formula
     depends_on :xcode => ["8.3.2", :build]
   end
 
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   depends_on "libpcap"
   depends_on "python@2"
 
@@ -81,19 +81,33 @@ class Mongodb36 < Formula
 
     (buildpath/"src/mongo-tools").install Dir["src/mongo/gotools/src/github.com/mongodb/mongo-tools/bin/*"]
 
-    args = %W[
-      -j#{ENV.make_jobs}
-      --build-mongoreplay=true
-      --prefix=#{prefix}
-      --ssl
-      --use-new-tools
-      CC=#{ENV.cc}
-      CXX=#{ENV.cxx}
-      CCFLAGS=-mmacosx-version-min=#{MacOS.version}
-      LINKFLAGS=-mmacosx-version-min=#{MacOS.version}
-      CCFLAGS=-I#{Formula["openssl"].opt_include}
-      LINKFLAGS=-L#{Formula["openssl"].opt_lib}
-    ]
+    if OS.mac?
+      args = %W[
+          -j#{ENV.make_jobs}
+          --build-mongoreplay=true
+          --prefix=#{prefix}
+          --ssl
+          --use-new-tools
+          CC=#{ENV.cc}
+          CXX=#{ENV.cxx}
+          CCFLAGS=-mmacosx-version-min=#{MacOS.version}
+          LINKFLAGS=-mmacosx-version-min=#{MacOS.version}
+          CCFLAGS=-I#{Formula["openssl@1.1"].opt_include}
+          LINKFLAGS=-L#{Formula["openssl@1.1"].opt_lib}
+      ]
+    else
+      args = %W[
+          -j#{ENV.make_jobs}
+          --build-mongoreplay=true
+          --prefix=#{prefix}
+          --ssl
+          --use-new-tools
+          CC=#{ENV.cc}
+          CXX=#{ENV.cxx}
+          CCFLAGS=-I#{Formula["openssl@1.1"].opt_include}
+          LINKFLAGS=-L#{Formula["openssl@1.1"].opt_lib}
+      ]
+    end
 
     args << "--disable-warnings-as-errors" if MacOS.version >= :yosemite
 
