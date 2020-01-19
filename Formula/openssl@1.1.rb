@@ -1,4 +1,4 @@
-class Openssl11 < Formula
+class OpensslAT11 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl.org/"
   url "https://www.openssl.org/source/openssl-1.1.1d.tar.gz"
