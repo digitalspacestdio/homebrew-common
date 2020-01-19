@@ -11,13 +11,13 @@ class OpensslAT10 < Formula
   keg_only :provided_by_macos,
     "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
 
-#  unless OS.mac?
+  unless OS.mac?
     resource "cacert" do
       # homepage "http://curl.haxx.se/docs/caextract.html"
       url "https://curl.haxx.se/ca/cacert.pem"
       sha256 "adf770dfd574a0d6026bfaa270cb6879b063957177a991d453ff1d302c02081f"
     end
-#  end
+  end
 
   def install
     # openssl does not in fact require an executable stack.
@@ -67,14 +67,14 @@ class OpensslAT10 < Formula
   end
 
   def post_install
-#    unless OS.mac?
+    unless OS.mac?
       # Download and install cacert.pem from curl.haxx.se
       cacert = resource("cacert")
       rm_f openssldir/"cert.pem"
       filename = Pathname.new(cacert.url).basename
       openssldir.install cacert.files(filename => "cert.pem")
       return
-#    end
+    end
 
     keychains = %w[
       /System/Library/Keychains/SystemRootCertificates.keychain
