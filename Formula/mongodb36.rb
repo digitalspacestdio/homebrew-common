@@ -2,9 +2,10 @@ class Mongodb36 < Formula
   include Language::Python::Virtualenv
   desc "High-performance, schema-free, document-oriented database"
   homepage "https://www.mongodb.org/"
-  url "https://fastdl.mongodb.org/src/mongodb-src-r3.6.13.tar.gz"
-  sha256 "e4f1ea19dd22446d0348dde39fd229f8cae759d75a06509be43a2f5517997bd5"
-  revision 1
+  url "https://fastdl.mongodb.org/src/mongodb-src-r3.6.17.tar.gz"
+  sha256 "25981810f48fdae7ca43dffe0a797c8111a920975287813bf2f2a0e6f64f6b00"
+  version "3.6.17"
+  revision 2
 
 #   bottle do
 #     cellar :any
@@ -22,6 +23,7 @@ class Mongodb36 < Formula
     depends_on :xcode => ["8.3.2", :build]
   end
 
+  depends_on "boost@1.59"
   depends_on "openssl@1.1"
   depends_on "libpcap"
   depends_on "python@2"
@@ -41,8 +43,18 @@ class Mongodb36 < Formula
      sha256 "4027c5f6127a6267a435201981ba156de91ad0d1d98e9ddc2aa173453453492d"
    end
 
+   resource "boost" do
+     url "https://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.bz2"
+     sha256 "727a932322d94287b62abb1bd2d41723eec4356a7728909e38adb65ca25241ca"
+   end
+
   def install
     ENV.libcxx
+    ENV.cxx11
+    ENV.append "CXXFLAGS", "-std=c++14"
+
+    #ENV['CFLAGS'] = '-I$(brew --prefix libpam)/include'
+    #ENV['LDFLAGS'] = '-L$(brew --prefix libpam)/lib'
 
     ["Cheetah", "PyYAML", "typing"].each do |r|
       resource(r).stage do
@@ -72,8 +84,8 @@ class Mongodb36 < Formula
       end
       inreplace "build.sh", "#!/bin/sh", "#!/bin/bash"
 
-      ENV["LIBRARY_PATH"] = [Formula["openssl"].opt_lib, Formula["libpcap"].opt_lib].join(':')
-      ENV["CPATH"] = [Formula["openssl"].opt_include, Formula["libpcap"].opt_include].join(':')
+      ENV["LIBRARY_PATH"] = [Formula["openssl@1.1"].opt_lib, Formula["libpcap"].opt_lib].join(':')
+      ENV["CPATH"] = [Formula["openssl@1.1"].opt_include, Formula["libpcap"].opt_include].join(':')
       ENV["GOROOT"] = Formula["go@1.11"].opt_libexec
 
       system "./build.sh", "ssl"
@@ -83,17 +95,18 @@ class Mongodb36 < Formula
 
     if OS.mac?
       args = %W[
-          -j#{ENV.make_jobs}
-          --build-mongoreplay=true
-          --prefix=#{prefix}
-          --ssl
-          --use-new-tools
-          CC=#{ENV.cc}
-          CXX=#{ENV.cxx}
-          CCFLAGS=-mmacosx-version-min=#{MacOS.version}
-          LINKFLAGS=-mmacosx-version-min=#{MacOS.version}
-          CCFLAGS=-I#{Formula["openssl@1.1"].opt_include}
-          LINKFLAGS=-L#{Formula["openssl@1.1"].opt_lib}
+        -j#{ENV.make_jobs}
+        --build-mongoreplay=true
+        --prefix=#{prefix}
+        --ssl
+        --use-new-tools
+        CC=#{ENV.cc}
+        CXX=#{ENV.cxx}
+        CCFLAGS=-mmacosx-version-min=#{MacOS.version}
+        LINKFLAGS=-mmacosx-version-min=#{MacOS.version}
+        CCFLAGS=-I#{Formula["openssl@1.1"].opt_include}
+        LINKFLAGS=-L#{Formula["openssl@1.1"].opt_lib}
+        MONGO_VERSION=#{version}
       ]
     else
       args = %W[
@@ -109,7 +122,7 @@ class Mongodb36 < Formula
       ]
     end
 
-    args << "--disable-warnings-as-errors" if MacOS.version >= :yosemite
+    args << "--disable-warnings-as-errors"
 
     system "scons", "install", *args
 
@@ -176,5 +189,9 @@ class Mongodb36 < Formula
 
   test do
     system "#{bin}/mongod", "--sysinfo"
+  end
+
+  def patches
+    "https://raw.githubusercontent.com/djocker/homebrew-common/master/Patches/mongodb36/macos.patch" if OS.mac?
   end
 end
