@@ -1,3 +1,4 @@
 {
-  "curl": "djocker/php/phpcurl"
+  "djocker/common/curl": "djocker/php/phpcurl",
+  "djocker/php/curl": "djocker/php/phpcurl"
 }
