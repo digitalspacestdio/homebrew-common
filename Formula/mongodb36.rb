@@ -23,7 +23,6 @@ class Mongodb36 < Formula
     depends_on :xcode => ["8.3.2", :build]
   end
 
-  depends_on "boost@1.59"
   depends_on "openssl@1.1"
   depends_on "libpcap"
   depends_on "python@2"
@@ -41,11 +40,6 @@ class Mongodb36 < Formula
    resource "typing" do
      url "https://files.pythonhosted.org/packages/bf/9b/2bf84e841575b633d8d91ad923e198a415e3901f228715524689495b4317/typing-3.6.6.tar.gz"
      sha256 "4027c5f6127a6267a435201981ba156de91ad0d1d98e9ddc2aa173453453492d"
-   end
-
-   resource "boost" do
-     url "https://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.bz2"
-     sha256 "727a932322d94287b62abb1bd2d41723eec4356a7728909e38adb65ca25241ca"
    end
 
   def install
