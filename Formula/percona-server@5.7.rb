@@ -16,6 +16,7 @@ class PerconaServerAT57 < Formula
     satisfy { datadir == var/"mysql" }
   end
 
+  depends_on "pkg-config" => :build
   depends_on "cmake" => :build
   # https://github.com/Homebrew/homebrew-core/issues/1475
   # Needs at least Clang 3.3, which shipped alongside Lion.
