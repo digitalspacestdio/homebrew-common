@@ -29,7 +29,7 @@ class PerconaServerAT57 < Formula
     ENV['LDFLAGS'] = '-L$(brew --prefix libpam)/lib'
   end
 
-  conflicts_with "mariadb", "mysql", "mysql-cluster",
+  conflicts_with "mariadb", "mysql",
     :because => "percona, mariadb, and mysql install the same binaries."
   conflicts_with "mysql-connector-c",
     :because => "both install MySQL client libraries"
