@@ -18,7 +18,7 @@ class Mongodb36 < Formula
 
   depends_on "go@1.11" => :build
   depends_on "pkg-config" => :build
-  depends_on "scons" => :build
+  depends_on "scons30" => :build
   if OS.mac?
     depends_on :xcode => ["8.3.2", :build]
   end
@@ -118,7 +118,7 @@ class Mongodb36 < Formula
 
     args << "--disable-warnings-as-errors"
 
-    system "scons", "install", *args
+    system "#{Formula["scons30"].prefix}/bin/scons", "install", *args
 
     (buildpath/"mongod.conf").write mongodb_conf
     etc.install "mongod.conf"
