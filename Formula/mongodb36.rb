@@ -185,7 +185,7 @@ class Mongodb36 < Formula
     system "#{bin}/mongod", "--sysinfo"
   end
 
-  if OS.mac
+  if OS.mac?
       patch :p1 do
          url "https://raw.githubusercontent.com/djocker/homebrew-common/master/Patches/mongodb36/macos.patch"
          sha256 "d38ba1a4b11edfc54a46cef9145c02aa027a9fc63afdfcb7f90626af629efeba"
