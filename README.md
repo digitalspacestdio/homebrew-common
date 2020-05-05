@@ -18,7 +18,7 @@ brew install percona-server@5.7
 
 ### Install Python 2
 ```
-brew install python@5.7
+brew install python@2
 ```
 
 ## Run docker container(linuxbrew) for testing and development
