@@ -16,6 +16,7 @@ class Mongodb36 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "gcc" => :build
   depends_on "go@1.11" => :build
   depends_on "pkg-config" => :build
   depends_on "scons30" => :build
@@ -43,9 +44,9 @@ class Mongodb36 < Formula
    end
 
   def install
-    ENV.libcxx
-    ENV.cxx11
-    ENV.append "CXXFLAGS", "-std=c++14"
+    #ENV.libcxx
+    #ENV.cxx11
+    #ENV.append "CXXFLAGS", "-std=c++14"
 
     #ENV['CFLAGS'] = '-I$(brew --prefix libpam)/include'
     #ENV['LDFLAGS'] = '-L$(brew --prefix libpam)/lib'
@@ -86,6 +87,9 @@ class Mongodb36 < Formula
     end
 
     (buildpath/"src/mongo-tools").install Dir["src/mongo/gotools/src/github.com/mongodb/mongo-tools/bin/*"]
+
+    ENV["CC"] = "gcc"
+    ENV["CXX"] = "g++"
 
     if OS.mac?
       args = %W[
