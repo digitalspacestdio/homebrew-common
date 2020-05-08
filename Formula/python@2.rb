@@ -23,6 +23,7 @@ class PythonAT2 < Formula
     satisfy { MacOS::CLT.installed? }
   end
 
+  depends_on "gcc" => :build
   depends_on "pkg-config" => :build
   depends_on "gdbm"
   depends_on "openssl@1.1"
