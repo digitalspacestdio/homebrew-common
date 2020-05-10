@@ -46,7 +46,7 @@ class PythonAT2 < Formula
   end
 
   def lib_cellar
-    prefix / (OS.mac? ? "Frameworks/Python.framework/Versions/2.7/lib/python2.7" : "") /
+    prefix / (OS.mac? ? "Frameworks/Python.framework/Versions/2.7" : "") /
           "lib/python2.7"
   end
 
