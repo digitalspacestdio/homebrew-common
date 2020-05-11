@@ -20,9 +20,9 @@ class Mongodb36 < Formula
   depends_on "go@1.11" => :build
   depends_on "pkg-config" => :build
   depends_on "scons30" => :build
-  if OS.mac?
-    depends_on :xcode => ["8.3.2", :build]
-  end
+#   if OS.mac?
+#     depends_on :xcode => ["8.3.2", :build]
+#   end
 
   depends_on "openssl@1.1"
   depends_on "libpcap"
@@ -88,8 +88,9 @@ class Mongodb36 < Formula
 
     (buildpath/"src/mongo-tools").install Dir["src/mongo/gotools/src/github.com/mongodb/mongo-tools/bin/*"]
 
-    ENV["CC"] = "gcc"
-    ENV["CXX"] = "g++"
+    ENV["CC"] = "gcc-9"
+    ENV["LD"] = "gcc-9"
+    ENV["CXX"] = "g++-9"
 
     if OS.mac?
       args = %W[
