@@ -10,6 +10,8 @@ class Varnish52 < Formula
     sha256 "508da7c537c4d41c9a4af5e5c8faceec47c7768bf5e9542806514f3f718a2f2b" => :el_capitan
   end
 
+  keg_only :versioned_formula
+
   depends_on "pkg-config" => :build
   depends_on "docutils" => :build
   depends_on "pcre"
