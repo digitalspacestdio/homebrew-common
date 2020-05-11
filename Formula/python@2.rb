@@ -107,8 +107,9 @@ class PythonAT2 < Formula
     # paths for the dependencies of the compiled extension modules.
     # See Linuxbrew/linuxbrew#420, Linuxbrew/linuxbrew#460, and Linuxbrew/linuxbrew#875
     #unless OS.mac?
-      ENV["CC"] = "gcc"
-      ENV["CXX"] = "g++"
+      ENV["CC"] = "gcc-9"
+      ENV["LD"] = "gcc-9"
+      ENV["CXX"] = "g++-9"
 #       if build.bottle?
 #         # Configure Python to use cc and c++ to build extension modules.
 #
