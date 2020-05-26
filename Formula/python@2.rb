@@ -23,6 +23,9 @@ class PythonAT2 < Formula
     satisfy { MacOS::CLT.installed? }
   end
 
+  keg_only :versioned_formula
+
+  depends_on "gcc" => :build
   depends_on "pkg-config" => :build
   depends_on "gdbm"
   depends_on "openssl@1.1"
@@ -45,7 +48,8 @@ class PythonAT2 < Formula
   end
 
   def lib_cellar
-    prefix/"Frameworks/Python.framework/Versions/2.7/lib/python2.7"
+    prefix / (OS.mac? ? "Frameworks/Python.framework/Versions/2.7" : "") /
+          "lib/python2.7"
   end
 
   def site_packages_cellar
@@ -68,7 +72,7 @@ class PythonAT2 < Formula
       --enable-ipv6
       --datarootdir=#{share}
       --datadir=#{share}
-      --enable-framework=#{frameworks}
+      #{OS.mac? ? "--enable-framework=#{frameworks}" : "--enable-shared"}
       --without-ensurepip
     ]
 
@@ -87,7 +91,7 @@ class PythonAT2 < Formula
     ldflags  = []
     cppflags = []
 
-    if MacOS.sdk_path_if_needed
+    if OS.mac? && MacOS.sdk_path_if_needed
       # Help Python's build system (setuptools/pip) to build things on SDK-based systems
       # The setup.py looks at "-isysroot" to get the sysroot (and not at --sysroot)
       cflags  << "-isysroot #{MacOS.sdk_path}" << "-I#{MacOS.sdk_path}/usr/include"
@@ -100,6 +104,21 @@ class PythonAT2 < Formula
 
     # Avoid linking to libgcc https://code.activestate.com/lists/python-dev/112195/
     args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
+
+    # Python's setup.py parses CPPFLAGS and LDFLAGS to learn search
+    # paths for the dependencies of the compiled extension modules.
+    # See Linuxbrew/linuxbrew#420, Linuxbrew/linuxbrew#460, and Linuxbrew/linuxbrew#875
+    #unless OS.mac?
+      ENV["CC"] = "gcc-9"
+      ENV["LD"] = "gcc-9"
+      ENV["CXX"] = "g++-9"
+#       if build.bottle?
+#         # Configure Python to use cc and c++ to build extension modules.
+#
+#       end
+      cppflags << ENV.cppflags << " -I#{HOMEBREW_PREFIX}/include"
+      ldflags << ENV.ldflags << " -L#{HOMEBREW_PREFIX}/lib"
+    #end
 
     # We want our readline and openssl! This is just to outsmart the detection code,
     # superenv handles that cc finds includes/libs!
@@ -127,6 +146,8 @@ class PythonAT2 < Formula
       f.gsub! "DEFAULT_FRAMEWORK_FALLBACK = [", "DEFAULT_FRAMEWORK_FALLBACK = [ '#{HOMEBREW_PREFIX}/Frameworks',"
     end
 
+    args << "CC=#{ENV.cc}"
+    args << "CXX=#{ENV.cxx}"
     args << "CFLAGS=#{cflags.join(" ")}" unless cflags.empty?
     args << "LDFLAGS=#{ldflags.join(" ")}" unless ldflags.empty?
     args << "CPPFLAGS=#{cppflags.join(" ")}" unless cppflags.empty?
@@ -137,7 +158,7 @@ class PythonAT2 < Formula
     ENV.deparallelize do
       # Tell Python not to install into /Applications
       system "make", "install", "PYTHONAPPSDIR=#{prefix}"
-      system "make", "frameworkinstallextras", "PYTHONAPPSDIR=#{pkgshare}"
+      system "make", "frameworkinstallextras", "PYTHONAPPSDIR=#{pkgshare}" if OS.mac?
     end
 
     # Fixes setting Python build flags for certain software
@@ -149,10 +170,17 @@ class PythonAT2 < Formula
     end
 
     # Prevent third-party packages from building against fragile Cellar paths
-    inreplace [lib_cellar/"_sysconfigdata.py",
+    if OS.mac?
+      inreplace [lib_cellar/"_sysconfigdata.py",
                lib_cellar/"config/Makefile",
                frameworks/"Python.framework/Versions/Current/lib/pkgconfig/python-2.7.pc"],
               prefix, opt_prefix
+    else
+      inreplace Dir[lib_cellar/"**/_sysconfigdata_m_linux_x86_64-*.py",
+                    lib_cellar/"config*/Makefile",
+                    lib/"pkgconfig/python-2.7.pc"],
+              prefix, opt_prefix
+    end
 
     # Symlink the pkgconfig files into HOMEBREW_PREFIX so they're accessible.
     (lib/"pkgconfig").install_symlink Dir[frameworks/"Python.framework/Versions/Current/lib/pkgconfig/*"]
@@ -160,11 +188,13 @@ class PythonAT2 < Formula
     # Remove 2to3 because Python 3 also installs it
     rm bin/"2to3"
 
+    if OS.mac?
     # A fix, because python and python@2 both want to install Python.framework
     # and therefore we can't link both into HOMEBREW_PREFIX/Frameworks
     # https://github.com/Homebrew/homebrew/issues/15943
     ["Headers", "Python", "Resources"].each { |f| rm(prefix/"Frameworks/Python.framework/#{f}") }
     rm prefix/"Frameworks/Python.framework/Versions/Current"
+    end
 
     # Remove the site-packages that Python created in its Cellar.
     site_packages_cellar.rmtree
@@ -307,7 +337,7 @@ class PythonAT2 < Formula
     # and it can occur that building sqlite silently fails if OSX's sqlite is used.
     system "#{bin}/python", "-c", "import sqlite3"
     # Check if some other modules import. Then the linked libs are working.
-    system "#{bin}/python", "-c", "import Tkinter; root = Tkinter.Tk()"
+    system "#{bin}/python", "-c", "import Tkinter; root = Tkinter.Tk()" if OS.mac?
     system "#{bin}/python", "-c", "import gdbm"
     system "#{bin}/python", "-c", "import zlib"
     system bin/"pip", "list", "--format=columns"

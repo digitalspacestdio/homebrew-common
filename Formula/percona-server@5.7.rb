@@ -16,6 +16,8 @@ class PerconaServerAT57 < Formula
     satisfy { datadir == var/"mysql" }
   end
 
+  keg_only :versioned_formula
+
   depends_on "pkg-config" => :build
   depends_on "cmake" => :build
   # https://github.com/Homebrew/homebrew-core/issues/1475
