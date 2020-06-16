@@ -4,11 +4,11 @@ class Varnish52 < Formula
   url "https://varnish-cache.org/_downloads/varnish-5.2.1.tgz"
   sha256 "b8452c9d78c16f78c8cfd1c1a1e696523bf64b7721c330150dcc0852459014b3"
 
-  bottle do
-    sha256 "382cd91df3dcb06cb4e741036e061f64bf42cc8f22615baf2c3c88c5e6796dce" => :high_sierra
-    sha256 "4376d9964660db9e28b1075560bfec753d0bfd5c04fbbf9c6f2c2d9eb9d29088" => :sierra
-    sha256 "508da7c537c4d41c9a4af5e5c8faceec47c7768bf5e9542806514f3f718a2f2b" => :el_capitan
-  end
+#   bottle do
+#     sha256 "382cd91df3dcb06cb4e741036e061f64bf42cc8f22615baf2c3c88c5e6796dce" => :high_sierra
+#     sha256 "4376d9964660db9e28b1075560bfec753d0bfd5c04fbbf9c6f2c2d9eb9d29088" => :sierra
+#     sha256 "508da7c537c4d41c9a4af5e5c8faceec47c7768bf5e9542806514f3f718a2f2b" => :el_capitan
+#   end
 
   keg_only :versioned_formula
 

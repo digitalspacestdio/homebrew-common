@@ -5,12 +5,12 @@ class PerconaServerAT56 < Formula
   version "5.6.42-84.2"
   sha256 "3105ead687f56a1ae0ace557d276fe8dc7f4e1f71d8523032f713ebb80635347"
 
-  bottle do
-    sha256 "14c44d88f544e03bf096e96f077f2ab9a1cd9ad6b95c1b5b69bab67d337bb416" => :mojave
-    sha256 "42aee545ba8add7b71afc189b9f92ec133d1fa712577708bf5b741a58146b416" => :high_sierra
-    sha256 "1ebf06f5346e40267f69744df6827ff593b43901413c4b4e644974326ca2fdc9" => :sierra
-    sha256 "e8198376ff0f18fe069a339e5cde5642cd6d7b53d0e480753b9e8fa4e300838e" => :x86_64_linux
-  end
+#   bottle do
+#     sha256 "14c44d88f544e03bf096e96f077f2ab9a1cd9ad6b95c1b5b69bab67d337bb416" => :mojave
+#     sha256 "42aee545ba8add7b71afc189b9f92ec133d1fa712577708bf5b741a58146b416" => :high_sierra
+#     sha256 "1ebf06f5346e40267f69744df6827ff593b43901413c4b4e644974326ca2fdc9" => :sierra
+#     sha256 "e8198376ff0f18fe069a339e5cde5642cd6d7b53d0e480753b9e8fa4e300838e" => :x86_64_linux
+#   end
 
   pour_bottle? do
     reason "The bottle needs a var/mysql datadir (yours is var/percona)."
