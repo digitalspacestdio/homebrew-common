@@ -6,7 +6,7 @@ class OpensslAT10 < Formula
   homepage "https://openssl.org/"
   url "https://www.openssl.org/source/openssl-1.0.2u.tar.gz"
   sha256 "ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16"
-  revision 1
+  revision 2
 
   keg_only :provided_by_macos,
     "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
@@ -15,7 +15,7 @@ class OpensslAT10 < Formula
     resource "cacert" do
       # homepage "http://curl.haxx.se/docs/caextract.html"
       url "https://curl.haxx.se/ca/cacert.pem"
-      sha256 "adf770dfd574a0d6026bfaa270cb6879b063957177a991d453ff1d302c02081f"
+      sha256 "bb28d145ed1a4ee67253d8ddb11268069c9dafe3db25a9eee654974c4e43eee5"
     end
   end
 
