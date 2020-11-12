@@ -14,7 +14,7 @@ class OpensslAT10 < Formula
   unless OS.mac?
     resource "cacert" do
       # homepage "http://curl.haxx.se/docs/caextract.html"
-      url "https://curl.haxx.se/ca/cacert.pem"
+      url "https://curl.se/ca/cacert-2020-10-14.pem"
       sha256 "bb28d145ed1a4ee67253d8ddb11268069c9dafe3db25a9eee654974c4e43eee5"
     end
   end
