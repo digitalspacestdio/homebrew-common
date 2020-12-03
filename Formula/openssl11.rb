@@ -55,6 +55,8 @@ class Openssl11 < Formula
     args = %W[
       --prefix=#{prefix}
       --openssldir=#{openssldir}
+      enable-ssl2
+      enable-ssl3
     ]
     on_linux do
       args += (ENV.cflags || "").split
