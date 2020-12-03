@@ -58,6 +58,7 @@ class Openssl11 < Formula
       --openssldir=#{openssldir}
       enable-ssl2
       enable-ssl3
+      enable-ssl3-method
     ]
     on_linux do
       args += (ENV.cflags || "").split
