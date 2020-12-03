@@ -8,12 +8,13 @@ class OpensslAT11 < Formula
   license "OpenSSL"
   version_scheme 1
 
+  keg_only :provided_by_macos,
+      "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
+
   livecheck do
     url "https://www.openssl.org/source/"
     regex(/href=.*?openssl[._-]v?(1\.1(?:\.\d+)+[a-z]?)\.t/i)
   end
-
-  keg_only :shadowed_by_macos, "macOS provides LibreSSL"
 
   on_linux do
     resource "cacert" do
