@@ -7,6 +7,7 @@ class Openssl11 < Formula
   sha256 "5c9ca8774bd7b03e5784f26ae9e9e6d749c9da2438545077e6b3d755a06595d9"
   license "OpenSSL"
   version_scheme 1
+  revision 2
 
   keg_only :provided_by_macos,
       "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
