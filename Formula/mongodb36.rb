@@ -5,7 +5,7 @@ class Mongodb36 < Formula
   url "https://fastdl.mongodb.org/src/mongodb-src-r3.6.17.tar.gz"
   sha256 "25981810f48fdae7ca43dffe0a797c8111a920975287813bf2f2a0e6f64f6b00"
   version "3.6.17"
-  revision 2
+  revision 3
 
 #   bottle do
 #     cellar :any
@@ -88,9 +88,9 @@ class Mongodb36 < Formula
 
     (buildpath/"src/mongo-tools").install Dir["src/mongo/gotools/src/github.com/mongodb/mongo-tools/bin/*"]
 
-    ENV["CC"] = "gcc-9"
-    ENV["LD"] = "gcc-9"
-    ENV["CXX"] = "g++-9"
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["LD"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
 
     if OS.mac?
       args = %W[
