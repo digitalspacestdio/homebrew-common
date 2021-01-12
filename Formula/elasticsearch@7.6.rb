@@ -23,7 +23,7 @@ class ElasticsearchAT76 < Formula
     mkdir "tar" do
       # Extract the package to the tar directory
       system "tar", "--strip-components=1", "-xf",
-        Dir["../distribution/archives/oss-no-jdk-darwin-tar/build/distributions/elasticsearch-oss-*.tar.gz"].first
+        Dir["../distribution/archives/no-jdk-darwin-tar/build/distributions/elasticsearch-*.tar.gz"].first
 
       # Install into package directory
       libexec.install "bin", "lib", "modules"
@@ -120,7 +120,7 @@ class ElasticsearchAT76 < Formula
                                 "-Epath.logs=#{testpath}/logs"
     sleep 10
     output = shell_output("curl -s -XGET localhost:#{port}/")
-    assert_equal "oss", JSON.parse(output)["version"]["build_flavor"]
+    #assert_equal "oss", JSON.parse(output)["version"]["build_flavor"]
 
     system "#{bin}/elasticsearch-plugin", "list"
   end
