@@ -18,7 +18,7 @@ class ElasticsearchAT76 < Formula
 
   def install
     # Doesn't support brewed gradle
-    system "./gradlew", ":distribution:archives:oss-no-jdk-darwin-tar:assemble"
+    system "./gradlew", ":distribution:archives:no-jdk-darwin-tar:assemble"
 
     mkdir "tar" do
       # Extract the package to the tar directory
