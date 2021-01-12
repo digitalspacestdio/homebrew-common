@@ -11,9 +11,14 @@ class ElasticsearchAT76 < Formula
     "elasticsearch_#{ENV["USER"]}"
   end
 
+  patch do
+    url "https://gist.githubusercontent.com/sergeycherepanov/d072acc44453b31b7892f8c838a9d91f/raw/24aff8f6d3e603f249b96fad6aff160f449fcf6d/es.patch"
+    sha256 "56a617ca91a2cb85771aab7a94e75220f035b2ecf96ce4a4ff8d8752a21408b3"
+  end
+
   def install
     # Doesn't support brewed gradle
-    system "./gradlew", ":distribution:archives:oss-no-jdk-darwin-tar:assemble", "-Dbuild.snapshot=false"
+    system "./gradlew", ":distribution:archives:oss-no-jdk-darwin-tar:assemble"
 
     mkdir "tar" do
       # Extract the package to the tar directory
