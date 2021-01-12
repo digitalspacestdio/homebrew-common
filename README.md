@@ -1,4 +1,4 @@
-# homebrew-common
+# Homebrew Common Tap
 Homebrew/Linuxbrew formulas
 
 ### Add new tap
@@ -6,19 +6,30 @@ Homebrew/Linuxbrew formulas
 brew tap djocker/common
 ```
 
-### Install Percona Server 5.6
+### Percona Server
 ```
 brew install percona-server@5.6
-```
-
-### Install Percona Server 5.7
-```
 brew install percona-server@5.7
 ```
 
-### Install Python 2
+### Python 2
 ```
 brew install python@2
+```
+
+### Mongodb 3.6
+```
+brew install mongodb36
+```
+
+### Imagemagick 6
+```
+brew install imagemagick6
+```
+
+### OpenSSL 1.0
+```
+brew install openssl@1.0
 ```
 
 ## Run docker container(linuxbrew) for testing and development
