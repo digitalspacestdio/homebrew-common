@@ -12,8 +12,8 @@ class ElasticsearchAT76 < Formula
   end
 
   patch do
-    url "https://gist.githubusercontent.com/sergeycherepanov/d072acc44453b31b7892f8c838a9d91f/raw/d167def30a936df5891f8ca2fc25d7d76f4003eb/es.patch"
-    sha256 "a9a301659d0568d22549d1a7d108a4e758784009b55c2d4b570f2ec8daccc6c1"
+    url "https://gist.githubusercontent.com/sergeycherepanov/d072acc44453b31b7892f8c838a9d91f/raw/94412480f0663e8e107fab17986301db367210be/es.patch"
+    sha256 "3b37b9e62688a8a47b1db3c5ca2bed83243e4ed8431b3c4c1989514450e12bb0"
   end
 
   def install
