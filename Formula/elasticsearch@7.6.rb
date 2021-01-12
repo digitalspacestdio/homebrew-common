@@ -59,8 +59,8 @@ class ElasticsearchAT76 < Formula
     ln_s var/"elasticsearch/plugins", libexec/"plugins" unless (libexec/"plugins").exist?
     # fix test not being able to create keystore because of sandbox permissions
     system bin/"elasticsearch-keystore", "create" unless (etc/"elasticsearch/elasticsearch.keystore").exist?
-    system bin/elasticsearch-plugin install --batch analysis-icu
-    system bin/elasticsearch-plugin install --batch analysis-phonetic
+    system bin/"elasticsearch-plugin", "install", "analysis-icu"
+    system bin/"elasticsearch-plugin", "install", "analysis-phonetic"
   end
 
   def caveats
