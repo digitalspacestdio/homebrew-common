@@ -12,7 +12,7 @@ class Icu4cAT671 < Formula
     regex(%r{href=.*?/tag/release[._-]v?(\d+(?:[.-]\d+)+)["' >]}i)
   end
 
-  keg_only :provided_by_macos, "macOS provides libicucore.dylib (but nothing else)"
+  keg_only :versioned_formula
 
   # fix C++14 compatibility of U_ASSERT macro.
   # Remove with next release (ICU 68).

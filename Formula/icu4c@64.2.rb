@@ -7,7 +7,7 @@ class Icu4cAT642 < Formula
   sha256 "627d5d8478e6d96fc8c90fed4851239079a561a6a8b9e48b0892f24e82d31d6c"
   revision 1
 
-  keg_only :provided_by_macos, "macOS provides libicucore.dylib (but nothing else)"
+  keg_only :versioned_formula
 
   def install
     args = %W[
