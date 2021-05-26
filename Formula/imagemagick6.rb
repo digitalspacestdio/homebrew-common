@@ -7,6 +7,8 @@ class Imagemagick6 < Formula
   url "https://www.imagemagick.org/download/ImageMagick-6.9.12-13.tar.xz"
   sha256 "a72cb13e79a0878a6fd07f877a61e683c29b646d4fd3ca9ff1ddc042cae846c6"
   head "https://github.com/imagemagick/imagemagick6.git"
+  version "6.9.12"
+  revision 13
 
 #   bottle do
 #     sha256 "ef26aa5e74724de5ad4eced9fec645c118c4f1eb212dbda0f241e9189cc089db" => :mojave
