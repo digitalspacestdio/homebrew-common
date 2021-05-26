@@ -53,7 +53,6 @@ class Imagemagick6 < Formula
       --without-pango
       --without-x
       --without-wmf
-      --with-gcc-arch=opteron
       --with-xml=#{Formula["libxml2"].opt_prefix}
     ]
 
