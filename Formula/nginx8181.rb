@@ -1,7 +1,7 @@
 class Nginx8181 < Formula
   desc "Secondary Nginx Configuration"
   version "0.1"
-  revision 1
+  revision 2
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -31,7 +31,7 @@ class Nginx8181 < Formula
           <false/>
           <key>ProgramArguments</key>
           <array>
-              <string>#{opt_bin}/nginx</string>
+              <string>#{Formula["nginx"].opt_bin}/nginx</string>
               <string>-c</string>
               <string>#{etc}/nginx/nginx8181.conf</string>
               <string>-g</string>
