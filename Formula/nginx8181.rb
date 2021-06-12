@@ -1,6 +1,6 @@
 class Nginx8181 < Formula
   desc "Secondary Nginx Configuration"
-  version 1
+  version "0.1"
   revision 1
 
   url "file:///dev/null"
