@@ -5,7 +5,7 @@ class ElasticsearchAT76 < Formula
   sha256 "6ff4871dcae6954e13680aefc196da574a59a36418d06a7e095550ce81a370f8"
   revision 1
 
-  depends_on "openjdk"
+  depends_on "openjdk@11"
 
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
@@ -52,7 +52,7 @@ class ElasticsearchAT76 < Formula
                 libexec/"bin/elasticsearch-keystore",
                 libexec/"bin/elasticsearch-plugin",
                 libexec/"bin/elasticsearch-shard"
-    bin.env_script_all_files(libexec/"bin", :JAVA_HOME => Formula["openjdk"].opt_prefix)
+    bin.env_script_all_files(libexec/"bin", :JAVA_HOME => Formula["openjdk@11"].opt_prefix)
   end
 
   def post_install
