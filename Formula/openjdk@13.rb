@@ -67,6 +67,8 @@ class OpenjdkAT13 < Formula
                           OS.linux? ? "--with-toolchain-type=gcc" : "",
 
     ENV["MAKEFLAGS"] = "JOBS=#{ENV.make_jobs}"
+    ENV["BINUTILS"] = "binutils-2.30"
+    ENV["ARCH"] = "amd64"
 
     system "make", "images"
 
