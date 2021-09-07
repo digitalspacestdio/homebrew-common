@@ -1,4 +1,4 @@
-FROM djocker/linuxbrew as builder
+FROM digitalspacestudio/linuxbrew:3.2.8 as builder
 LABEL maintainer="Sergey Cherepanov <s@cherepanov.co>"
 LABEL name="djocker/perconaserver56"
 ARG DEBIAN_FRONTEND=noninteractive
@@ -17,7 +17,7 @@ RUN rm -rf /home/linuxbrew/.cache/Homebrew \
     && brew cleanup \
     && rm -rf /home/linuxbrew/.linuxbrew/Homebrew/Library/Homebrew/vendor/portable-ruby
 
-FROM djocker/debian
+FROM digitalspacestudio/debian
 RUN useradd -m -s /bin/bash linuxbrew
 USER linuxbrew
 WORKDIR /home/linuxbrew
