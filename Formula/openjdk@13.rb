@@ -47,7 +47,7 @@ class OpenjdkAT13 < Formula
 
     short_version, _, build = version.to_s.rpartition("+")
 
-    if OS.linux
+    if OS.linux?
         ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
         ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
     else
