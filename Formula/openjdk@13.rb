@@ -12,7 +12,9 @@ class OpenjdkAT13 < Formula
   depends_on "libzip" => :build
   depends_on "zip"  => :build
   depends_on "unzip"  => :build
-  if OS.linux? || OS.mac?
+  if OS.linux?
+  depends_on "gcc@10" => :build
+  else
   depends_on "gcc@10" => :build
   end
 
@@ -45,7 +47,10 @@ class OpenjdkAT13 < Formula
 
     short_version, _, build = version.to_s.rpartition("+")
 
-    if OS.linux || OS.mac?
+    if OS.linux
+        ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+        ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+    else
         ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
         ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
     end
@@ -66,7 +71,8 @@ class OpenjdkAT13 < Formula
                           "--with-zlib=#{Formula["libzip"].opt_prefix}",
 
                           OS.mac? ? "--with-extra-ldflags=-headerpad_max_install_names" : "",
-                          OS.linux? || OS.mac? ? "--with-toolchain-type=gcc" : "",
+                          OS.linux? ? "--with-toolchain-type=gcc" : "",
+                          OS.mac? ? "--with-toolchain-type=gcc" : "",
 
     ENV["MAKEFLAGS"] = "JOBS=#{ENV.make_jobs}"
 
