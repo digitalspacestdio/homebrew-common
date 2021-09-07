@@ -9,7 +9,6 @@ class OpenjdkAT13 < Formula
   keg_only "it shadows the macOS `java` wrapper"
 
   depends_on "autoconf" => :build
-  depends_on "libzip" => :build
   depends_on "zip"  => :build
   depends_on "unzip"  => :build
   if OS.linux?
@@ -68,7 +67,6 @@ class OpenjdkAT13 < Formula
                           "--with-native-debug-symbols=none",
                           "--enable-dtrace=auto",
                           "--with-jvm-variants=server",
-                          "--with-zlib=#{Formula["libzip"].opt_prefix}",
 
                           OS.mac? ? "--with-extra-ldflags=-headerpad_max_install_names" : "",
                           OS.linux? ? "--with-toolchain-type=gcc" : "",
