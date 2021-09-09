@@ -17,6 +17,7 @@ class ElasticsearchAT76 < Formula
   end
 
   def install
+    ENV.cxx11
     # Doesn't support brewed gradle
     system "./gradlew", ":distribution:archives:no-jdk-darwin-tar:assemble"
 
