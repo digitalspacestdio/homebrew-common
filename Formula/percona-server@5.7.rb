@@ -55,6 +55,8 @@ class PerconaServerAT57 < Formula
     # Set HAVE_MEMSET_S flag to fix compilation
     # https://bugs.launchpad.net/percona-server/+bug/1741647
     if OS.mac?
+        ENV.libcxx
+        ENV.cxx11
         ENV.prepend "CPPFLAGS", "-DHAVE_MEMSET_S=1"
         # dialog.so dynamic linking is broken on Mac OS X
         # https://bugs.launchpad.net/percona-server/+bug/1671357
