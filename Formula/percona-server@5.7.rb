@@ -128,6 +128,39 @@ class PerconaServerAT57 < Formula
       [mysqld]
       # Only allow connections from localhost
       bind-address = 127.0.0.1
+      default-authentication-plugin = mysql_native_password
+      max_allowed_packet    = 512M
+      thread_stack          = 192K
+      thread_cache_size     = 8
+      interactive_timeout   = 300
+      wait_timeout          = 900
+      sort_buffer_size      = 16M
+      read_rnd_buffer_size  = 16M
+      read_buffer_size      = 16M
+      join_buffer_size      = 16M
+      key_buffer_size       = 256M
+      tmp_table_size        = 64M
+      max_heap_table_size   = 64M
+      query_cache_type       = 1
+      query_cache_size       = 10M
+      query_cache_limit=256K = 256K
+
+      # binlog_expire_logs_seconds = 3600
+      # tmpdir = /dev/shm
+
+      innodb_doublewrite              = 0
+      innodb_file_per_table           = 1
+      innodb_thread_concurrency       = 0
+      innodb_lock_wait_timeout        = 300
+      innodb_log_files_in_group       = 2
+      innodb_log_file_size            = 640M # if changing, mv /var/lib/mysql/ib_logfile[01] /tmp
+      innodb_log_buffer_size          = 64M
+      innodb_flush_log_at_trx_commit  = 2
+      innodb_buffer_pool_size         = 5G
+      innodb_buffer_pool_instances    = 5
+      expire_logs_days                = 5
+      innodb_flush_method             = O_DIRECT
+      innodb_flush_log_at_trx_commit  = 2
     EOS
     etc.install "my.cnf"
   end
