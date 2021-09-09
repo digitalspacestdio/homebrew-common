@@ -54,6 +54,7 @@ class PerconaServerAT57 < Formula
   end
 
   def install
+    ENV.cxx11
     # Set HAVE_MEMSET_S flag to fix compilation
     # https://bugs.launchpad.net/percona-server/+bug/1741647
     if OS.mac?
