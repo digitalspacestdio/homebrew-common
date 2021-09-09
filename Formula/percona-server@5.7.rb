@@ -16,15 +16,21 @@ class PerconaServerAT57 < Formula
     satisfy { datadir == var/"mysql" }
   end
 
+  livecheck do
+    url "https://dev.mysql.com/downloads/mysql/5.7.html?tpl=files&os=src&version=5.7"
+    regex(/href=.*?mysql[._-](?:boost[._-])?v?(5\.7(?:\.\d+)*)\.t/i)
+  end
+
   keg_only :versioned_formula
 
-  depends_on "gcc@10" => :build
-  depends_on "pkg-config" => :build
+  on_linux do
+    depends_on "pkg-config" => :build
+  end
   depends_on "cmake" => :build
   # https://github.com/Homebrew/homebrew-core/issues/1475
   # Needs at least Clang 3.3, which shipped alongside Lion.
   # Note: MySQL themselves don't support anything below El Capitan.
-  depends_on "openssl"
+  depends_on "openssl@1.1"
   unless OS.mac?
     depends_on "libpam"
     depends_on "libedit"
@@ -53,12 +59,10 @@ class PerconaServerAT57 < Formula
   end
 
   def install
-    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
     # Set HAVE_MEMSET_S flag to fix compilation
     # https://bugs.launchpad.net/percona-server/+bug/1741647
     if OS.mac?
-        ENV.prepend "CPPFLAGS", "-DHAVE_MEMSET_S=1 -DFORCE_UNSUPPORTED_COMPILER=1"
+        ENV.prepend "CPPFLAGS", "-DHAVE_MEMSET_S=1"
         # dialog.so dynamic linking is broken on Mac OS X
         # https://bugs.launchpad.net/percona-server/+bug/1671357
         inreplace "plugin/percona-pam-for-mysql/src/dialog.c",
@@ -66,6 +70,12 @@ class PerconaServerAT57 < Formula
           "#include <stdlib.h>\n#include <../strings/my_stpnmov.c>"
     end
 
+    if OS.linux?
+      # Fix libmysqlgcs.a(gcs_logging.cc.o): relocation R_X86_64_32
+      # against `_ZN17Gcs_debug_options12m_debug_noneB5cxx11E' can not be used when making
+      # a shared object; recompile with -fPIC
+      ENV.append_to_cflags "-fPIC"
+    end
 
 
     # https://dev.mysql.com/doc/refman/5.7/en/source-configuration-options.html
@@ -91,8 +101,8 @@ class PerconaServerAT57 < Formula
     # MySQL >5.7.x mandates Boost as a requirement to build & has a strict
     # version check in place to ensure it only builds against expected release.
     # This is problematic when Boost releases don't align with MySQL releases.
-    (buildpath/"boost").install resource("boost")
-    args << "-DWITH_BOOST=#{buildpath}/boost"
+    #(buildpath/"boost").install resource("boost")
+    args << "-DWITH_BOOST=boost"
 
     # Percona MyRocks does not compile on macOS
     # https://bugs.launchpad.net/percona-server/+bug/1741639
