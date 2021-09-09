@@ -14,12 +14,12 @@ class GccAT9 < Formula
   end
 
   # gcc is designed to be portable.
-  bottle do
-    sha256 big_sur:      "5d22085577464257e9b1cb00bae0a9691474ad7690692afd4e2789bf512cd1a5"
-    sha256 catalina:     "be32c5993e4dd28c9af70ed8a65071e1a99cf40f273f8ea66924fe30635c9a72"
-    sha256 mojave:       "4fe853726359f38c27fe4c8d0a5d62167bdad4e1f6166dd8c7944a499c77a88b"
-    sha256 x86_64_linux: "7167db0a3675997859d1000319a87d908db4f81fb9fa2de90dd91f1a00e67610"
-  end
+#   bottle do
+#     sha256 big_sur:      "5d22085577464257e9b1cb00bae0a9691474ad7690692afd4e2789bf512cd1a5"
+#     sha256 catalina:     "be32c5993e4dd28c9af70ed8a65071e1a99cf40f273f8ea66924fe30635c9a72"
+#     sha256 mojave:       "4fe853726359f38c27fe4c8d0a5d62167bdad4e1f6166dd8c7944a499c77a88b"
+#     sha256 x86_64_linux: "7167db0a3675997859d1000319a87d908db4f81fb9fa2de90dd91f1a00e67610"
+#   end
 
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.

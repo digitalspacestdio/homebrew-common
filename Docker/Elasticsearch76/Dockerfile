@@ -5,7 +5,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ARG BREW_FORMULA=elasticsearch@7.6
 
 USER root
-RUN apt update && apt install libx11-dev
+RUN apt update && apt install -yqq libxtst-dev libxext-dev libxt-dev libxi-dev libxrandr-dev
 
 USER linuxbrew
 RUN brew tap djocker/common

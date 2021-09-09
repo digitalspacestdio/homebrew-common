@@ -6,6 +6,7 @@ class ElasticsearchAT76 < Formula
   revision 1
 
   depends_on "openjdk@13"
+  depends_on "cups" => :build
 
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
