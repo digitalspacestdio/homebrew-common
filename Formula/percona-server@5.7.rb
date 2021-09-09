@@ -16,11 +16,6 @@ class PerconaServerAT57 < Formula
     satisfy { datadir == var/"mysql" }
   end
 
-  livecheck do
-    url "https://dev.mysql.com/downloads/mysql/5.7.html?tpl=files&os=src&version=5.7"
-    regex(/href=.*?mysql[._-](?:boost[._-])?v?(5\.7(?:\.\d+)*)\.t/i)
-  end
-
   keg_only :versioned_formula
 
   on_linux do
@@ -101,8 +96,8 @@ class PerconaServerAT57 < Formula
     # MySQL >5.7.x mandates Boost as a requirement to build & has a strict
     # version check in place to ensure it only builds against expected release.
     # This is problematic when Boost releases don't align with MySQL releases.
-    #(buildpath/"boost").install resource("boost")
-    args << "-DWITH_BOOST=boost"
+    (buildpath/"boost").install resource("boost")
+    args << "-DWITH_BOOST=#{buildpath}/boost"
 
     # Percona MyRocks does not compile on macOS
     # https://bugs.launchpad.net/percona-server/+bug/1741639
