@@ -12,7 +12,7 @@ class OpenjdkAT13 < Formula
   depends_on "zip"  => :build
   depends_on "unzip"  => :build
   if OS.linux?
-  depends_on "gcc@10" => :build
+  depends_on "gcc@9" => :build
   end
 
   on_linux do
@@ -45,8 +45,8 @@ class OpenjdkAT13 < Formula
     short_version, _, build = version.to_s.rpartition("+")
 
     if OS.linux?
-        ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
-        ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
+        ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9"
+        ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9"
     end
     ENV["ZIPEXE"] = "#{Formula["zip"].opt_prefix}/bin/zip"
     ENV["UNZIP"] = "#{Formula["unzip"].opt_prefix}/bin/unzip"
