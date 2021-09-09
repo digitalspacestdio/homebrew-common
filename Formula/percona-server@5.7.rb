@@ -18,6 +18,7 @@ class PerconaServerAT57 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "gcc@10" => :build
   depends_on "pkg-config" => :build
   depends_on "cmake" => :build
   # https://github.com/Homebrew/homebrew-core/issues/1475
@@ -52,11 +53,11 @@ class PerconaServerAT57 < Formula
   end
 
   def install
+    ENV["CC"] = "#{Formula["gcc@10"].opt_prefix}/bin/gcc-10"
+    ENV["CXX"] = "#{Formula["gcc@10"].opt_prefix}/bin/g++-10"
     # Set HAVE_MEMSET_S flag to fix compilation
     # https://bugs.launchpad.net/percona-server/+bug/1741647
     if OS.mac?
-        ENV.libcxx
-        ENV.cxx11
         ENV.prepend "CPPFLAGS", "-DHAVE_MEMSET_S=1"
         # dialog.so dynamic linking is broken on Mac OS X
         # https://bugs.launchpad.net/percona-server/+bug/1671357
