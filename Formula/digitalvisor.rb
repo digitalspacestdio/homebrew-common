@@ -8,6 +8,11 @@ class Digitalvisor < Formula
   license "BSD-3-Clause-Modification"
   head "https://github.com/Supervisor/supervisor.git", branch: "master"
   depends_on "python@3.10"
+  revision 2
+
+  def log_dir
+      var / "log"
+  end
 
   def install
     inreplace buildpath/"supervisor/skel/sample.conf" do |s|
@@ -21,6 +26,7 @@ class Digitalvisor < Formula
     virtualenv_install_with_resources
 
     etc.install buildpath/"supervisor/skel/sample.conf" => "digitalvisor.conf"
+    log_dir.mkpath
   end
 
   def post_install
