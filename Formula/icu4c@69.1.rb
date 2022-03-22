@@ -10,26 +10,26 @@ class Icu4cAT671 < Formula
       url :stable
       regex(/^release[._-]v?(\d+(?:[.-]\d+)+)$/i)
       strategy :git do |tags, regex|
-        tags.map { |tag| tag[regex, 1]&.gsub("-", ".") }.compact
+          tags.map { |tag| tag[regex, 1]&.gsub("-", ".") }.compact
       end
     end
 
   keg_only :versioned_formula
 
-  def install
-      args = %W[
-        --prefix=#{prefix}
-        --disable-samples
-        --disable-tests
-        --enable-static
-        --with-library-bits=64
-      ]
+    def install
+        args = %W[
+            --prefix=#{prefix}
+            --disable-samples
+            --disable-tests
+            --enable-static
+            --with-library-bits=64
+        ]
 
-      cd "source" do
-        system "./configure", *args
-        system "make"
-        system "make", "install"
-      end
+        cd "source" do
+            system "./configure", *args
+            system "make"
+            system "make", "install"
+        end
     end
 
     test do
@@ -40,5 +40,4 @@ class Icu4cAT671 < Formula
         system "#{bin}/gendict", "--uchars", "hello", "dict"
       end
     end
-  end
 end
