@@ -1,4 +1,4 @@
-class Icu4cAT671 < Formula
+class Icu4cAT691 < Formula
   desc "C/C++ and Java libraries for Unicode and globalization"
   homepage "http://site.icu-project.org/home"
   url "https://github.com/unicode-org/icu/releases/download/release-69-1/icu4c-69_1-src.tgz"
