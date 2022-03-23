@@ -7,12 +7,12 @@ class Icu4cAT691 < Formula
   license "ICU"
 
   livecheck do
-      url :stable
-      regex(/^release[._-]v?(\d+(?:[.-]\d+)+)$/i)
-      strategy :git do |tags, regex|
-          tags.map { |tag| tag[regex, 1]&.gsub("-", ".") }.compact
-      end
+    url :stable
+    regex(/^release[._-]v?(\d+(?:[.-]\d+)+)$/i)
+    strategy :git do |tags, regex|
+        tags.map { |tag| tag[regex, 1]&.gsub("-", ".") }.compact
     end
+  end
 
   keg_only :versioned_formula
 
