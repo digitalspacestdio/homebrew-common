@@ -14,6 +14,8 @@ class Icu4cAT671 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "gcc@9" => :build if OS.mac?
+
   # fix C++14 compatibility of U_ASSERT macro.
   # Remove with next release (ICU 68).
   patch :p2 do
@@ -22,6 +24,8 @@ class Icu4cAT671 < Formula
   end
 
   def install
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.mac?
     args = %W[
       --prefix=#{prefix}
       --disable-samples

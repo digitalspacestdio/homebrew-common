@@ -9,7 +9,11 @@ class Icu4cAT642 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "gcc@9" => :build if OS.mac?
+
   def install
+    ENV["CC"] = "#{Formula["gcc@9"].opt_prefix}/bin/gcc-9" if OS.mac?
+    ENV["CXX"] = "#{Formula["gcc@9"].opt_prefix}/bin/g++-9" if OS.mac?
     args = %W[
       --prefix=#{prefix}
       --disable-samples
