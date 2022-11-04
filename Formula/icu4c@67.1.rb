@@ -5,6 +5,7 @@ class Icu4cAT671 < Formula
   version "67.1"
   sha256 "94a80cd6f251a53bd2a997f6f1b5ac6653fe791dfab66e1eb0227740fb86d5dc"
   license "ICU"
+  revision 2
 
   livecheck do
     url :stable
@@ -14,7 +15,7 @@ class Icu4cAT671 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "gcc" => :build if OS.mac?
+  #depends_on "gcc" => :build if OS.mac?
 
   # fix C++14 compatibility of U_ASSERT macro.
   # Remove with next release (ICU 68).
@@ -24,8 +25,8 @@ class Icu4cAT671 < Formula
   end
 
   def install
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
+    #ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11" if OS.mac?
+    #ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11" if OS.mac?
     args = %W[
       --prefix=#{prefix}
       --disable-samples
