@@ -1,7 +1,7 @@
 class Nginx8181 < Formula
   desc "Secondary Nginx Configuration"
   version "0.1"
-  revision 2
+  revision 3
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -45,7 +45,7 @@ class Nginx8181 < Formula
     EOS
   end
 
-    test do
+  test do
     (testpath/"nginx8181.conf").write <<~EOS
       worker_processes 4;
       error_log #{testpath}/error8181.log;
