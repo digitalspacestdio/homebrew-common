@@ -8,7 +8,9 @@ class Digitalvisor < Formula
   license "BSD-3-Clause-Modification"
   head "https://github.com/Supervisor/supervisor.git", branch: "master"
   depends_on "python@3.10"
-  revision 2
+  revision 3
+
+  keg_only "support formula"
 
   def log_dir
       var / "log"
