@@ -1,7 +1,7 @@
 class Nginx8181 < Formula
   desc "Secondary Nginx Configuration"
   version "0.1"
-  revision 3
+  revision 4
 
   url "file:///dev/null"
   sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
@@ -15,34 +15,10 @@ class Nginx8181 < Formula
     prefix.install "installed.txt"
   end
 
-  plist_options manual: "nginx"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-        <dict>
-          <key>Label</key>
-          <string>#{plist_name}</string>
-          <key>RunAtLoad</key>
-          <true/>
-          <key>KeepAlive</key>
-          <false/>
-          <key>ProgramArguments</key>
-          <array>
-              <string>#{Formula["nginx"].opt_bin}/nginx</string>
-              <string>-c</string>
-              <string>#{etc}/nginx/nginx8181.conf</string>
-              <string>-g</string>
-              <string>daemon off;</string>
-
-          </array>
-          <key>WorkingDirectory</key>
-          <string>#{HOMEBREW_PREFIX}</string>
-        </dict>
-      </plist>
-    EOS
+  service do
+    run ["#{Formula["nginx"].opt_bin}/nginx", "-c", "#{etc}/nginx8181/nginx.conf", "-g", "daemon off;"]
+    keep_alive true
+    working_dir "#{HOMEBREW_PREFIX}"
   end
 
   test do
