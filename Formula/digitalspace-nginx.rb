@@ -217,47 +217,6 @@ class DigitalspaceNginx < Formula
       if (!-d $documentRoot) {
           set $documentRoot $projectDir;
       }
-
-      # set default php version
-      set $php_version "8.1";
-      set_by_lua_block $php_version {
-        file = io.open(ngx.var.documentRoot .. "/.phprc", "r")
-        if file==nil
-        then
-          file = io.open(ngx.var.documentRoot .. "/.php-version", "r")
-        end
-        if file==nil
-        then
-            return 81
-        end
-        local data = file:read()
-        local i, j = data:find(".", 1, true)
-        local major, minor
-        if i == nil then
-          major = data
-        else 
-          major = data:sub(1, i-1)
-        end
-
-        if j == nil then
-          minor = ""
-        else
-          local lastpart = data:sub(j+1)
-          i, j = lastpart:find(".", 1, true)
-          if i == nil then
-            minor = lastpart
-          else 
-            minor = lastpart:sub(1, i-1)
-          end
-        end
-
-        local version = major .. "." .. minor
-
-        if version == "" then
-          return "8.1"
-        end
-        return version
-      }
       
       # if the symfony like
       # if (-f $projectDir/../bin/console) {
@@ -402,6 +361,47 @@ class DigitalspaceNginx < Formula
       
       ## Process .php files
       location ~ ^.+\\.php {
+          # set default php version
+          set $php_version "8.1";
+          set_by_lua_block $php_version {
+            file = io.open(ngx.var.documentRoot .. "/.phprc", "r")
+            if file==nil
+            then
+              file = io.open(ngx.var.documentRoot .. "/.php-version", "r")
+            end
+            if file==nil
+            then
+                return 81
+            end
+            local data = file:read()
+            local i, j = data:find(".", 1, true)
+            local major, minor
+            if i == nil then
+              major = data
+            else 
+              major = data:sub(1, i-1)
+            end
+    
+            if j == nil then
+              minor = ""
+            else
+              local lastpart = data:sub(j+1)
+              i, j = lastpart:find(".", 1, true)
+              if i == nil then
+                minor = lastpart
+              else 
+                minor = lastpart:sub(1, i-1)
+              end
+            end
+    
+            local version = major .. "." .. minor
+    
+            if version == "" then
+              return "8.1"
+            end
+            return version
+          }
+
           # If file not found rewrite to index
           if (!-e $request_filename) {
               rewrite / $cgiIndex last;
