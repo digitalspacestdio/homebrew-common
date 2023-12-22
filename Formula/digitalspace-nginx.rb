@@ -444,7 +444,7 @@ def nginx_local_config
       listen 127.0.0.1:1984;
       port_in_redirect off;
 
-      server_name ~^(?<project_name>.+?)\\.+(?<pool>local)$;
+      server_name ~^(?<project_name>.+?)\\.+(?<pool>.+?)(\\..+)*$;
       
       include #{etc}/digitalspace-nginx/dev.conf;
     }

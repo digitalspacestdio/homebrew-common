@@ -77,6 +77,44 @@ class DigitalspaceTraefik < Formula
       nil
   end
 
+  def traefik_snippets_config
+    <<~EOS
+    [http.middlewares]
+      [http.middlewares.redirect-trailing-slash.redirectRegex]
+        regex = "^(http|ws)s?:\\\\/\\\\/(www\\\\.){0,1}(([a-z0-9\\\\-_]+?\\\\.)+[a-z0-9\\\\-_]+)(((\\\\/[^\\\\/\\\\?]+)*?)(\\\\/[^\\\\/.\\\\?]+))(\\\\/{0}|\\\\/{2,})(\\\\?{1}.*){0,1}$"
+        replacement = "${1}s://${3}${5}/${10}"
+        permanent =  true
+    
+      [http.middlewares.redirect-from-www.redirectRegex]
+        regex = "^(http|ws)s?:\\\\/\\\\/www\\\\.(.*)"
+        replacement = "${1}s://${2}"
+        permanent =  true
+    
+      [http.middlewares.redirect-secure.redirectRegex]
+        regex = "^(http|ws):\\\\/\\\\/(.+)$"
+        replacement = "${1}s://${2}"
+        permanent =  true
+    
+      [http.middlewares.redirect-double-slash.redirectRegex]
+        regex = "^(http|ws)s?:\\\\/\\\\/(.*\\\\/)\\\\/(.*)$"
+        replacement = "${1}s://${2}${3}"
+        permanent =  true
+    
+      [http.middlewares.ratelimit-default.rateLimit]
+        average = 100
+        burst = 200
+        period = "5s"
+    
+      [http.middlewares.admin-auth.basicAuth]
+        # admin / $ecretPassw0rd
+        users = [
+            "admin:$2y$05$SrVjSbbXSRCqx4nJkJxEtuypRzjmjhrKkKFpTss.PtPbUM/TUwMwC"
+        ]
+    
+      [http.middlewares.gzip.compress]
+    EOS
+  end
+
   def traefik_localhost_config
     <<~EOS
     [http.routers]
@@ -161,6 +199,9 @@ class DigitalspaceTraefik < Formula
 
     (etc/"digitalspace-traefik"/"conf.d"/"localhost.toml").delete if (etc/"digitalspace-traefik"/"conf.d"/"localhost.toml").exist?
     (etc/"digitalspace-traefik"/"conf.d"/"localhost.toml").write(traefik_localhost_config)
+
+    (etc/"digitalspace-traefik"/"conf.d"/"snippets.toml").delete if (etc/"digitalspace-traefik"/"conf.d"/"snippets.toml").exist?
+    (etc/"digitalspace-traefik"/"conf.d"/"snippets.toml").write(traefik_snippets_config)
   end
 
   step_path = `#{Formula["step"].opt_bin}/step path`
