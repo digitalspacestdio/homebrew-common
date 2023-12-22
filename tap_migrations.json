@@ -1,4 +1,9 @@
 {
-  "djocker/common/curl": "djocker/php/phpcurl",
-  "djocker/php/curl": "djocker/php/phpcurl"
+  "digitalspacestdio/common/digitalspace-dnsmasq": "digitalspacestdio/nextgen-devenv/digitalspace-dnsmasq",
+  "digitalspacestdio/common/digitalspace-lua-resty-core": "digitalspacestdio/nextgen-devenv/digitalspace-lua-resty-core",
+  "digitalspacestdio/common/digitalspace-nginx-lua-module": "digitalspacestdio/nextgen-devenv/digitalspace-nginx-lua-module",
+  "digitalspacestdio/common/digitalspace-nginx": "digitalspacestdio/nextgen-devenv/digitalspace-nginx",
+  "digitalspacestdio/common/digitalspace-step-ca": "digitalspacestdio/nextgen-devenv/digitalspace-step-ca",
+  "digitalspacestdio/common/digitalspace-supervisor": "digitalspacestdio/nextgen-devenv/digitalspace-supervisor",
+  "digitalspacestdio/common/digitalspace-traefik": "digitalspacestdio/nextgen-devenv/digitalspace-traefik"
 }
