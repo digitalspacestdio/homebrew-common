@@ -7,6 +7,11 @@ class Icu4cAT642 < Formula
   sha256 "627d5d8478e6d96fc8c90fed4851239079a561a6a8b9e48b0892f24e82d31d6c"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/icu4c@64.2"
+    sha256 cellar: :any_skip_relocation, sonoma: "8099815664d2b3dd330b253b3aa0b99c819f61258821acce5f3433517c3eb07b"
+  end
+
   keg_only :versioned_formula
 
   #depends_on "gcc@9" => :build if OS.mac?

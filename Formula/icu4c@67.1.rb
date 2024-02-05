@@ -13,6 +13,11 @@ class Icu4cAT671 < Formula
     regex(%r{href=.*?/tag/release[._-]v?(\d+(?:[.-]\d+)+)["' >]}i)
   end
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/icu4c@67.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "8e6acb5fb109a7cffd73e1cf5e119e451edeb324f0e9558234c183537c6b2ff1"
+  end
+
   keg_only :versioned_formula
 
   #depends_on "gcc" => :build if OS.mac?
