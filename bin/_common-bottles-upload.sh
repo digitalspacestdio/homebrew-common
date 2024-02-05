@@ -9,8 +9,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 brew tap digitalspacestdio/common
 brew tap digitalspacestdio/common
 cd $(brew tap-info --json digitalspacestdio/common | jq -r '.[].path')
-git stash
-git pull
+#git stash
+#git pull
 
 FORMULAS=$(brew search digitalspacestdio/common | grep "$1\|$1@[0-9]\+" | awk -F'/' '{ print $3 }' | sort)
 for FORMULA in $FORMULAS; do
@@ -24,6 +24,7 @@ for FORMULA in $FORMULAS; do
         JSON_FORMULA_NAME=$(jq -r '.[].formula.name' "$jsonfile")
         if ! [[ -z $JSON_FORMULA_NAME ]]; then
             mergedfile=$(jq -r '.["digitalspacestdio/common/'$JSON_FORMULA_NAME'"].formula.name + "-" + ."digitalspacestdio/common/'$JSON_FORMULA_NAME'".formula.pkg_version + ".json"' "$jsonfile")
+            set -x
             while read tgzName; do
                 if [[ -f "$tgzName" ]]; then
                     s3cmd info "s3://homebrew-bottles/$FORMULA/$tgzName" >/dev/null && {
@@ -32,6 +33,7 @@ for FORMULA in $FORMULAS; do
                     s3cmd put "$tgzName" "s3://homebrew-bottles/$FORMULA/$tgzName"
                 fi
             done < <(jq -r '."digitalspacestdio/common/'$JSON_FORMULA_NAME'".bottle.tags[].filename' "$jsonfile")
+            set +x
             s3cmd info "s3://homebrew-bottles/$FORMULA/$mergedfile" >/dev/null && {
                 s3cmd get "s3://homebrew-bottles/$FORMULA/$mergedfile" "$mergedfile".src
                 if [[ "object" != $(cat "$mergedfile".src| jq -r type) ]]; then
