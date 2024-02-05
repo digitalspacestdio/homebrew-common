@@ -8,16 +8,17 @@ fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 brew tap digitalspacestdio/common
-cd $(brew tap-info --json digitalspacestdio/common | jq -r '.[].path')
-git stash
-git pull
+#cd $(brew tap-info --json digitalspacestdio/common | jq -r '.[].path')
+#git stash
+#git pull
 
 FORMULAS=$(brew search digitalspacestdio/common | grep "$1\|$1@[0-9]\+" | awk -F'/' '{ print $3 }' | sort)
 echo "==> Next formulas found:"
+echo -e "\033[33m==> The following formulas are matched:\033[0m"
 echo "$FORMULAS"
 sleep 5
 for FORMULA in $FORMULAS; do
-    echo "==> Ceating bottles for $FORMULA ..."
+    echo -e "\033[33m==> Ceating bottles for $FORMULA ...\033[0m"
     rm -rf ${HOME}/.bottles/$FORMULA.bottle
     mkdir -p ${HOME}/.bottles/$FORMULA.bottle
     cd ${HOME}/.bottles/$FORMULA.bottle
@@ -33,6 +34,14 @@ for FORMULA in $FORMULAS; do
     fi
 
     echo "==> Building bottles for $FORMULA ..."
+
+
+    [[ "true" == $(brew info  --json=v1 $FORMULA | jq '.[0].installed[0].built_as_bottle') ]] || {
+        echo "==> Removing previously installed formula $FORMULA ..."
+        sleep 3
+        brew uninstall --force --ignore-dependencies $FORMULA
+    }
+
     brew install --quiet --build-bottle $FORMULA 2>&1
     brew bottle --skip-relocation --no-rebuild --root-url 'https://f003.backblazeb2.com/file/homebrew-bottles/'$FORMULA --json $FORMULA
     ls | grep $FORMULA'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
