@@ -10,6 +10,11 @@ class Imagemagick6 < Formula
   version "6.9.13"
   revision 1
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/imagemagick6"
+    sha256 cellar: :any_skip_relocation, sonoma: "f3fcf2eb2ab85f6b0f346a58c54c2983021607115c9c5f1a2502793ed8e5c2b0"
+  end
+
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
