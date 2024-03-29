@@ -11,6 +11,11 @@ class Libxml2AT212Icu4c721 < Formula
       url :stable
       regex(/libxml2[._-]v?(\d+(?:\.\d+)+)\.t/i)
     end
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libxml2@2.12-icu4c.72.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc4adb1086502891d53db7d3801c0d17d3d941d08139d1bc2fa1aa5e5ebb7fcf"
+  end
   
     head do
       url "https://gitlab.gnome.org/GNOME/libxml2.git", branch: "master"

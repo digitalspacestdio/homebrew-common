@@ -5,6 +5,11 @@ class Libxml2AT29Icu4c691 < Formula
   mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/libxml2/libxml2-2.9.9.tar.gz"
   sha256 "94fb70890143e3c6549f265cee93ec064c80a84c42ad0f23e85ee1fd6540a871"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libxml2@2.9-icu4c.69.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "554bc374669e7f250978154522ee8712a058e7f3a5c536b65cfe2ad9682b84db"
+  end
+
   head do
     url "https://gitlab.gnome.org/GNOME/libxml2.git"
 
