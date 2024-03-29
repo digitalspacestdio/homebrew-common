@@ -24,14 +24,14 @@ class LibxsltAT110Icu4c721 < Formula
   
     depends_on "digitalspacestdio/common/icu4c@72.1"
     depends_on "libgcrypt"
-    depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.72.1"
+    depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.72.1"
   
     on_linux do
       depends_on "pkg-config" => :build
     end
   
     def install
-      libxml2 = Formula["digitalspacestdio/common/libxml2@2.9-icu4c.72.1"]
+      libxml2 = Formula["digitalspacestdio/common/libxml2@2.12-icu4c.72.1"]
       system "autoreconf", "--force", "--install", "--verbose" if build.head?
       system "./configure", "--disable-dependency-tracking",
                             "--disable-silent-rules",
