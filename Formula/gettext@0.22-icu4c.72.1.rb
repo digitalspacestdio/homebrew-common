@@ -10,7 +10,7 @@ class GettextAT022Icu4c721 < Formula
     #uses_from_macos "libxml2"
     uses_from_macos "ncurses"
 
-    depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.72.1" if OS.linux?
+    depends_on "digitalspacestdio/common/libxml2@2.12-icu4c.72.1" if OS.linux?
   
     keg_only :versioned_formula
 
