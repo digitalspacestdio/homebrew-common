@@ -11,6 +11,8 @@ class GettextAT022Icu4c732 < Formula
     uses_from_macos "ncurses"
 
     depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.73.2" if OS.linux?
+
+    keg_only :versioned_formula
   
     def install
       args = [

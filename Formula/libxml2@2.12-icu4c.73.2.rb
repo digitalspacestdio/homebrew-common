@@ -21,7 +21,7 @@ class Libxml2AT212Icu4c732 < Formula
       depends_on "pkg-config" => :build
     end
   
-    keg_only :provided_by_macos
+    keg_only :versioned_formula
   
     depends_on "python-setuptools" => :build
     depends_on "python@3.11" => [:build, :test]

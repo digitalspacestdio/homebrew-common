@@ -12,6 +12,8 @@ class GettextAT022Icu4c721 < Formula
 
     depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.72.1" if OS.linux?
   
+    keg_only :versioned_formula
+
     def install
       args = [
         "--disable-silent-rules",

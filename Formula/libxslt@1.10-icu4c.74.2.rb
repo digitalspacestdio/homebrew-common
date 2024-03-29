@@ -20,7 +20,7 @@ class LibxsltAT110Icu4c742 < Formula
       depends_on "libtool" => :build
     end
   
-    keg_only :provided_by_macos
+    keg_only :versioned_formula
   
     depends_on "digitalspacestdio/common/icu4c@74.2"
     depends_on "libgcrypt"
