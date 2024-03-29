@@ -7,6 +7,7 @@ class Libxml2AT29Icu4c691 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libxml2@2.9-icu4c.69.1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "69fa37926f063f77e8a7fa7b9230860f9ebe043aa895018c3df6619be9fde898"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "554bc374669e7f250978154522ee8712a058e7f3a5c536b65cfe2ad9682b84db"
   end
 
