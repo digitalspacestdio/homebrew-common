@@ -14,6 +14,7 @@ class LibxsltAT110Icu4c721 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libxslt@1.10-icu4c.72.1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "22b5f0e8e4a6a3b0d2b98008b917a186c08cd463d050779ac9e2fcd07dfad48d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9e641c39bafe9b5a25cb4c6070dfe4d0f4e0f22176d0d4ece0cd242ae3522b76"
   end
   
