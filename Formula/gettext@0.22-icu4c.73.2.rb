@@ -29,7 +29,7 @@ class GettextAT022Icu4c732 < Formula
         "--without-git",
         "--without-cvs",
         "--without-xz",
-        "--with-libxml2-prefix=#{Formula["digitalspacestdio/common/libxml2@2.9-icu4c.73.2"].opt_prefix}"
+        "--with-libxml2-prefix=#{Formula["digitalspacestdio/common/libxml2@2.12-icu4c.73.2"].opt_prefix}"
       ]
     #   args << if OS.mac?
     #     # Ship libintl.h. Disabled on linux as libintl.h is provided by glibc
