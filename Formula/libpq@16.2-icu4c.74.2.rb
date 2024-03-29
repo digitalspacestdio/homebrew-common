@@ -11,6 +11,11 @@ class LibpqAT162Icu4c742 < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libpq@16.2-icu4c.74.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0cbc0420d580626648f65d25cbe05bbc0542dd607b80567d738f77a6dc951ffc"
+  end
+
   keg_only "conflicts with postgres formula"
 
   depends_on "pkg-config" => :build
