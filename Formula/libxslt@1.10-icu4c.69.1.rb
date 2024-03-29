@@ -11,6 +11,11 @@ class LibxsltAT110Icu4c691 < Formula
       url :stable
       regex(/libxslt[._-]v?(\d+(?:\.\d+)+)\.t/i)
     end
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libxslt@1.10-icu4c.69.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "93bee195b091135a01e94a3b179e54b57571a92d7c74e7edf1635423ac4a590a"
+  end
   
     head do
       url "https://gitlab.gnome.org/GNOME/libxslt.git", branch: "master"
