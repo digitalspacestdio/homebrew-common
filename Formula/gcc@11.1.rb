@@ -1,6 +1,6 @@
 require "os/linux/glibc"
 
-class Gcc < Formula
+class GccAT111 < Formula
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org/"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
