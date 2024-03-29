@@ -13,7 +13,7 @@ class V8js < Formula
 #   end
 
   depends_on "ninja" => :build
-  depends_on "llvm" if MacOS.version < :mojave
+  # depends_on "llvm" if MacOS.version < :mojave
 
   # https://bugs.chromium.org/p/chromium/issues/detail?id=620127
   depends_on :macos => :el_capitan
@@ -82,7 +82,7 @@ class V8js < Formula
       :use_custom_libcxx            => false,       # uses system libc++ instead of Google's custom one
     }
     # use clang from homebrew llvm formula on <= High Sierra, because the system clang is to old for V8
-    gn_args[:clang_base_path] = "\"#{Formula["llvm"].prefix}\"" if MacOS.version < :mojave
+    # gn_args[:clang_base_path] = "\"#{Formula["llvm"].prefix}\"" if MacOS.version < :mojave
 
     # Transform to args string
     gn_args_string = gn_args.map { |k, v| "#{k}=#{v}" }.join(" ")
