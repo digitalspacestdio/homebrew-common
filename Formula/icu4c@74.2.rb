@@ -14,6 +14,11 @@ class Icu4cAT742 < Formula
     end
   end
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/icu4c@74.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1d9da3a5f40a1b8223d65019b43a4bd341177c86183154754e039da05f4ec7b8"
+  end
+
   keg_only :versioned_formula
 
   def install
