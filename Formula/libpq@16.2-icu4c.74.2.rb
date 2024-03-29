@@ -1,4 +1,4 @@
-class Libpq < Formula
+class LibpqAT162Icu4c742 < Formula
   desc "Postgres C API library"
   homepage "https://www.postgresql.org/docs/current/libpq.html"
   url "https://ftp.postgresql.org/pub/source/v16.2/postgresql-16.2.tar.bz2"
@@ -14,7 +14,7 @@ class Libpq < Formula
   keg_only "conflicts with postgres formula"
 
   depends_on "pkg-config" => :build
-  depends_on "digitalspacestdio/common/icu4c@69.1"
+  depends_on "digitalspacestdio/common/icu4c@74.2"
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"

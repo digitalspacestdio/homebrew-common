@@ -1,4 +1,4 @@
-class Libxslt < Formula
+class LibxsltAT110Icu4c691 < Formula
     desc "C XSLT library for GNOME"
     homepage "http://xmlsoft.org/XSLT/"
     url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.39.tar.xz"
@@ -24,14 +24,14 @@ class Libxslt < Formula
   
     depends_on "digitalspacestdio/common/icu4c@69.1"
     depends_on "libgcrypt"
-    depends_on "digitalspacestdio/common/libxml2"
+    depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.69.1"
   
     on_linux do
       depends_on "pkg-config" => :build
     end
   
     def install
-      libxml2 = Formula["digitalspacestdio/common/libxml2"]
+      libxml2 = Formula["digitalspacestdio/common/libxml2@2.9-icu4c.69.1"]
       system "autoreconf", "--force", "--install", "--verbose" if build.head?
       system "./configure", "--disable-dependency-tracking",
                             "--disable-silent-rules",

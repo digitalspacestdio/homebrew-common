@@ -1,4 +1,4 @@
-class Gettext < Formula
+class GettextAT022Icu4c742 < Formula
     desc "GNU internationalization (i18n) and localization (l10n) library"
     homepage "https://www.gnu.org/software/gettext/"
     url "https://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz"
@@ -10,7 +10,7 @@ class Gettext < Formula
     #uses_from_macos "libxml2"
     uses_from_macos "ncurses"
 
-    depends_on "digitalspacestdio/common/libxml2" if OS.linux?
+    depends_on "digitalspacestdio/common/libxml2@2.9-icu4c.74.2" if OS.linux?
   
     def install
       args = [
@@ -27,7 +27,7 @@ class Gettext < Formula
         "--without-git",
         "--without-cvs",
         "--without-xz",
-        "--with-libxml2-prefix=#{Formula["digitalspacestdio/common/libxml2"].opt_prefix}"
+        "--with-libxml2-prefix=#{Formula["digitalspacestdio/common/libxml2@2.9-icu4c.74.2"].opt_prefix}"
       ]
     #   args << if OS.mac?
     #     # Ship libintl.h. Disabled on linux as libintl.h is provided by glibc

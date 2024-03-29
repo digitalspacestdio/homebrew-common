@@ -1,4 +1,4 @@
-class Libxml2 < Formula
+class Libxml2AT212Icu4c691 < Formula
     desc "GNOME XML library"
     homepage "http://xmlsoft.org/"
     url "https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.6.tar.xz"

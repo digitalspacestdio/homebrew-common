@@ -1,4 +1,4 @@
-class Libxml2AT29 < Formula
+class Libxml2AT29Icu4c691 < Formula
   desc "GNOME XML library"
   homepage "http://xmlsoft.org/"
   url "http://xmlsoft.org/sources/libxml2-2.9.9.tar.gz"
