@@ -5,6 +5,11 @@ class LibiconvAT115 < Formula
   mirror "https://ftpmirror.gnu.org/libiconv/libiconv-1.15.tar.gz"
   sha256 "ccf536620a45458d26ba83887a983b96827001e92a13847b45e4925cc8913178"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libiconv@1.15"
+    sha256 cellar: :any_skip_relocation, sonoma: "c045fa46a4b4944da89253e068f4cbf2bb4165e24073703347bc88b6e12a12e1"
+  end
+
   keg_only :versioned_formula
 
   patch do
