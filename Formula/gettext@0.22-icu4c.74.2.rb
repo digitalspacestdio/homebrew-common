@@ -7,6 +7,11 @@ class GettextAT022Icu4c742 < Formula
   sha256 "ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/gettext@0.22-icu4c.74.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "30e1f6204649a31160094ac702edde166f559c32aeb25097631201c6ae78e07e"
+  end
+
   #uses_from_macos "libxml2"
   uses_from_macos "ncurses"
 
