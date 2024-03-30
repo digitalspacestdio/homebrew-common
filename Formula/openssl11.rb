@@ -9,8 +9,7 @@ class Openssl11 < Formula
   version_scheme 1
   revision 3
 
-  keg_only :provided_by_macos,
-      "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
+  keg_only :versioned_formula
 
   livecheck do
     url "https://www.openssl.org/source/"

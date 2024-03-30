@@ -5,7 +5,7 @@ class LibiconvAT115 < Formula
   mirror "https://ftpmirror.gnu.org/libiconv/libiconv-1.15.tar.gz"
   sha256 "ccf536620a45458d26ba83887a983b96827001e92a13847b45e4925cc8913178"
 
-  keg_only :provided_by_macos
+  keg_only :versioned_formula
 
   patch do
     url "https://raw.githubusercontent.com/Homebrew/patches/9be2793af/libiconv/patch-utf8mac.diff"

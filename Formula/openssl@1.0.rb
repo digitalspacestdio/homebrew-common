@@ -8,8 +8,7 @@ class OpensslAT10 < Formula
   sha256 "ecd0c6ffb493dd06707d38b14bb4d8c2288bb7033735606569d8f90f89669d16"
   revision 2
 
-  keg_only :provided_by_macos,
-    "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
+  keg_only :versioned_formula
 
   unless OS.mac?
     resource "cacert" do

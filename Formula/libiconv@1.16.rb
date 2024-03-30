@@ -6,7 +6,7 @@ class LibiconvAT116 < Formula
   sha256 "e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.0-or-later"]
 
-  keg_only :provided_by_macos
+  keg_only :versioned_formula
 
   depends_on :macos # is not needed on Linux, where iconv.h is provided by glibc
 
