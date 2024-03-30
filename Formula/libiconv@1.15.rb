@@ -20,6 +20,8 @@ class LibiconvAT115 < Formula
     ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
     ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     ENV.deparallelize
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
+    ENV.append "CFLAGS", "-Wno-implicit-int"
 
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
