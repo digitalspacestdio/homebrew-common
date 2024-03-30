@@ -6,6 +6,11 @@ class GettextAT022Icu4c721 < Formula
     mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz"
     sha256 "ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0"
     license "GPL-3.0-or-later"
+
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/gettext@0.22-icu4c.72.1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "7d6af196af65bd7470fa19f151dc86dc4efa0f361409fe7c77e17f27e93e80af"
+  end
   
     #uses_from_macos "libxml2"
     uses_from_macos "ncurses"
