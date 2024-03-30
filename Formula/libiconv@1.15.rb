@@ -12,9 +12,13 @@ class LibiconvAT115 < Formula
     sha256 "e8128732f22f63b5c656659786d2cf76f1450008f36bcf541285268c66cabeab"
   end
 
+  depends_on "gcc@11"
+
   patch :DATA
 
   def install
+    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11"
+    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11"
     ENV.deparallelize
 
     system "./configure", "--disable-debug",
