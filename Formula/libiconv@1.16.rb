@@ -1,4 +1,4 @@
-class Libiconv < Formula
+class LibiconvAT116 < Formula
   desc "Conversion library"
   homepage "https://www.gnu.org/software/libiconv/"
   url "https://ftp.gnu.org/gnu/libiconv/libiconv-1.16.tar.gz"
