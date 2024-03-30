@@ -9,6 +9,7 @@ class GettextAT022Icu4c691 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/gettext@0.22-icu4c.69.1"
+    sha256 cellar: :any_skip_relocation, sonoma:       "2a21d44015b2c00c8af149889953496705bc945d389ceba7d1b77b090012a1b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "513bda2ea3f1994ba28bf0f925dd483815b0ea365ea5fd2dfe6fc0dc76ecaa77"
   end
 
