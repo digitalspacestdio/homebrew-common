@@ -19,6 +19,8 @@ class LibiconvAT116 < Formula
 
   def install
     ENV.deparallelize
+    ENV.append "CFLAGS", "-Wno-incompatible-pointer-types"
+    ENV.append "CFLAGS", "-Wno-implicit-int"
 
     system "./configure", "--disable-debug",
                           "--disable-dependency-tracking",
