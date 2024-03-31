@@ -6,6 +6,11 @@ class LibiconvAT116 < Formula
   sha256 "e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04"
   license all_of: ["GPL-3.0-or-later", "LGPL-2.0-or-later"]
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libiconv@1.16"
+    sha256 cellar: :any_skip_relocation, sonoma: "27c71b32b57b2f1c8b0aed4ea51a506f9814ed25a5af386e9817beaa1600a3ae"
+  end
+
   keg_only :versioned_formula
 
   depends_on :macos
