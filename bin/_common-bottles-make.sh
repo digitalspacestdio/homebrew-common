@@ -7,6 +7,7 @@ if [[ -z $1 ]]; then
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 brew tap digitalspacestdio/common
 #cd $(brew tap-info --json digitalspacestdio/common | jq -r '.[].path')
 #git stash
