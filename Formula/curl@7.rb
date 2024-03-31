@@ -47,8 +47,8 @@ class CurlAT7 < Formula
   end
 
   def install
-    ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
-    ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
+    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
+    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
 
     ENV.append "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_prefix}/lib"
     ENV.append "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_prefix}/include"
