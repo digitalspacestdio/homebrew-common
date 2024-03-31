@@ -6,14 +6,6 @@ class Icu4cAT691 < Formula
   sha256 "4cba7b7acd1d3c42c44bb0c14be6637098c7faf2b330ce876bc5f3b915d09745"
   license "ICU"
 
-  livecheck do
-    url :stable
-    regex(/^release[._-]v?(\d+(?:[.-]\d+)+)$/i)
-    strategy :git do |tags, regex|
-        tags.map { |tag| tag[regex, 1]&.gsub("-", ".") }.compact
-    end
-  end
-
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/icu4c@69.1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fdfaae19b37ceaff48e5547c3724c2db1572b1d856631995db468e14bbbb75c"
@@ -24,7 +16,7 @@ class Icu4cAT691 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "gcc@11" => :build if OS.linux?
+  depends_on "gcc@11"
   
   def install
     ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?

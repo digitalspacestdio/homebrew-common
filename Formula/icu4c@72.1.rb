@@ -6,14 +6,6 @@ class Icu4cAT721 < Formula
   sha256 "a2d2d38217092a7ed56635e34467f92f976b370e20182ad325edea6681a71d68"
   license "ICU"
 
-  livecheck do
-    url :stable
-    regex(/^release[._-]v?(\d+(?:[.-]\d+)+)$/i)
-    strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.gsub("-", ".") }.compact
-    end
-  end
-
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/icu4c@72.1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76ae90fae7bdd6d323cd7694de65ec1ebcd1553c219eb178817c1c72fbd00114"
@@ -24,7 +16,11 @@ class Icu4cAT721 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "gcc@11"
+
   def install
+    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
+    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
     args = %W[
       --prefix=#{prefix}
       --disable-samples

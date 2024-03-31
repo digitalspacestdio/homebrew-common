@@ -24,6 +24,7 @@ class CurlAT8 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "gcc@11" => :build
   depends_on "pkg-config" => :build
   depends_on "brotli"
   depends_on "libidn2"

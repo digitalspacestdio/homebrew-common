@@ -34,8 +34,8 @@ class CurlAT7 < Formula
   depends_on "brotli"
   depends_on "libidn2"
   depends_on "openssl@1.1"
-  depends_on "pkg-config" => :build
   depends_on "gcc@11" => :build
+  depends_on "pkg-config" => :build
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional

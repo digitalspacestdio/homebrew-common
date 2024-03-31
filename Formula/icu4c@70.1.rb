@@ -6,14 +6,6 @@ class Icu4cAT701 < Formula
   sha256 "8d205428c17bf13bb535300669ed28b338a157b1c01ae66d31d0d3e2d47c3fd5"
   license "ICU"
 
-  livecheck do
-    url :stable
-    regex(/^release[._-]v?(\d+(?:[.-]\d+)+)$/i)
-    strategy :git do |tags, regex|
-        tags.map { |tag| tag[regex, 1]&.gsub("-", ".") }.compact
-    end
-  end
-
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/icu4c@70.1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fc43ab38e6d8198e0a1dece4f1aa18eb6d9e0492030f8a259f28347a8c03a8f"
@@ -24,28 +16,32 @@ class Icu4cAT701 < Formula
 
   keg_only :versioned_formula
 
-    def install
-        args = %W[
-            --prefix=#{prefix}
-            --disable-samples
-            --disable-tests
-            --enable-static
-            --with-library-bits=64
-        ]
+  depends_on "gcc@11"
 
-        cd "source" do
-            system "./configure", *args
-            system "make"
-            system "make", "install"
-        end
-    end
+  def install
+    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
+    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
+    args = %W[
+        --prefix=#{prefix}
+        --disable-samples
+        --disable-tests
+        --enable-static
+        --with-library-bits=64
+    ]
 
-    test do
-      if File.exist? "/usr/share/dict/words"
-        system "#{bin}/gendict", "--uchars", "/usr/share/dict/words", "dict"
-      else
-        (testpath/"hello").write "hello\nworld\n"
-        system "#{bin}/gendict", "--uchars", "hello", "dict"
-      end
+    cd "source" do
+      system "./configure", *args
+      system "make"
+      system "make", "install"
     end
+  end
+
+  test do
+    if File.exist? "/usr/share/dict/words"
+      system "#{bin}/gendict", "--uchars", "/usr/share/dict/words", "dict"
+    else
+      (testpath/"hello").write "hello\nworld\n"
+      system "#{bin}/gendict", "--uchars", "hello", "dict"
+    end
+  end
 end
