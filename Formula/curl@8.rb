@@ -14,6 +14,11 @@ class CurlAT8 < Formula
     regex(/href=.*?curl[._-]v?(.*?)\.t/i)
   end
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@8"
+    sha256 cellar: :any_skip_relocation, sonoma: "a24c628a3f4e038b47cf174a29f367037789c1beed02ba1a5acc8a5f29a6abf4"
+  end
+
   head do
     url "https://github.com/curl/curl.git", branch: "master"
 

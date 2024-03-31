@@ -5,6 +5,11 @@ class CurlAT7 < Formula
   mirror "http://curl.mirror.anstey.ca/curl-7.88.0.tar.bz2"
   sha256 "c81f439ed02442f6a9b95836dfb3a98e0c477610ca7b2f4d5aa1fc329543d33f"
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@7"
+    sha256 cellar: :any_skip_relocation, sonoma: "81ee3f55d0c14a1668bed7ad38acce00aeb8bf1186a8ba96058c2008a74555a1"
+  end
+
   pour_bottle? do
     reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."
     satisfy { OS.mac? || HOMEBREW_PREFIX.to_s == Homebrew::DEFAULT_PREFIX }
