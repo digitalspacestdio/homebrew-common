@@ -8,7 +8,7 @@ class LibiconvAT116 < Formula
 
   keg_only :versioned_formula
 
-  depends_on :macos # is not needed on Linux, where iconv.h is provided by glibc
+  depends_on :macos
 
   patch do
     url "https://raw.githubusercontent.com/Homebrew/patches/9be2793af/libiconv/patch-utf8mac.diff"
