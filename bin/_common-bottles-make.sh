@@ -18,7 +18,7 @@ echo -e "\033[33m==> The following formulas are matched:\033[0m"
 echo "$FORMULAS"
 sleep 5
 for FORMULA in $FORMULAS; do
-    echo -e "\033[33m==> Ceating bottles for $FORMULA ...\033[0m"
+    echo -e "\033[33m==> Creating bottles for $FORMULA ...\033[0m"
     rm -rf ${HOME}/.bottles/$FORMULA.bottle
     mkdir -p ${HOME}/.bottles/$FORMULA.bottle
     cd ${HOME}/.bottles/$FORMULA.bottle
