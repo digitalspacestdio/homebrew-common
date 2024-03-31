@@ -14,6 +14,7 @@ class LibpqAT162Icu4c742 < Formula
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libpq@16.2-icu4c.74.2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "ba8a88566b4cab695fd7809c8e36fbe380463b223146f68acb5ccaac7cd96e45"
+    sha256 cellar: :any_skip_relocation, sonoma:       "6771d889d5a243f9e16d227b7dabfd46a7e765b22c61a8a15d9be878a2d48765"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0cbc0420d580626648f65d25cbe05bbc0542dd607b80567d738f77a6dc951ffc"
   end
 
