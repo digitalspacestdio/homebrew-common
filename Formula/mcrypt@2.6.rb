@@ -65,22 +65,22 @@ class McryptAT26 < Formula
     end
   end
   
-  __END__
-  diff --git a/src/rfc2440.c b/src/rfc2440.c
-  index 5a1f296..aeb501c 100644
-  --- a/src/rfc2440.c
-  +++ b/src/rfc2440.c
-  @@ -23,7 +23,12 @@
-   #include <zlib.h>
-   #endif
-   #include <stdio.h>
-  +
-  +#ifdef __APPLE__
-  +#include <malloc/malloc.h>
-  +#else
-   #include <malloc.h>
-  +#endif
-  
-   #include "xmalloc.h"
-   #include "keys.h"
+__END__
+diff --git a/src/rfc2440.c b/src/rfc2440.c
+index 5a1f296..aeb501c 100644
+--- a/src/rfc2440.c
++++ b/src/rfc2440.c
+@@ -23,7 +23,12 @@
+  #include <zlib.h>
+  #endif
+  #include <stdio.h>
++
++#ifdef __APPLE__
++#include <malloc/malloc.h>
++#else
+  #include <malloc.h>
++#endif
+
+  #include "xmalloc.h"
+  #include "keys.h"
   
