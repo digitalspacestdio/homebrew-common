@@ -16,11 +16,7 @@ class Icu4cAT701 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "gcc@11"
-
   def install
-    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
-    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
     args = %W[
         --prefix=#{prefix}
         --disable-samples
