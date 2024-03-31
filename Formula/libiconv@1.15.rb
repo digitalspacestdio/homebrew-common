@@ -7,7 +7,7 @@ class LibiconvAT115 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libiconv@1.15"
-    sha256 cellar: :any_skip_relocation, sonoma: "c045fa46a4b4944da89253e068f4cbf2bb4165e24073703347bc88b6e12a12e1"
+    sha256 cellar: :any_skip_relocation, sonoma: "3f79564b4f35737308c103360b5a8a280422f39e31a61fc374b28c25631a581e"
   end
 
   keg_only :versioned_formula
