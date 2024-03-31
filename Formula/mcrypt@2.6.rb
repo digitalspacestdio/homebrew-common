@@ -6,6 +6,11 @@ class McryptAT26 < Formula
   license "GPL-3.0-or-later"
   revision 10
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/mcrypt@2.6"
+    sha256 cellar: :any_skip_relocation, sonoma: "02cdc371b97813a5cb1844cc1eba07f445fc1e1c33e6bc0e8a3809959e4af822"
+  end
+
   keg_only :versioned_formula
 
   # Added automake as a build dependency to update config files in libmcrypt.
