@@ -31,7 +31,7 @@ class McryptAT26 < Formula
     resource("libmcrypt").stage do
       # Workaround for ancient config files not recognising aarch64 macos.
       %w[config.guess config.sub].each do |fn|
-       cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
+        cp "#{Formula["automake"].opt_prefix}/share/automake-#{Formula["automake"].version.major_minor}/#{fn}", fn
       end
 
       args = []
@@ -64,7 +64,7 @@ class McryptAT26 < Formula
     system bin/"mcrypt", "--key", "TestPassword", "--decrypt", "test.txt.nc"
   end
 end
-
+  
 __END__
 diff --git a/src/rfc2440.c b/src/rfc2440.c
 index 5a1f296..aeb501c 100644
