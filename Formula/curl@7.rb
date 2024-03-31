@@ -24,7 +24,6 @@ class CurlAT7 < Formula
   option "with-libssh2", "Build with scp and sftp support"
   option "with-c-ares", "Build with C-Ares async DNS support"
   option "with-gssapi", "Build with GSSAPI/Kerberos authentication support."
-  option "with-libmetalink", "Build with libmetalink support."
   option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
 
   deprecated_option "with-rtmp" => "with-rtmpdump"
@@ -37,7 +36,6 @@ class CurlAT7 < Formula
   depends_on "gcc@11" => :build
   depends_on "pkg-config" => :build
   depends_on "c-ares" => :optional
-  depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional
   depends_on "nghttp2" => :optional
   depends_on "rtmpdump" => :optional
@@ -84,7 +82,6 @@ class CurlAT7 < Formula
     args << "--with-ca-path=#{etc}/openssl@1.1/certs"
 
     args << (build.with?("libssh2") ? "--with-libssh2" : "--without-libssh2")
-    args << (build.with?("libmetalink") ? "--with-libmetalink" : "--without-libmetalink")
     args << (build.with?("gssapi") ? "--with-gssapi" : "--without-gssapi")
     args << (build.with?("rtmpdump") ? "--with-librtmp" : "--without-librtmp")
 
