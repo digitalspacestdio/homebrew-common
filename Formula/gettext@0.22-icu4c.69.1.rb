@@ -9,9 +9,11 @@ class GettextAT022Icu4c691 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/gettext@0.22-icu4c.69.1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9aaa6f4045f1115a4a3a8dee117c9f703f0fbac5f3b536d943398a15ce90e8ed"
-    sha256 cellar: :any_skip_relocation, sonoma:       "2a21d44015b2c00c8af149889953496705bc945d389ceba7d1b77b090012a1b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "513bda2ea3f1994ba28bf0f925dd483815b0ea365ea5fd2dfe6fc0dc76ecaa77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aaa6f4045f1115a4a3a8dee117c9f703f0fbac5f3b536d943398a15ce90e8ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e10f3bd73672feed7df4480bac57bbb74d52607779051fc0a0d8575c378ef731"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2a21d44015b2c00c8af149889953496705bc945d389ceba7d1b77b090012a1b9"
+    sha256 cellar: :any_skip_relocation, monterey:      "c38b92a107cbb7f70994b4cbb51e6e5dcdcddffef395413129852fe470e9fd88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "513bda2ea3f1994ba28bf0f925dd483815b0ea365ea5fd2dfe6fc0dc76ecaa77"
   end
 
   #uses_from_macos "libxml2"
