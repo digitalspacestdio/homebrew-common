@@ -18,6 +18,7 @@ class CurlAT8 < Formula
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma: "18441017ff8a30f0d12feadfec37801245018d9e1f2e371c6f816395e8fa61b4"
     sha256 cellar: :any_skip_relocation, sonoma:       "a24c628a3f4e038b47cf174a29f367037789c1beed02ba1a5acc8a5f29a6abf4"
+    sha256 cellar: :any_skip_relocation, monterey:     "86b0413a34d6b085e48ad4231ea6678fe140b0c97c6f0ed65216216d5f84425c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9a88e437308579feac6cf4f4f82642090862fa93069cf87d4f3cae06b0b368c9"
   end
 
