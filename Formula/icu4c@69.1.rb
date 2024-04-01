@@ -9,9 +9,9 @@ class Icu4cAT691 < Formula
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/icu4c@69.1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fdfaae19b37ceaff48e5547c3724c2db1572b1d856631995db468e14bbbb75c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "088401115094e9b7e4ba7f14735562ffb85acd64b668703586738a56d4ddb927"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a384ee343bbfd21f87cb91bcf0ea3162bf1c9509a30366a94445f6dfee72df2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d68bce6b8e08d7fc24682aec5afb8b2091739d7c6266c0b090521f455354385d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9116d4e5d671e18cdee733eb4d4e07002c30b5b1ea9c97f560910f3e3c61ee10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc1ed3fa9ad9f3414685882f89da8171c9f219f57338c330f9f7a0b8ab850a58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c40b1b40e4df561127bb31b1aeaaff23f0e55adf74966ef15837a8ac46ddcb82"
   end
 
   keg_only :versioned_formula
