@@ -9,9 +9,10 @@ class GettextAT022Icu4c742 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/gettext@0.22-icu4c.74.2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "83794e40c96c957a6e281ac2b7b00422d5407dd9e8f4ff42598994c0375b6a9c"
-    sha256 cellar: :any_skip_relocation, sonoma:       "8d8a0511ce821f9d0bbb7424cdfe8f26bad11f4f8daf4683083477623eefbc3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "30e1f6204649a31160094ac702edde166f559c32aeb25097631201c6ae78e07e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83794e40c96c957a6e281ac2b7b00422d5407dd9e8f4ff42598994c0375b6a9c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0855bbbf0a3fa04a283b347ea005e002adf508ffd65287d34ffa79743099e1a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d8a0511ce821f9d0bbb7424cdfe8f26bad11f4f8daf4683083477623eefbc3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30e1f6204649a31160094ac702edde166f559c32aeb25097631201c6ae78e07e"
   end
 
   #uses_from_macos "libxml2"
