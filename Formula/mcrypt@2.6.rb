@@ -8,8 +8,9 @@ class McryptAT26 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/mcrypt@2.6"
-    sha256 cellar: :any_skip_relocation, sonoma:       "02cdc371b97813a5cb1844cc1eba07f445fc1e1c33e6bc0e8a3809959e4af822"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "155b056596295ea6f43bd840a4fa8149466a82bba3f19536a5e6a1af5fc7f1be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aef742f5dc10ed07163ba3bf5ff05c520dd3ea6c3ab3e5ac448da72db5fd97fa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02cdc371b97813a5cb1844cc1eba07f445fc1e1c33e6bc0e8a3809959e4af822"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "155b056596295ea6f43bd840a4fa8149466a82bba3f19536a5e6a1af5fc7f1be"
   end
 
   keg_only :versioned_formula
