@@ -13,9 +13,10 @@ class LibpqAT162Icu4c721 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libpq@16.2-icu4c.72.1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "cbc744499fa8a31969f837d1f274ee79df7d93685d6f901ac4fc3e9dccb3be4c"
-    sha256 cellar: :any_skip_relocation, sonoma:       "458d6848158a5778b1c1097c2c1b9741982184be84dab153cc90c29a3e9ee84f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2b69ff0f90dff06e4289f5089bdd07d5900136b199575b59ef31ff1990ef7c38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbc744499fa8a31969f837d1f274ee79df7d93685d6f901ac4fc3e9dccb3be4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ff19c8753d70f5a4e044a3eb667b6a6e0f0ea7768d7d94e92887ca8805249482"
+    sha256 cellar: :any_skip_relocation, sonoma:        "458d6848158a5778b1c1097c2c1b9741982184be84dab153cc90c29a3e9ee84f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b69ff0f90dff06e4289f5089bdd07d5900136b199575b59ef31ff1990ef7c38"
   end
 
   keg_only "conflicts with postgres formula"

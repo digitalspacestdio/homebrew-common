@@ -14,9 +14,10 @@ class Libxml2AT212Icu4c721 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libxml2@2.12-icu4c.72.1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "2b50f079fc0ca34d88c42fa91496341458ede9c35d26903cf250836fc4b63ba9"
-    sha256 cellar: :any_skip_relocation, sonoma:       "db36333f665f7be81b0e459ac41a20e69561269a8950eded0152f1370a5e18cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cc4adb1086502891d53db7d3801c0d17d3d941d08139d1bc2fa1aa5e5ebb7fcf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b50f079fc0ca34d88c42fa91496341458ede9c35d26903cf250836fc4b63ba9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "16ae13694035c662bd86262381d195a7d6240c6a8c726214550665f409f730bd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db36333f665f7be81b0e459ac41a20e69561269a8950eded0152f1370a5e18cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc4adb1086502891d53db7d3801c0d17d3d941d08139d1bc2fa1aa5e5ebb7fcf"
   end
 
   head do
