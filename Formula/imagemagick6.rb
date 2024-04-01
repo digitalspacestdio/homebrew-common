@@ -15,6 +15,7 @@ class Imagemagick6 < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8459c57cbb95a7f17534747a09e386be0670b0e36ce8d7973beabaa89b8bb25c"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "37ff6fe03ac810624bd8084373ee3634940ce6a2b12a52d96978f97323d498e2"
     sha256 cellar: :any_skip_relocation, sonoma:        "f3fcf2eb2ab85f6b0f346a58c54c2983021607115c9c5f1a2502793ed8e5c2b0"
+    sha256 cellar: :any_skip_relocation, monterey:      "0212124b51cc67ed7ac638c0d7f6d18b74616871f8327735e798c5da57422f56"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ad8ab4275b82502d88227e7d10cac438efe7df6e9d76b18d703fe65fa76a4ba"
   end
 
