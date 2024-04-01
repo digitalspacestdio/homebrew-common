@@ -55,6 +55,6 @@ done
 cd $(brew tap-info --json digitalspacestdio/common | jq -r '.[].path' | perl -pe 's/\+/\ /g;' -e 's/%(..)/chr(hex($1))/eg;')
 git add .
 git commit -m "bottles update: $FORMULAS"
-git pull --rebase
+echo "merge"| git pull --no-rebase
 git push
 cd -
