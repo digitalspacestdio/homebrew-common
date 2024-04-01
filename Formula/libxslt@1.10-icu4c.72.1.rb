@@ -17,6 +17,7 @@ class LibxsltAT110Icu4c721 < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22b5f0e8e4a6a3b0d2b98008b917a186c08cd463d050779ac9e2fcd07dfad48d"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5517990d56a49ba3f0de176bac702ae32ae7426c848c1387be13bf8cad6e2741"
     sha256 cellar: :any_skip_relocation, sonoma:        "273a76ed43f6769bac5c931a95b7cce5880e7a70e952dc88bf973ab0929d0588"
+    sha256 cellar: :any_skip_relocation, monterey:      "40bb8f0664b9c1d7090e6dee259c8c2c1f39fd2a8b601756374504fd48b065c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e641c39bafe9b5a25cb4c6070dfe4d0f4e0f22176d0d4ece0cd242ae3522b76"
   end
   
