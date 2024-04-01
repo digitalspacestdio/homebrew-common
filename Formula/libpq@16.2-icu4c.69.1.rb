@@ -16,6 +16,7 @@ class LibpqAT162Icu4c691 < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4dc490f29afc152f13e8d3e6dcd6c355e32688a86a8fcfde8964e7cd28a3611"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f6bbea45d759b51e71e5ae7154763a1d0e592bbcea205d14685fb31838ebad5b"
     sha256 cellar: :any_skip_relocation, sonoma:        "8bbba26f10a3ef6362fb8fca386eb3e2967b46699cb1a5bb44c06c70eec77f6f"
+    sha256 cellar: :any_skip_relocation, monterey:      "b1833e15663364cf259221d95cd1ea52be73571b912e0049dda1b1782874543a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f6e270fb325893819f21764e3e4c499bd3f69273747558726c4adbf6f1804ab"
   end
 
