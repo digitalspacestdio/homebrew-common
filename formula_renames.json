@@ -1,3 +1,5 @@
 {
-  "digitalvisor": "digitalspace-supervisor"
+  "digitalvisor": "digitalspace-supervisor",
+  "phpcurl": "curl@7",
+  "phpmcrypt": "mcrypt@2.6"
 }
