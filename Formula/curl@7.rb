@@ -1,18 +1,11 @@
 class CurlAT7 < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.88.0.tar.bz2"
-  mirror "http://curl.mirror.anstey.ca/curl-7.88.0.tar.bz2"
-  sha256 "c81f439ed02442f6a9b95836dfb3a98e0c477610ca7b2f4d5aa1fc329543d33f"
-
-  bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9007f52b52811bd510f438c9bafbf96b37a765e84801216352e195fe064d270e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5309ad02485a33562bea87841920001719ee705796c7422d1b9e153831d537f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81ee3f55d0c14a1668bed7ad38acce00aeb8bf1186a8ba96058c2008a74555a1"
-    sha256 cellar: :any_skip_relocation, monterey:      "9d8649a3e158d761844b46beafcecc8c4b93cfde15c7a1e9feaf85af570c2c5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2a73970cdce0e27fae8fb4f7b6b95f14c9f8abef4ff29a476f610ab192ea5d1"
-  end
+  url "https://curl.haxx.se/download/curl-7.72.0.tar.bz2"
+  mirror "http://curl.mirror.anstey.ca/curl-7.72.0.tar.bz2"
+  sha256 "ad91970864102a59765e20ce16216efc9d6ad381471f7accceceab7d905703ef"
+  version '7.72.0'
+  revision 5
 
   pour_bottle? do
     reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."
@@ -27,24 +20,35 @@ class CurlAT7 < Formula
     depends_on "libtool" => :build
   end
 
-  keg_only :versioned_formula
+  keg_only "php only dependency"
 
   option "with-rtmpdump", "Build with RTMP support"
   option "with-libssh2", "Build with scp and sftp support"
   option "with-c-ares", "Build with C-Ares async DNS support"
   option "with-gssapi", "Build with GSSAPI/Kerberos authentication support."
+  option "with-libmetalink", "Build with libmetalink support."
   option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
 
   deprecated_option "with-rtmp" => "with-rtmpdump"
   deprecated_option "with-ssh" => "with-libssh2"
   deprecated_option "with-ares" => "with-c-ares"
 
+  # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
+  # which is currently not supported by Secure Transport (DarwinSSL).
+#   if MacOS.version < :mountain_lion || build.with?("nghttp2") || build.with?("openssl")
+#     depends_on "openssl@1.1"
+#   else
+#     option "with-openssl", "Build with OpenSSL instead of Secure Transport"
+#     depends_on "openssl@1.1" => :optional
+#   end
+
   depends_on "brotli"
   depends_on "libidn2"
   depends_on "openssl@1.1"
-  depends_on "gcc@11" => :build
   depends_on "pkg-config" => :build
+#  depends_on "gcc" => :build
   depends_on "c-ares" => :optional
+  depends_on "libmetalink" => :optional
   depends_on "libssh2" => :optional
   depends_on "nghttp2" => :optional
   depends_on "rtmpdump" => :optional
@@ -53,14 +57,17 @@ class CurlAT7 < Formula
     depends_on "openldap" => :optional
   end
 
-  def install
-    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
-    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
+  ENV['CFLAGS'] = '-I$(brew --prefix openssl@1.1)/include'
+  ENV['LDFLAGS'] = '-L$(brew --prefix openssl@1.1)/lib'
 
-    ENV.append "LDFLAGS", "-L#{Formula["openssl@1.1"].opt_prefix}/lib"
-    ENV.append "CPPFLAGS", "-I#{Formula["openssl@1.1"].opt_prefix}/include"
+  def install
+    #ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
+    #ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
 
     system "./buildconf" if build.head?
+
+    # Allow to build on Lion, lowering from the upstream setting of 10.8
+    ENV.append_to_cflags "-mmacosx-version-min=10.7" if MacOS.version <= :lion && OS.mac?
 
     args = %W[
       --disable-debug
@@ -88,6 +95,7 @@ class CurlAT7 < Formula
     args << "--with-ca-path=#{etc}/openssl@1.1/certs"
 
     args << (build.with?("libssh2") ? "--with-libssh2" : "--without-libssh2")
+    args << (build.with?("libmetalink") ? "--with-libmetalink" : "--without-libmetalink")
     args << (build.with?("gssapi") ? "--with-gssapi" : "--without-gssapi")
     args << (build.with?("rtmpdump") ? "--with-librtmp" : "--without-librtmp")
 
@@ -101,7 +109,7 @@ class CurlAT7 < Formula
     system "./configure", *args
     system "make", "install"
     system "make", "install", "-C", "scripts"
-    libexec.install "scripts/mk-ca-bundle.pl"
+    libexec.install "lib/mk-ca-bundle.pl"
   end
 
   test do
