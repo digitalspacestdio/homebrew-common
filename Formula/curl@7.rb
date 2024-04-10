@@ -9,9 +9,10 @@ class CurlAT7 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@7"
-    sha256 cellar: :any_skip_relocation, sonoma:       "9048709da70976273359bedea89f07560f63e12f0e8b855bba9c2392b1131910"
-    sha256 cellar: :any_skip_relocation, monterey:     "f3ae236b943a077c5acda69bb7148b090e1514eeda4107b2300fcb3f9938dfaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ec1103048698e1afc5128f7cacb839a12be570f1f1d08dc57f4522d05a931c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6e714aabcd6d01ba2b9454e069933702000ea53977f153594726518fa123fbc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9048709da70976273359bedea89f07560f63e12f0e8b855bba9c2392b1131910"
+    sha256 cellar: :any_skip_relocation, monterey:      "f3ae236b943a077c5acda69bb7148b090e1514eeda4107b2300fcb3f9938dfaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ec1103048698e1afc5128f7cacb839a12be570f1f1d08dc57f4522d05a931c6"
   end
 
   pour_bottle? do
