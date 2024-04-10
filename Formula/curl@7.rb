@@ -7,6 +7,11 @@ class CurlAT7 < Formula
   version '7.72.0'
   revision 5
 
+  bottle do
+    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ec1103048698e1afc5128f7cacb839a12be570f1f1d08dc57f4522d05a931c6"
+  end
+
   pour_bottle? do
     reason "The bottle needs to be installed into #{Homebrew::DEFAULT_PREFIX} when built with OpenSSL."
     satisfy { OS.mac? || HOMEBREW_PREFIX.to_s == Homebrew::DEFAULT_PREFIX }
@@ -67,7 +72,7 @@ class CurlAT7 < Formula
     system "./buildconf" if build.head?
 
     # Allow to build on Lion, lowering from the upstream setting of 10.8
-    ENV.append_to_cflags "-mmacosx-version-min=10.7" if MacOS.version <= :lion && OS.mac?
+    ENV.append_to_cflags "-mmacosx-version-min=10.7" if OS.mac? && MacOS.version <= :lion
 
     args = %W[
       --disable-debug
