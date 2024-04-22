@@ -9,6 +9,7 @@ class CurlAT7 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@7"
+    sha256 cellar: :any_skip_relocation, monterey:     "9b792e03086c5991fec97b11a320f3b2dc91ee1ff6d160e4e240216e0b7948f5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "45f3b2ab5d1fb94f857f50f3a4de78e9af90055a4c1f9a96b8ec590706cc03fb"
   end
 
