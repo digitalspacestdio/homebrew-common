@@ -5,15 +5,13 @@ class CurlAT7 < Formula
   mirror "http://curl.mirror.anstey.ca/curl-7.72.0.tar.bz2"
   sha256 "ad91970864102a59765e20ce16216efc9d6ad381471f7accceceab7d905703ef"
   version '7.72.0'
-  revision 5
+  revision 8
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6e714aabcd6d01ba2b9454e069933702000ea53977f153594726518fa123fbc"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5b75db1ba484fd4e2af4f140302088e68ed5069dbcfafebc6a289e3302fa063a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9048709da70976273359bedea89f07560f63e12f0e8b855bba9c2392b1131910"
-    sha256 cellar: :any_skip_relocation, monterey:       "f3ae236b943a077c5acda69bb7148b090e1514eeda4107b2300fcb3f9938dfaa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ec1103048698e1afc5128f7cacb839a12be570f1f1d08dc57f4522d05a931c6"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "280868a9f739f545e0f9a36161d5d830ee7af618b508f5c97f95e42488082dbf"
+    sha256 cellar: :any_skip_relocation, monterey:       "ac3d27c6178ebacc9853567f00d098ccfc7f6f1e050f6fcfd23e3e8559aadf87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a46e9f012edf0bc72bee9b3cf981e98f77c43c86f0e0ec12d6f4629eaac308ba"
   end
 
   pour_bottle? do
@@ -29,17 +27,15 @@ class CurlAT7 < Formula
     depends_on "libtool" => :build
   end
 
-  keg_only "php only dependency"
+  keg_only :versioned_formula
 
   option "with-rtmpdump", "Build with RTMP support"
-  option "with-libssh2", "Build with scp and sftp support"
   option "with-c-ares", "Build with C-Ares async DNS support"
   option "with-gssapi", "Build with GSSAPI/Kerberos authentication support."
   option "with-libmetalink", "Build with libmetalink support."
   option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
 
   deprecated_option "with-rtmp" => "with-rtmpdump"
-  deprecated_option "with-ssh" => "with-libssh2"
   deprecated_option "with-ares" => "with-c-ares"
 
   # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
@@ -55,10 +51,9 @@ class CurlAT7 < Formula
   depends_on "libidn2"
   depends_on "openssl@1.1"
   depends_on "pkg-config" => :build
-#  depends_on "gcc" => :build
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
-  depends_on "libssh2" => :optional
+  depends_on "libssh2"
   depends_on "nghttp2" => :optional
   depends_on "rtmpdump" => :optional
   unless OS.mac?
@@ -103,7 +98,7 @@ class CurlAT7 < Formula
     args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
     args << "--with-ca-path=#{etc}/openssl@1.1/certs"
 
-    args << (build.with?("libssh2") ? "--with-libssh2" : "--without-libssh2")
+    args << "--with-libssh2"
     args << (build.with?("libmetalink") ? "--with-libmetalink" : "--without-libmetalink")
     args << (build.with?("gssapi") ? "--with-gssapi" : "--without-gssapi")
     args << (build.with?("rtmpdump") ? "--with-librtmp" : "--without-librtmp")

@@ -8,6 +8,7 @@ class CurlAT8 < Formula
   mirror "http://fresh-center.net/linux/www/legacy/curl-8.7.1.tar.bz2"
   sha256 "05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76"
   license "curl"
+  revision 8
 
   livecheck do
     url "https://curl.se/download/"
@@ -16,12 +17,9 @@ class CurlAT8 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18441017ff8a30f0d12feadfec37801245018d9e1f2e371c6f816395e8fa61b4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b8aa7df56ce59c39b65c799eaccde40649a766b161ebd9c33be0e090261ad98"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "179760e6ab3c75632d3ac3afda93b47ee2d78d04681ad0e87e0b78d7dd566aac"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a24c628a3f4e038b47cf174a29f367037789c1beed02ba1a5acc8a5f29a6abf4"
-    sha256 cellar: :any_skip_relocation, monterey:       "86b0413a34d6b085e48ad4231ea6678fe140b0c97c6f0ed65216216d5f84425c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a88e437308579feac6cf4f4f82642090862fa93069cf87d4f3cae06b0b368c9"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "23b494b0b8d89593d8a6af6d4e53012e63c0535cb6613092f43cf8cea3c883ff"
+    sha256 cellar: :any_skip_relocation, monterey:       "2c23a500182b5cac46f2627f197a0f9e9857b8cf819c05dc60e8671491fd720c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fbbc93040b44d1426e5f40cac01011eb0b234339e8ea4460f1661c123c7af1a7"
   end
 
   head do
