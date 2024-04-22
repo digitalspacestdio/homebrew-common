@@ -8,10 +8,11 @@ class LibiconvAT116 < Formula
 
   bottle do
     root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libiconv@1.16"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b1179c25a7c231b060d2fc18e2b4b51ee47166ffc478e8980a3f3e9d0ae94d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7349103117fc26ef75540ba22b97e02b5514e550414d44cad4184bfba2dd52d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7811fc54bf52ba0c7640796507cf1e3da1d09c24453ee641598c4831e1171577"
-    sha256 cellar: :any_skip_relocation, monterey:      "41619d1bc5984409b741a1df5d952e78ee6f59bb86a3be27cb642420bdad5df8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b1179c25a7c231b060d2fc18e2b4b51ee47166ffc478e8980a3f3e9d0ae94d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7349103117fc26ef75540ba22b97e02b5514e550414d44cad4184bfba2dd52d3"
+    sha256 cellar: :any_skip_relocation, arm64_monterey: "a43f34edf30c5fd02d64b6ed4e6dc012d67537dcbb09df3cb165fefcfc9eaa74"
+    sha256 cellar: :any_skip_relocation, sonoma:         "7811fc54bf52ba0c7640796507cf1e3da1d09c24453ee641598c4831e1171577"
+    sha256 cellar: :any_skip_relocation, monterey:       "41619d1bc5984409b741a1df5d952e78ee6f59bb86a3be27cb642420bdad5df8"
   end
 
   keg_only :versioned_formula
