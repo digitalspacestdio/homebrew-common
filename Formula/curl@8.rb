@@ -20,7 +20,7 @@ class CurlAT8 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "0b8aa7df56ce59c39b65c799eaccde40649a766b161ebd9c33be0e090261ad98"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "179760e6ab3c75632d3ac3afda93b47ee2d78d04681ad0e87e0b78d7dd566aac"
     sha256 cellar: :any_skip_relocation, sonoma:         "a24c628a3f4e038b47cf174a29f367037789c1beed02ba1a5acc8a5f29a6abf4"
-    sha256 cellar: :any_skip_relocation, monterey:       "86b0413a34d6b085e48ad4231ea6678fe140b0c97c6f0ed65216216d5f84425c"
+    sha256 cellar: :any_skip_relocation, monterey:       "9fd54d805b66dda6b16d81f2b4df0a7de0636a506aa1ce21149cc404fbee4ccd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a88e437308579feac6cf4f4f82642090862fa93069cf87d4f3cae06b0b368c9"
   end
 
