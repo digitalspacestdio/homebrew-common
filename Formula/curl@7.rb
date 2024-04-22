@@ -97,7 +97,7 @@ class CurlAT7 < Formula
     args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
     args << "--with-ca-path=#{etc}/openssl@1.1/certs"
 
-    args << "--with-libssh2")
+    args << "--with-libssh2"
     args << (build.with?("libmetalink") ? "--with-libmetalink" : "--without-libmetalink")
     args << (build.with?("gssapi") ? "--with-gssapi" : "--without-gssapi")
     args << (build.with?("rtmpdump") ? "--with-librtmp" : "--without-librtmp")
