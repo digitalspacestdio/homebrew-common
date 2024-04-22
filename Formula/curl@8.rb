@@ -8,6 +8,7 @@ class CurlAT8 < Formula
   mirror "http://fresh-center.net/linux/www/legacy/curl-8.7.1.tar.bz2"
   sha256 "05bbd2b698e9cfbab477c33aa5e99b4975501835a41b7ca6ca71de03d8849e76"
   license "curl"
+  revision 7
 
   livecheck do
     url "https://curl.se/download/"
