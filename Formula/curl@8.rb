@@ -32,7 +32,7 @@ class CurlAT8 < Formula
 
   keg_only :versioned_formula
 
-  depends_on "gcc@11" => :build
+  #depends_on "gcc@11" => :build
   depends_on "pkg-config" => :build
   depends_on "brotli"
   depends_on "libidn2"
@@ -54,8 +54,8 @@ class CurlAT8 < Formula
   end
 
   def install
-    ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
-    ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
+    #ENV["CC"] = "#{Formula["gcc@11"].opt_prefix}/bin/gcc-11" if OS.linux?
+    #ENV["CXX"] = "#{Formula["gcc@11"].opt_prefix}/bin/g++-11" if OS.linux?
 
     tag_name = "curl-#{version.to_s.tr(".", "_")}"
     if build.stable? && stable.mirrors.grep(/github\.com/).first.exclude?(tag_name)
