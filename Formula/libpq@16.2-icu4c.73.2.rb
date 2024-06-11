@@ -37,6 +37,7 @@ class LibpqAT162Icu4c732 < Formula
   end
 
   def install
+    ENV.append "USE_SLICING_BY_8_CRC32C", "1" if Hardware::CPU.arm? && OS.linux?
     system "./configure", "--disable-debug",
                           "--prefix=#{prefix}",
                           "--with-gssapi",
