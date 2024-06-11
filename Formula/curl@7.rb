@@ -33,7 +33,7 @@ class CurlAT7 < Formula
   option "with-c-ares", "Build with C-Ares async DNS support"
   option "with-gssapi", "Build with GSSAPI/Kerberos authentication support."
   option "with-libmetalink", "Build with libmetalink support."
-  option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
+  #option "with-nghttp2", "Build with HTTP/2 support (requires OpenSSL)"
 
   deprecated_option "with-rtmp" => "with-rtmpdump"
   deprecated_option "with-ares" => "with-c-ares"
@@ -51,10 +51,11 @@ class CurlAT7 < Formula
   depends_on "libidn2"
   depends_on "openssl@1.1"
   depends_on "pkg-config" => :build
+  depends_on "libssh2"
+  depends_on "nghttp2"
+
   depends_on "c-ares" => :optional
   depends_on "libmetalink" => :optional
-  depends_on "libssh2"
-  depends_on "nghttp2" => :optional
   depends_on "rtmpdump" => :optional
   unless OS.mac?
     depends_on "krb5" if build.with? "gssapi"
@@ -65,9 +66,6 @@ class CurlAT7 < Formula
   ENV['LDFLAGS'] = '-L$(brew --prefix openssl@1.1)/lib'
 
   def install
-    #ENV["CC"] = "#{Formula["gcc"].opt_prefix}/bin/gcc-11"
-    #ENV["CXX"] = "#{Formula["gcc"].opt_prefix}/bin/g++-11"
-
     system "./buildconf" if build.head?
 
     # Allow to build on Lion, lowering from the upstream setting of 10.8
@@ -98,7 +96,8 @@ class CurlAT7 < Formula
     args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
     args << "--with-ca-path=#{etc}/openssl@1.1/certs"
 
-    args << "--with-libssh2"
+    args << "--with-libssh2=#{Formula["libssh2"].opt_prefix}"
+
     args << (build.with?("libmetalink") ? "--with-libmetalink" : "--without-libmetalink")
     args << (build.with?("gssapi") ? "--with-gssapi" : "--without-gssapi")
     args << (build.with?("rtmpdump") ? "--with-librtmp" : "--without-librtmp")
