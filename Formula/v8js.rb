@@ -2,8 +2,8 @@ class V8js < Formula
   desc "Google's JavaScript engine"
   homepage "https://github.com/v8/v8/wiki"
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
-  url "https://github.com/v8/v8/archive/refs/tags/13.1.108.tar.gz"
-  sha256 "2cd98b4447b29caefe4d86d742ef65cbdde6151eff5c357dcc821409ea6ecb32"
+  url "https://github.com/v8/v8/archive/7.5.288.22.tar.gz"
+  sha256 "df12222ebdb9538f62434785ea246f1d27f198b5d674e0577dd1487ffe53b6e2"
 
   depends_on "ninja" => :build
   # depends_on "llvm" if MacOS.version < :mojave
