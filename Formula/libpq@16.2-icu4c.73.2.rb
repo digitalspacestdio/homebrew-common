@@ -13,6 +13,7 @@ class LibpqAT162Icu4c732 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libpq@16.2-icu4c.73.2"
+    sha256 cellar: :any_skip_relocation, ventura:      "eb2660e715853b70bb34b2687351d89964985da53abf9bc754ebdcaf170d66f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "629744446623bdb86dfa4f3824b73276f7f5ecc0b619f5d579a4154eb445da9f"
   end
 
