@@ -9,6 +9,11 @@ class ProtobufAT282 < Formula
       url :stable
       strategy :github_latest
     end
+
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/protobuf@28.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "085adb8df69d083492c872529e49089017f29f127d973970ccf9561869ad5161"
+  end
   
     depends_on "cmake" => :build
     depends_on "abseil"
