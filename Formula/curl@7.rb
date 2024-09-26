@@ -1,11 +1,10 @@
 class CurlAT7 < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.72.0.tar.bz2"
-  mirror "http://curl.mirror.anstey.ca/curl-7.72.0.tar.bz2"
+  url "https://curl.haxx.se/download/curl-7.88.1.tar.bz2"
+  mirror "http://curl.mirror.anstey.ca/curl-7.88.1.tar.bz2"
   sha256 "ad91970864102a59765e20ce16216efc9d6ad381471f7accceceab7d905703ef"
-  version '7.72.0'
-  revision 8
+  version '7.88.1'
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/8/curl@7"
@@ -19,7 +18,7 @@ class CurlAT7 < Formula
 
   head do
     url "https://github.com/curl/curl.git"
-    depends_on "openssl@1.1" => :build
+    depends_on "openssl111w" => :build
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -39,15 +38,15 @@ class CurlAT7 < Formula
   # HTTP/2 support requires OpenSSL 1.0.2+ or LibreSSL 2.1.3+ for ALPN Support
   # which is currently not supported by Secure Transport (DarwinSSL).
 #   if MacOS.version < :mountain_lion || build.with?("nghttp2") || build.with?("openssl")
-#     depends_on "openssl@1.1"
+#     depends_on "openssl111w"
 #   else
 #     option "with-openssl", "Build with OpenSSL instead of Secure Transport"
-#     depends_on "openssl@1.1" => :optional
+#     depends_on "openssl111w" => :optional
 #   end
 
   depends_on "brotli"
   depends_on "libidn2"
-  depends_on "openssl@1.1"
+  depends_on "openssl111w"
   depends_on "pkg-config" => :build
   depends_on "libssh2"
   depends_on "nghttp2"
@@ -60,8 +59,8 @@ class CurlAT7 < Formula
     depends_on "openldap" => :optional
   end
 
-  ENV['CFLAGS'] = '-I$(brew --prefix openssl@1.1)/include'
-  ENV['LDFLAGS'] = '-L$(brew --prefix openssl@1.1)/lib'
+  ENV['CFLAGS'] = '-I{$(brew --prefix openssl111w)}/include'
+  ENV['LDFLAGS'] = '-L$(brew --prefix openssl111w)/lib'
 
   def install
     system "./buildconf" if build.head?
@@ -80,19 +79,19 @@ class CurlAT7 < Formula
     # "--with-ssl" any more. "when possible, set the PKG_CONFIG_PATH environment
     # variable instead of using this option". Multi-SSL choice breaks w/o using it.
     #     if MacOS.version < :mountain_lion || build.with?("openssl") || build.with?("nghttp2")
-    #       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl@1.1"].opt_lib}/pkgconfig"
-    #       args << "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}"
-    #       args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
-    #       args << "--with-ca-path=#{etc}/openssl@1.1/certs"
+    #       ENV.prepend_path "PKG_CONFIG_PATH", "#{Formula["openssl111w"].opt_lib}/pkgconfig"
+    #       args << "--with-ssl=#{Formula["openssl111w"].opt_prefix}"
+    #       args << "--with-ca-bundle=#{etc}/openssl111w/cert.pem"
+    #       args << "--with-ca-path=#{etc}/openssl111w/certs"
     #     else
     #       args << "--with-darwinssl"
     #       args << "--without-ca-bundle"
     #       args << "--without-ca-path"
     #     end
 
-    args << "--with-ssl=#{Formula["openssl@1.1"].opt_prefix}"
-    args << "--with-ca-bundle=#{etc}/openssl@1.1/cert.pem"
-    args << "--with-ca-path=#{etc}/openssl@1.1/certs"
+    args << "--with-ssl=#{Formula["openssl111w"].opt_prefix}"
+    args << "--with-ca-bundle=#{etc}/openssl111w/cert.pem"
+    args << "--with-ca-path=#{etc}/openssl111w/certs"
 
     args << "--with-libssh2=#{Formula["libssh2"].opt_prefix}"
 
