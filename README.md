@@ -6,13 +6,6 @@ Homebrew/Linuxbrew common formulas
 brew tap digitalspacestdio/common
 ```
 
-### Mysql Servers
-```
-brew install mysql57
-brew install mysql80
-brew install mysql84
-```
-
 ### Imagemagick 6
 ```
 brew install imagemagick6
