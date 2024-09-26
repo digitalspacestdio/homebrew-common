@@ -14,6 +14,7 @@ class LibxsltAT110Icu4c732 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxslt@1.10-icu4c.73.2"
+    sha256 cellar: :any_skip_relocation, ventura:      "b95815ab926b272fc56d7a66ff3d5f143ca8b20cffc24eb4a7ec9e098978e788"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "6d3c319259ad4f6b9c15a38b364da6e7f01f4ca0839a542d285cd8f4b996261a"
   end
   
