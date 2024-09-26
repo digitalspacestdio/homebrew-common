@@ -11,7 +11,7 @@ brew tap digitalspacestdio/common
 brew install imagemagick6
 ```
 
-### OpenSSL 1.1
+### OpenSSL 1.1.1w
 ```
-brew install openssl@1.1
+brew install openssl111w
 ```
