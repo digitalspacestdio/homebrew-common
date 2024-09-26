@@ -23,7 +23,7 @@ class LibiconvAT115 < Formula
     sha256 "e8128732f22f63b5c656659786d2cf76f1450008f36bcf541285268c66cabeab"
   end
 
-  depends_on "gcc@11"
+  depends_on "gcc@11" => :build
 
   patch :DATA
 
