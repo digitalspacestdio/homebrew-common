@@ -74,9 +74,8 @@ do
                 brew list | grep '^'${FORMULA//"$TAP_NAME_PREFIX"/}'$' && xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'brew uninstall --force --ignore-dependencies {} || true'
             }
 
-            FORMULA_REVISION=$(brew info --json=v1 $FORMULA | jq '.[0].revision')
             brew install --quiet --build-bottle $FORMULA 2>&1
-            brew bottle --skip-relocation --no-rebuild --root-url ${BASE_ROOT_URL}/${FORMULA_REVISION}/${FORMULA//"$TAP_NAME_PREFIX"/} --json $FORMULA
+            brew bottle --skip-relocation --no-rebuild --root-url ${BASE_ROOT_URL}/${FORMULA//"$TAP_NAME_PREFIX"/} --json $FORMULA
             ls | grep ${FORMULA//"$TAP_NAME_PREFIX"/}'.*--.*.gz$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
             ls | grep ${FORMULA//"$TAP_NAME_PREFIX"/}'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
             cd $(brew tap-info --json "${TAP_NAME}" | jq -r '.[].path')
