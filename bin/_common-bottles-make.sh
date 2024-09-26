@@ -37,7 +37,7 @@ do
                 rm -rf ${HOME}/.bottles/$FORMULA.bottle
             fi
             for DEP in $(brew deps --full --direct $FORMULA | grep "${TAP_NAME}"); do
-                if ! grep "$DEP$" /tmp/.${TAP_SUBDIR}_bottles_created_${FORMULAS_MD5}.tmp > /dev/null; then
+                if ! grep -q "$DEP$" /tmp/.${TAP_SUBDIR}_bottles_created_${FORMULAS_MD5}.tmp; then
                     echo -n -e "\033[33m==> Building dependency bottle \033[0m"
                     echo -e "$DEP \033[33mfor\033[0m $FORMULA"
                     REBUILD='' $0 $DEP
@@ -48,13 +48,13 @@ do
     
     for FORMULA in $FORMULAS; do
 
-        if ! [[ -d ${HOME}/.bottles/${FORMULA//"$TAP_NAME_PREFIX"/}.bottle ]] || ! grep "$FORMULA$" /tmp/.${TAP_SUBDIR}_bottles_created_${FORMULAS_MD5}.tmp; then
+        if ! [[ -d ${HOME}/.bottles/${FORMULA//"$TAP_NAME_PREFIX"/}.bottle ]] || ! grep -q "$FORMULA$" /tmp/.${TAP_SUBDIR}_bottles_created_${FORMULAS_MD5}.tmp; then
             echo -e "\033[33m==> Creating bottles for $FORMULA ...\033[0m"
             rm -rf ${HOME}/.bottles/${FORMULA//"$TAP_NAME_PREFIX"/}.bottle
             mkdir -p ${HOME}/.bottles/${FORMULA//"$TAP_NAME_PREFIX"/}.bottle
             cd ${HOME}/.bottles/${FORMULA//"$TAP_NAME_PREFIX"/}.bottle
 
-            if brew deps --full --direct $FORMULA | grep $FORMULA | grep -v $FORMULA"$" > /dev/null; then
+            if brew deps --full --direct $FORMULA | grep -q $FORMULA | grep -v $FORMULA"$" > /dev/null; then
                 DEPS=$(brew deps --full --direct $FORMULA | grep $FORMULA | grep -v $FORMULA"$")
                 echo -e "\033[33m==> Installing dependencies ($DEPS) for $FORMULA ..."
                 echo -e "\033[0m"
