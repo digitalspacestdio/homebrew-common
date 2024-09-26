@@ -30,7 +30,7 @@ do
     FORMULAS=$(brew search "${TAP_NAME}" | grep "${TAP_NAME}" | grep "\($ARG\|$ARG@[0-9]\+\)\$" | sort)
     if [[ -n "$FORMULAS" ]]; then
         for FORMULA in $FORMULAS; do
-            if [[ "yes" != $(brew info --json=v1 ${FORMULA} | jq '.[0].deprecated') ]]; then
+            if [[ "true" != $(brew info --json=v1 ${FORMULA} | jq '.[0].deprecated') ]]; then
                 find "${HOMEBREW_PREFIX}/etc" -maxdepth 1 -name "${FORMULA//"$TAP_NAME_PREFIX"/}*" -exec rm -v -rf {} \; || true
                 if [[ -n $REBUILD ]]; then
                     brew list | grep '^'${FORMULA//"$TAP_NAME_PREFIX"/}'$' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'brew uninstall --force --ignore-dependencies {} || true'
@@ -49,7 +49,7 @@ do
     fi
     
     for FORMULA in $FORMULAS; do
-        if [[ "yes" != $(brew info --json=v1 ${FORMULA} | jq '.[0].deprecated') ]]; then
+        if [[ "true" != $(brew info --json=v1 ${FORMULA} | jq '.[0].deprecated') ]]; then
             if ! [[ -d ${HOME}/.bottles/${FORMULA//"$TAP_NAME_PREFIX"/}.bottle ]] || ! grep -q "$FORMULA$" /tmp/.${TAP_SUBDIR}_bottles_created_${FORMULAS_MD5}.tmp; then
                 echo -e "\033[33m==> Creating bottles for $FORMULA ...\033[0m"
                 rm -rf ${HOME}/.bottles/${FORMULA//"$TAP_NAME_PREFIX"/}.bottle
