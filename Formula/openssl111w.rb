@@ -10,6 +10,11 @@ class Openssl111w < Formula
   license "OpenSSL"
   version_scheme 1
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/openssl111w"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c39eea26b009febd8d025e88dd5d61ce836658760611aafc7c6879f5248f1f3c"
+  end
+
   keg_only :versioned_formula
 
   depends_on "ca-certificates"
