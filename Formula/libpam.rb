@@ -8,6 +8,11 @@ class Libpam < Formula
   license any_of: ["BSD-3-Clause", "GPL-1.0-only"]
   head "https://github.com/linux-pam/linux-pam.git", branch: "master"
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/libpam"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7dbe4f89279cbb03da6f3f64e297469b7749a59aa7d86a12449a94c5b52da201"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "libnsl"
   depends_on "libprelude"
