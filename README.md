@@ -1,25 +1,16 @@
 # Homebrew Common Tap
-Homebrew/Linuxbrew formulas
+Homebrew/Linuxbrew common formulas
 
 ### Add new tap
 ```
-brew tap djocker/common
+brew tap digitalspacestdio/common
 ```
 
-### Percona Server
+### Mysql Servers
 ```
-brew install percona-server@5.6
-brew install percona-server@5.7
-```
-
-### Python 2
-```
-brew install python@2
-```
-
-### Mongodb 3.6
-```
-brew install mongodb36
+brew install mysql57
+brew install mysql80
+brew install mysql84
 ```
 
 ### Imagemagick 6
@@ -27,12 +18,7 @@ brew install mongodb36
 brew install imagemagick6
 ```
 
-### OpenSSL 1.0
+### OpenSSL 1.1
 ```
-brew install openssl@1.0
-```
-
-## Run docker container(linuxbrew) for testing and development
-```
-bash run_dev.sh
+brew install openssl@1.1
 ```
