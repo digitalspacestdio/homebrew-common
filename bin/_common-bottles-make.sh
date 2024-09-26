@@ -81,7 +81,7 @@ do
             ls | grep ${FORMULA//"$TAP_NAME_PREFIX"/}'.*--.*.json$' | awk -F'--' '{ print $0 " " $1 "-" $2 }' | xargs $(if [[ "$OSTYPE" != "darwin"* ]]; then printf -- '--no-run-if-empty'; fi;) -I{} bash -c 'mv {}'
             cd $(brew tap-info --json "${TAP_NAME}" | jq -r '.[].path')
 
-            ${DIR}/_ngdev-bottles-upload.sh ${FORMULA//"$TAP_NAME_PREFIX"/}
+            ${DIR}/_common-bottles-upload.sh ${FORMULA//"$TAP_NAME_PREFIX"/}
 
             echo $FORMULA >> /tmp/.${TAP_SUBDIR}_bottles_created_${FORMULAS_MD5}.tmp
         fi
