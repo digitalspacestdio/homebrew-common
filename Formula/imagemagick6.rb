@@ -11,8 +11,8 @@ class Imagemagick6 < Formula
   revision 2
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/2/imagemagick6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4c19c5c9f2c9808155248f9b9cba643534baccd54eefc2ce9f553d8c378e7a11"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/imagemagick6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a3a8ba26e94e67e936db8b215d6609249d17cf52e08ab77b70cfdadf9594338d"
   end
 
   keg_only :versioned_formula
