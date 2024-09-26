@@ -7,8 +7,8 @@ class Icu4cAT742 < Formula
   license "ICU"
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/icu4c@74.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ecd1cb2a5a96b0851308367a62aa0667d5c2925aa2633f68f1843eecb89b4b58"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/icu4c@74.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "37630eef713727378dd2bf49acb8963d68ef42e5ae5b777b69cd3063870ce6af"
   end
 
   keg_only :versioned_formula
