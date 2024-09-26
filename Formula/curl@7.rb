@@ -9,7 +9,7 @@ class CurlAT7 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/8/curl@7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f30e7a4e0379b6c43b31b1ea83e8ea833cf2a54deb0eaeb67553ecf40ad055e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "915b5141b152a0d0f649547b673e73428eceeef42faaae42718df26b7f525b13"
   end
 
   pour_bottle? do
