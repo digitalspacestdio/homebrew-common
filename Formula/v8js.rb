@@ -8,7 +8,7 @@ class V8js < Formula
   depends_on "ninja" => :build
   # depends_on "llvm" if MacOS.version < :mojave
 
-  deprecate! date: "2024-09-25", because: :unsupported
+  deprecate! date: "2023-09-25", because: :unsupported
 
   # https://bugs.chromium.org/p/chromium/issues/detail?id=620127
   # depends_on :macos => :el_capitan
