@@ -1,9 +1,9 @@
 class CurlAT7 < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.haxx.se/"
-  url "https://curl.haxx.se/download/curl-7.88.1.tar.bz2"
-  mirror "http://curl.mirror.anstey.ca/curl-7.88.1.tar.bz2"
-  sha256 "8224b45cce12abde039c12dc0711b7ea85b104b9ad534d6e4c5b4e188a61c907"
+  url "https://curl.haxx.se/download/curl-7.79.1.tar.bz2"
+  mirror "http://curl.mirror.anstey.ca/curl-7.79.1.tar.bz2"
+  sha256 "de62c4ab9a9316393962e8b94777a570bb9f71feb580fb4475e412f2f9387851"
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/8/curl@7"
