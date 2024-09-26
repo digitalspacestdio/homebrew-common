@@ -8,10 +8,8 @@ class CurlAT7 < Formula
   revision 8
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/curl@7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "280868a9f739f545e0f9a36161d5d830ee7af618b508f5c97f95e42488082dbf"
-    sha256 cellar: :any_skip_relocation, monterey:       "ac3d27c6178ebacc9853567f00d098ccfc7f6f1e050f6fcfd23e3e8559aadf87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a46e9f012edf0bc72bee9b3cf981e98f77c43c86f0e0ec12d6f4629eaac308ba"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/8/curl@7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "2e28a464a73748e2e1c10b060c6513559f722df73d43a8c9a422f356741181b7"
   end
 
   pour_bottle? do
