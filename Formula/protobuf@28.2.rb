@@ -5,15 +5,12 @@ class ProtobufAT282 < Formula
     sha256 "b2340aa47faf7ef10a0328190319d3f3bee1b24f426d4ce8f4253b6f27ce16db"
     license "BSD-3-Clause"
   
-    livecheck do
-      url :stable
-      strategy :github_latest
-    end
+    keg_only :versioned_formula
 
-  bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/protobuf@28.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "84e47cb356a140be7928d441b4f53a5b58876a4b051370e8ee56a0da8be337da"
-  end
+    bottle do
+      root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/protobuf@28.2"
+      sha256 cellar: :any_skip_relocation, x86_64_linux: "84e47cb356a140be7928d441b4f53a5b58876a4b051370e8ee56a0da8be337da"
+    end
   
     depends_on "cmake" => :build
     depends_on "abseil"
