@@ -6,8 +6,8 @@ class Libxml2AT29Icu4c691 < Formula
   sha256 "94fb70890143e3c6549f265cee93ec064c80a84c42ad0f23e85ee1fd6540a871"
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/libxml2@2.9-icu4c.69.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5edc2ce1c950c6e0d12ed74884761825f68799d994e99c8ada7ae4427cd9e769"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxml2@2.9-icu4c.69.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fcb99e90107ecfc5659d324cdd31ec721e577dacbd2ca94c68cadeb5361bd9e3"
   end
 
   head do
