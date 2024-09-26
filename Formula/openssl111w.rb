@@ -11,8 +11,8 @@ class Openssl111w < Formula
   version_scheme 1
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/openssl111w"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "8e30c848a586b1aea1615eb5a06b582546d607c59ee77932b9a54bf7a530cc2b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/openssl111w"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "922fa6f8904f81cfa321f17a169b83d383e6746a4ee8176affc56ca82905577e"
   end
 
   keg_only :versioned_formula
