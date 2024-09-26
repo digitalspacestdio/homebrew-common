@@ -8,8 +8,8 @@ class GettextAT022Icu4c742 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/gettext@0.22-icu4c.74.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ab33c3bffc31265ae5553845006bcbcd1871faba800a15299b44d4f6d0923855"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/gettext@0.22-icu4c.74.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4b0717966662cc8d387be2830767c5802e0c0b66ac307c7fa9c4f57f9aedb78a"
   end
 
   #uses_from_macos "libxml2"
