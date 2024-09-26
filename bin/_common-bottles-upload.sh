@@ -107,11 +107,11 @@ do
                         brew bottle --skip-relocation --no-rebuild --merge --write --no-commit --json "$jsonfile"
                     } || exit 1
                 fi
+
+                cd $(brew tap-info --json ${TAP_NAME} | jq -r '.[].path' | perl -pe 's/\+/\ /g;' -e 's/%(..)/chr(hex($1))/eg;')
+                git add .
+                git commit -m "bottle ${FORMULA//"$TAP_NAME_PREFIX"/} ${OSTYPE}"
             done
         done
     fi
 done
-
-cd $(brew tap-info --json ${TAP_NAME} | jq -r '.[].path' | perl -pe 's/\+/\ /g;' -e 's/%(..)/chr(hex($1))/eg;')
-git add .
-git commit -m "bottles ${FORMULAS:-''}"
