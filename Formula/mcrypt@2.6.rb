@@ -7,12 +7,10 @@ class McryptAT26 < Formula
   revision 10
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/mcrypt@2.6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "aef742f5dc10ed07163ba3bf5ff05c520dd3ea6c3ab3e5ac448da72db5fd97fa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e98f8f37ff7a6e0c4503352ab309c0fe23149090b1dffdc0a1586a443f19f38a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "02cdc371b97813a5cb1844cc1eba07f445fc1e1c33e6bc0e8a3809959e4af822"
-    sha256 cellar: :any_skip_relocation, monterey:       "a695463b6c29d6d11ae7bdcf6329da151490bf05a5d4e988fedd73a5377eb55f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "155b056596295ea6f43bd840a4fa8149466a82bba3f19536a5e6a1af5fc7f1be"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/mcrypt@2.6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "71b8895a5c00432fd90a4433e0b776d1d29f3f46a8652e5592fb05aa8599fd39"
+    sha256 cellar: :any_skip_relocation, ventura:       "367122a5f919a4007e0b4c5b89ed8bd0c7c9953319b32e8e08b06fc35b380110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4140ef49d153e483ce0d6d70a7ba41e2e8bf8c0b0820d6753e050b044ef5dbcc"
   end
 
   keg_only :versioned_formula

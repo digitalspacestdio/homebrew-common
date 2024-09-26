@@ -12,13 +12,10 @@ class LibpqAT162Icu4c691 < Formula
   end
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libpq@16.2-icu4c.69.1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d4dc490f29afc152f13e8d3e6dcd6c355e32688a86a8fcfde8964e7cd28a3611"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6bbea45d759b51e71e5ae7154763a1d0e592bbcea205d14685fb31838ebad5b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5250c6fafe27cadb46cbf821cbd30057336b768b4574d34b0d0397f3f6e1806b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8bbba26f10a3ef6362fb8fca386eb3e2967b46699cb1a5bb44c06c70eec77f6f"
-    sha256 cellar: :any_skip_relocation, monterey:       "b1833e15663364cf259221d95cd1ea52be73571b912e0049dda1b1782874543a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f6e270fb325893819f21764e3e4c499bd3f69273747558726c4adbf6f1804ab"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libpq@16.2-icu4c.69.1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d1fa0fb4779db583bedf8f63eec8dc2e97f1b2574016f0cfe3385925c9de574"
+    sha256 cellar: :any_skip_relocation, ventura:       "e02a1d3f42c077d03c912163ac43f3ba06db672c54e50ea748663aa520dd1242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47228e91c8ad774951b6df17956b581d8bce89c9b13cef745776fbb89dad3223"
   end
 
   keg_only "conflicts with postgres formula"

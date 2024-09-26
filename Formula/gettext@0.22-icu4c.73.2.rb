@@ -8,13 +8,10 @@ class GettextAT022Icu4c732 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/gettext@0.22-icu4c.73.2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "abb50631d429e988f08410354226992a291ac5b9a23cff979b6675fe7e6db70f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f4120571cb55a9ec081451b5016790b875342ca5328e33b97d17696cd80cbec"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "efd4e6168667f3790ca65a91e024ee94f88196f6a383a29769d40f672886e34f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1f4c6b7e64f5b21c61903f3ba678ee99ea151805de86a41cbc61ecb76a958cfe"
-    sha256 cellar: :any_skip_relocation, monterey:       "f418f08330b7568d80e062f9ed0e37342c09439121485dd1453de0d811a10416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "176401c74ec6f6f2e740bc8b38595f42dbb307038b8643f6f5bc983fe1bf7966"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/gettext@0.22-icu4c.73.2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7e9d433663f2f860f4dd5200c7caa128516be6e9ef83cdc7b4561a5a0c4ad508"
+    sha256 cellar: :any_skip_relocation, ventura:       "120b0d4dd80b2ffd8ccc525ca2e46cdc7cd6ad5eff8756b30846bffff5bc4991"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "331c58997c1660204ade90ec58aaca77e393744d224771d4de9296026ed20b8b"
   end
 
   #uses_from_macos "libxml2"

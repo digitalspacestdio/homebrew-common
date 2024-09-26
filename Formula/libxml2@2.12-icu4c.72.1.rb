@@ -13,13 +13,10 @@ class Libxml2AT212Icu4c721 < Formula
   end
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libxml2@2.12-icu4c.72.1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b50f079fc0ca34d88c42fa91496341458ede9c35d26903cf250836fc4b63ba9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16ae13694035c662bd86262381d195a7d6240c6a8c726214550665f409f730bd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cfcc0dbca6107e2787298cd372391c3f254283205f7e35d22e1b3ace77f6c1c5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "db36333f665f7be81b0e459ac41a20e69561269a8950eded0152f1370a5e18cf"
-    sha256 cellar: :any_skip_relocation, monterey:       "d15dcb7c7597cdc18ee9d1a5f445794deddb20b80be27c953078d51621378c68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc4adb1086502891d53db7d3801c0d17d3d941d08139d1bc2fa1aa5e5ebb7fcf"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxml2@2.12-icu4c.72.1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f3ba8c6218601c79bb6a5d5bad6689094ddb6e9f378953dbd249a5da53ed15d"
+    sha256 cellar: :any_skip_relocation, ventura:       "0e66d5347fc2b6678dba3f5ccfe8915c5ffa82d9a418297eda312068e29e9d15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f335c9abf3c3a97ede2bd85324f9ca725e42309e31e1b5a6fc29dd7a481a5bb"
   end
 
   head do

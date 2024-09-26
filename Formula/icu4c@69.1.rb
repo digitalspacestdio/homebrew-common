@@ -7,13 +7,10 @@ class Icu4cAT691 < Formula
   license "ICU"
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/icu4c@69.1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3fdfaae19b37ceaff48e5547c3724c2db1572b1d856631995db468e14bbbb75c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9116d4e5d671e18cdee733eb4d4e07002c30b5b1ea9c97f560910f3e3c61ee10"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "43d068a489e068c33611db971a05e5593714b8b17153843fa61b8ac635036044"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fc1ed3fa9ad9f3414685882f89da8171c9f219f57338c330f9f7a0b8ab850a58"
-    sha256 cellar: :any_skip_relocation, monterey:       "5fff5168bd9753261068cc1f6b1520623ec0980f1343fe9de422b3d71bd01bf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c40b1b40e4df561127bb31b1aeaaff23f0e55adf74966ef15837a8ac46ddcb82"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/icu4c@69.1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a77fe00396a02f4a0e2fe007c752d471bef2fc6e50f5dccac64377364b00bf82"
+    sha256 cellar: :any_skip_relocation, ventura:       "20a39508badeb51fe2c0db722ed684d24947eb0611f776150d4e49f5cd48e7cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fb4a8702c62503221e806d8f701e3d3e367858749c78573a92d966c710ace43"
   end
 
   keg_only :versioned_formula

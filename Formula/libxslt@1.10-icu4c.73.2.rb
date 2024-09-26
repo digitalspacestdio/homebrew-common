@@ -13,13 +13,10 @@ class LibxsltAT110Icu4c732 < Formula
     end
 
   bottle do
-    root_url "https://f003.backblazeb2.com/file/homebrew-bottles/libxslt@1.10-icu4c.73.2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80c2a30c0e70c2e5e1c90c71dd0cf5bb373de140381afb46db8673a501aa976a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba6a9253b656abc90c09f86d55bdc1a8b1423f166c1f42750d0393d761d54815"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d25679eb5d825f7bcfbd620842ff4f1376bf7e4cac043dd8706613ad68476bc8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "183280700ad871f0a2c768906e34b1e4361fbdd4aefeb510858d15670fb064e7"
-    sha256 cellar: :any_skip_relocation, monterey:       "e2f762e1e4b7a456c37e320f3f9c94348aa0f369f68546b9bbbdde3166140231"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f43817a66b5e28b02485178bf4d634c278ce37e725359414d546e6b155dc9341"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxslt@1.10-icu4c.73.2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9dd144e0174e701da2d1e54f519e994c5b441d6ec14a855da48eed7622ac7c8f"
+    sha256 cellar: :any_skip_relocation, ventura:       "b95815ab926b272fc56d7a66ff3d5f143ca8b20cffc24eb4a7ec9e098978e788"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d3c319259ad4f6b9c15a38b364da6e7f01f4ca0839a542d285cd8f4b996261a"
   end
   
     head do
