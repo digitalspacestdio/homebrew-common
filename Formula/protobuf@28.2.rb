@@ -11,8 +11,8 @@ class ProtobufAT282 < Formula
     end
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/protobuf@28.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "085adb8df69d083492c872529e49089017f29f127d973970ccf9561869ad5161"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/protobuf@28.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "84e47cb356a140be7928d441b4f53a5b58876a4b051370e8ee56a0da8be337da"
   end
   
     depends_on "cmake" => :build
