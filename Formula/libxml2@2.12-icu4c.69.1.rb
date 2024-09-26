@@ -13,8 +13,8 @@ class Libxml2AT212Icu4c691 < Formula
   end
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/libxml2@2.12-icu4c.69.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "79382fccfb8b0f16fa31bd47d480baafa8796cc401f9dfd9a8ddf9a1694aca3b"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxml2@2.12-icu4c.69.1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "24f0e7c4cb30062efcdc5516cbe52059f7d96728cff876255da61608ed00ac17"
   end
 
   head do
