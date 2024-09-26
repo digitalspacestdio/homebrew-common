@@ -9,8 +9,8 @@ class Libpam < Formula
   head "https://github.com/linux-pam/linux-pam.git", branch: "master"
 
   bottle do
-    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/libpam"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e075ed9cbf64d7ea94d49ea606b431b369cf91b56af4f04a236b75332f2ee6f9"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libpam"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "76d1e96fb3551a365043a3d6cf4863c9d160054fc64dd8533cfaf0a892c31fa6"
   end
 
   depends_on "pkg-config" => :build
