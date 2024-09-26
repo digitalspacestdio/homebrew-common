@@ -8,7 +8,7 @@ class Icu4cAT732 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/0/icu4c@73.2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3e8914c83c5d4036329e723202d45954155d156c92f510b804fa280ab47dd305"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3845aaa9ef031d6ffe4b9b66b70f12bafd9a9e2361d02d35d73080a407cfa46c"
   end
 
   keg_only :versioned_formula
