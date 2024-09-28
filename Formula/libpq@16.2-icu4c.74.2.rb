@@ -16,6 +16,7 @@ class LibpqAT162Icu4c742 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1997d468852189f0306f50ebca2bbe97d1845552a3de3be0ddb651526c2211c4"
     sha256 cellar: :any_skip_relocation, ventura:       "0c8bff7669e110d44ca3ec1018b4a9c4ecfa6b345cbb978d3c6ff6ab8b9c7671"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "509cd2f426e3b3cfed85bf02e72a802459a3af71a39824f46172f038b891e71d"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "c933f6e7ecf27f29840a1cee72219d8730179c6e0f1f12a11e3046a8f3abace9"
   end
 
   keg_only "conflicts with postgres formula"
