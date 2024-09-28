@@ -15,6 +15,7 @@ class Openssl111w < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "626b97bdd40dd433664cb0b05458e137ddcb387d1aee76133668928ea3fc60c7"
     sha256 cellar: :any_skip_relocation, ventura:       "38b9b601ab22a2a88ba04014a1994f5916a589bceb9ba213b0b062bf176923d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "922fa6f8904f81cfa321f17a169b83d383e6746a4ee8176affc56ca82905577e"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "b45ffec86bb88e259a7677a7a0d00fb63c2f81cc749909c5ccf1ab3f55fc4815"
   end
 
   keg_only :versioned_formula
