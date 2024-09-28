@@ -12,6 +12,7 @@ class ProtobufAT282 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5e0fb32e9dbd4d8f4c01335e0baf253998e2dd5f5ebd2415761243db3824c4a8"
     sha256 cellar: :any_skip_relocation, ventura:       "fe4a13bb3c2bf0bfda230929c6712c144726b74828f4787960343d5f632dd787"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "84e47cb356a140be7928d441b4f53a5b58876a4b051370e8ee56a0da8be337da"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "67ee590b765d3ca2d9cd11905b47d986bc1267825b2f6f2588a984e4747a191b"
   end
   
     depends_on "cmake" => :build
