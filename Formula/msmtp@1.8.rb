@@ -9,6 +9,11 @@ class MsmtpAT18 < Formula
       url "https://marlam.de/msmtp/download/"
       regex(/href=.*?msmtp[._-]v?(\d+(?:\.\d+)+)\.t/i)
     end
+
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/msmtp@1.8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4bb233744cb643742dc2940a2e16ddd7186647da3dc3690862b6f41984856d44"
+  end
   
     depends_on "pkg-config" => :build
     depends_on "gettext@0.22-icu4c.74.2"
