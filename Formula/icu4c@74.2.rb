@@ -11,7 +11,7 @@ class Icu4cAT742 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "70f1b8348af340aee4b5b6453804374c4c30445e519623cf0d3e3a58d506bd07"
     sha256 cellar: :any_skip_relocation, ventura:       "dc56b346db42e50e63fb737c5a9690e225ddbe94f4d81e7f3fc8d2b41ff31703"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce09d004e27031b8454c2c1dd84a2de3d0c1a0b06f03c30afbb4db79f1b28558"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "f26646da25494102c6d363e58f7fb0286b54539dba7d9191782ec3931775e7ad"
+    sha256 cellar: :any_skip_relocation, aarch64_linux: "b598389232fc1e88f1e8d51253e182c32976607de91c0085adb8ed857893030f"
   end
 
   keg_only :versioned_formula
