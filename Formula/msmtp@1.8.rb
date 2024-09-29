@@ -11,8 +11,9 @@ class MsmtpAT18 < Formula
   end
 
   bottle do
-  root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/msmtp@1.8"
-  sha256 cellar: :any_skip_relocation, x86_64_linux: "4bb233744cb643742dc2940a2e16ddd7186647da3dc3690862b6f41984856d44"
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/msmtp@1.8"
+    sha256 cellar: :any_skip_relocation, ventura:      "72f202efefc871e3d6d829d2950b2a2f05feb9000a09f2410e0e290bfbe5165f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "4bb233744cb643742dc2940a2e16ddd7186647da3dc3690862b6f41984856d44"
   end
   
   depends_on "pkg-config" => :build
