@@ -12,6 +12,11 @@ class Imagemagick7 < Formula
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
 
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/imagemagick7"
+    sha256 cellar: :any_skip_relocation, ventura: "d36b480ae2b5d9c37a0457cc0f19bde2c56a6a02915efdf34ba1da4b20c5d6a4"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "fontconfig"
   depends_on "freetype"
