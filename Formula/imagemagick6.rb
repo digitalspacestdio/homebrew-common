@@ -8,7 +8,7 @@ class Imagemagick6 < Formula
   sha256 "ab04edc1b0b6ee39fd7f568125c1b1ec12bbdb41f97a6888f5cde8622610ae30"
   head "https://github.com/imagemagick/imagemagick6.git"
   version "6.9.13"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/imagemagick6"
@@ -31,7 +31,7 @@ class Imagemagick6 < Formula
   depends_on "openjpeg"
   depends_on "webp"
   depends_on "xz"
-  depends_on "libxml2"
+  depends_on "libxml2@2.12-icu4c.74.2"
 
   skip_clean :la
 

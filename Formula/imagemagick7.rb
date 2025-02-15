@@ -1,10 +1,10 @@
 class Imagemagick7 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-38.tar.xz"
-  sha256 "48de548d4977fc226c982ca03b9d6ad8001b47d8dc142b49fdca69333bc4ad82"
+  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-43.tar.xz"
+  sha256 "fa79401342b409b9b7f7d3146bd6595787373811e72be1669c39b58d1489da4f"
   license "ImageMagick"
-  revision 2
+  revision 3
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -31,7 +31,7 @@ class Imagemagick7 < Formula
   depends_on "xz"
 
   uses_from_macos "bzip2"
-  uses_from_macos "libxml2"
+  uses_from_macos "libxml2@2.12-icu4c.74.2"
   uses_from_macos "zlib"
 
   on_macos do
