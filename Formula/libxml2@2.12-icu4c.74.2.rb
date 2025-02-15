@@ -15,7 +15,7 @@ class Libxml2AT212Icu4c742 < Formula
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxml2@2.12-icu4c.74.2"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2bcf129831e985e8b615b22e505a959abf113e8f36459913a1ecceafea1fe33e"
-    sha256 cellar: :any_skip_relocation, ventura:       "b980349a59a60b49cec1f31fb962040da69dc4b0205778e8e1f85997fe1ce398"
+    sha256 cellar: :any_skip_relocation, ventura:       "9e47a9942dfe713993f4459b0f4ed289676cd177aa6dba40cb95eae05de7bd47"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f94769f6fe958a12da7f397a23510bfcb4f700aa252ec1c241e392f5645a8115"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "8e74e1595ab9fc8b0428bc882a843e2d28c3327d26dde8ca2df2bfa341772024"
   end
