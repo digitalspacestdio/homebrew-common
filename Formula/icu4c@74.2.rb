@@ -9,8 +9,9 @@ class Icu4cAT742 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/icu4c@74.2"
-    sha256 cellar: :any_skip_relocation, ventura:      "635b5d1a33a5f6f4298349c380417ac0fe2e462d5cac5f3e29cd593ad3c2dbd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dfa9c047d01d6bdecf380da28122fd9b10d04a335cfb71c5ac44888137381d10"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c6b251d7470f67964facb5b8d71220004a76bcf09d00c948b2ff4c33028bc65d"
+    sha256 cellar: :any_skip_relocation, ventura:       "635b5d1a33a5f6f4298349c380417ac0fe2e462d5cac5f3e29cd593ad3c2dbd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfa9c047d01d6bdecf380da28122fd9b10d04a335cfb71c5ac44888137381d10"
   end
 
   keg_only :versioned_formula
