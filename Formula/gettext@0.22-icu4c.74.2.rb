@@ -10,8 +10,9 @@ class GettextAT022Icu4c742 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/gettext@0.22-icu4c.74.2"
-    sha256 cellar: :any_skip_relocation, ventura:      "16394a4453a35d0906cdbbd93537997c79cc212c113ac468762fb3124bb0dabd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "33fd11757966af161aaebeca00690cbd39e1d389eb62ce9871810e9c037715e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4415345aa83d04a61f56381385e7b9517a2fc39a3e6ee14073aad3b00b78f0c3"
+    sha256 cellar: :any_skip_relocation, ventura:       "16394a4453a35d0906cdbbd93537997c79cc212c113ac468762fb3124bb0dabd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33fd11757966af161aaebeca00690cbd39e1d389eb62ce9871810e9c037715e3"
   end
 
   #uses_from_macos "libxml2"
