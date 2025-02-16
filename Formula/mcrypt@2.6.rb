@@ -8,8 +8,9 @@ class McryptAT26 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/mcrypt@2.6"
-    sha256 cellar: :any_skip_relocation, ventura:      "961f00eccaf871d49c90e0703044d947b87020eb5055899e8f178a733622607d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a32f22d05998b067d3d7dbc4ee685d5ed2b8afbf62baa1953cadaf31ed5304d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "166629796913513c1da98753cd10619cd16ac30e2ed69aa65b93658cf22bedad"
+    sha256 cellar: :any_skip_relocation, ventura:       "961f00eccaf871d49c90e0703044d947b87020eb5055899e8f178a733622607d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a32f22d05998b067d3d7dbc4ee685d5ed2b8afbf62baa1953cadaf31ed5304d7"
   end
 
   keg_only :versioned_formula
