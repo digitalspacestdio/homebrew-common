@@ -1,15 +1,21 @@
 class Imagemagick7 < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org/index.php"
-  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-38.tar.xz"
-  sha256 "48de548d4977fc226c982ca03b9d6ad8001b47d8dc142b49fdca69333bc4ad82"
+  url "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-43.tar.xz"
+  sha256 "fa79401342b409b9b7f7d3146bd6595787373811e72be1669c39b58d1489da4f"
   license "ImageMagick"
-  revision 2
+  revision 3
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
     url "https://imagemagick.org/archive/"
     regex(/href=.*?ImageMagick[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
+  end
+
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/imagemagick7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b15052eaa8a6f6c5e4c7b2def42db514f8ba706577fd5267a8b855014d2748ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "d36b480ae2b5d9c37a0457cc0f19bde2c56a6a02915efdf34ba1da4b20c5d6a4"
   end
 
   depends_on "pkg-config" => :build
@@ -31,7 +37,7 @@ class Imagemagick7 < Formula
   depends_on "xz"
 
   uses_from_macos "bzip2"
-  uses_from_macos "libxml2"
+  uses_from_macos "libxml2@2.12-icu4c.74.2"
   uses_from_macos "zlib"
 
   on_macos do
