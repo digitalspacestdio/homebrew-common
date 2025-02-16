@@ -8,7 +8,8 @@ class LibiconvAT115 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libiconv@1.15"
-    sha256 cellar: :any_skip_relocation, ventura: "6b69496bccad3474b2ca4e37a9a0c9cec389396daa00451adba86ae6e2f10f98"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "76f589b23df7925087ac2af516e4796ba800192552596ccf731324b5195fe63a"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b69496bccad3474b2ca4e37a9a0c9cec389396daa00451adba86ae6e2f10f98"
   end
 
   keg_only :versioned_formula
