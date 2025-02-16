@@ -4,6 +4,7 @@ class Libxml2AT29Icu4c691 < Formula
   url "http://xmlsoft.org/sources/libxml2-2.9.9.tar.gz"
   mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/libxml2/libxml2-2.9.9.tar.gz"
   sha256 "94fb70890143e3c6549f265cee93ec064c80a84c42ad0f23e85ee1fd6540a871"
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxml2@2.9-icu4c.69.1"

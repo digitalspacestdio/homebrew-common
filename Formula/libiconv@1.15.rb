@@ -4,6 +4,7 @@ class LibiconvAT115 < Formula
   url "https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz"
   mirror "https://ftpmirror.gnu.org/libiconv/libiconv-1.15.tar.gz"
   sha256 "ccf536620a45458d26ba83887a983b96827001e92a13847b45e4925cc8913178"
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libiconv@1.15"

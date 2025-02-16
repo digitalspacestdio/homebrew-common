@@ -9,6 +9,7 @@ class Openssl111w < Formula
   sha256 "cf3098950cb4d853ad95c0841f1f9c6d3dc102dccfcacd521d93925208b76ac8"
   license "OpenSSL"
   version_scheme 1
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/openssl111w"

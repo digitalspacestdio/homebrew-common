@@ -3,6 +3,7 @@ class ProtobufAT282 < Formula
     homepage "https://protobuf.dev/"
     url "https://github.com/protocolbuffers/protobuf/releases/download/v28.2/protobuf-28.2.tar.gz"
     sha256 "b2340aa47faf7ef10a0328190319d3f3bee1b24f426d4ce8f4253b6f27ce16db"
+    revision 100
     license "BSD-3-Clause"
   
     keg_only :versioned_formula

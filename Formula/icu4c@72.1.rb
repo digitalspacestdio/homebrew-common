@@ -5,6 +5,7 @@ class Icu4cAT721 < Formula
   version "72.1"
   sha256 "a2d2d38217092a7ed56635e34467f92f976b370e20182ad325edea6681a71d68"
   license "ICU"
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/icu4c@72.1"

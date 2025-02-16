@@ -6,6 +6,7 @@ class GettextAT022Icu4c721 < Formula
   mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz"
   sha256 "ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0"
   license "GPL-3.0-or-later"
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/gettext@0.22-icu4c.72.1"
