@@ -8,10 +8,7 @@ class Libxml2AT29Icu4c691 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxml2@2.9-icu4c.69.1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "99573e864d4b742b7c8db9e60891dc69f8304510c750a20abeed28ef2dc2802b"
-    sha256 cellar: :any_skip_relocation, ventura:       "99b3b5333aa90c8345fb27490e754d8bcddbc8aef7b2201dd87c5c61d79e1ccb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcb99e90107ecfc5659d324cdd31ec721e577dacbd2ca94c68cadeb5361bd9e3"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "ed8f5366f28ca6a12591a0e5e0a3d86dfc935bfaf9ae1e23175fe6f9e408da6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7961b1fbdc696d5ea5ce175e3221903ec4eca9fd1d0dc54a1e05ff71fe93549b"
   end
 
   head do
