@@ -13,10 +13,7 @@ class LibpqAT162Icu4c732 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libpq@16.2-icu4c.73.2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4f2f39c8baeb473998495addf718209b51cd039370a0a16c43ef6d08fa19295a"
-    sha256 cellar: :any_skip_relocation, ventura:       "eb2660e715853b70bb34b2687351d89964985da53abf9bc754ebdcaf170d66f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "629744446623bdb86dfa4f3824b73276f7f5ecc0b619f5d579a4154eb445da9f"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "ebb29daee4776e9d00ae798efede901686d1800153cd732da36685f0a7a253ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e339e8c93c63f9f7d771198fbcf47e7aed765fd446c5a634fa3482ce87a3035b"
   end
 
   keg_only "conflicts with postgres formula"
