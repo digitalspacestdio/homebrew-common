@@ -10,6 +10,7 @@ class ProtobufAT282 < Formula
 
     bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/protobuf@28.2"
+    sha256 cellar: :any_skip_relocation, ventura:      "d6a2a59c536b94b3cbd0a6b14e394ec3440286c552e8290025d06f6a96f658eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "83a82bbbec4bc4bdc7f64416ab90096a0c10d01ec8e1979527f4c76574115ddd"
   end
   
