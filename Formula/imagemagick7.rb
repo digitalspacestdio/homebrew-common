@@ -14,8 +14,7 @@ class Imagemagick7 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/imagemagick7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b15052eaa8a6f6c5e4c7b2def42db514f8ba706577fd5267a8b855014d2748ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "d36b480ae2b5d9c37a0457cc0f19bde2c56a6a02915efdf34ba1da4b20c5d6a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1cb3b3c82309a82a06cb262225899b109b53a4d5bb354e09902736f4f3992541"
   end
 
   depends_on "pkg-config" => :build
