@@ -9,7 +9,8 @@ class LibiconvAT116 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libiconv@1.16"
-    sha256 cellar: :any_skip_relocation, ventura: "3ab530f1109a997d77836ebd9f4687623b68e0db5cb4e3b786245bd932b66da7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "842f4ed44760339ce23c50de1398eb9790ccf7784c6e4e6e6326866106866b7a"
+    sha256 cellar: :any_skip_relocation, ventura:       "3ab530f1109a997d77836ebd9f4687623b68e0db5cb4e3b786245bd932b66da7"
   end
 
   keg_only :versioned_formula
