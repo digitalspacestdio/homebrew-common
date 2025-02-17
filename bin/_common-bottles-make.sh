@@ -9,7 +9,7 @@ TAP_NAME_PREFIX="${TAP_NAME}/"
 TAP_SUBDIR=$(echo $TAP_NAME | awk -F/ '{ print $2 }')
 BASE_ROOT_URL="https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/${TAP_SUBDIR}"
 
-brew install md5sha1sum jq s3cmd
+brew install coreutils jq s3cmd
 brew tap "${TAP_NAME}"
 
 ARGS=${@:-$(brew search "${TAP_NAME}" | grep "${TAP_NAME}")}
