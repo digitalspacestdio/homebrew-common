@@ -4,7 +4,7 @@ class LibpqAT162Icu4c742 < Formula
   url "https://ftp.postgresql.org/pub/source/v16.2/postgresql-16.2.tar.bz2"
   sha256 "446e88294dbc2c9085ab4b7061a646fa604b4bec03521d5ea671c2e5ad9b2952"
   license "PostgreSQL"
-  revision 1
+  revision 100
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -13,10 +13,9 @@ class LibpqAT162Icu4c742 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libpq@16.2-icu4c.74.2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1997d468852189f0306f50ebca2bbe97d1845552a3de3be0ddb651526c2211c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c8bff7669e110d44ca3ec1018b4a9c4ecfa6b345cbb978d3c6ff6ab8b9c7671"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "509cd2f426e3b3cfed85bf02e72a802459a3af71a39824f46172f038b891e71d"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "c933f6e7ecf27f29840a1cee72219d8730179c6e0f1f12a11e3046a8f3abace9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c47e0aa24e476264bc7b6b6858ca690fbbf93e61ea6a1de0872090808b37751"
+    sha256 cellar: :any_skip_relocation, ventura:       "97be19f4874fcbc1c05fb1cdfb9254117a7ef4547855ff424c0a15517370ed06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8ba229715a98d016663e00a592aaea4a8fd5b5026af744ca113334ad29461f2"
   end
 
   keg_only "conflicts with postgres formula"

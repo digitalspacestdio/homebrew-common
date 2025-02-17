@@ -6,13 +6,13 @@ class GettextAT022Icu4c721 < Formula
   mirror "http://ftp.gnu.org/gnu/gettext/gettext-0.22.5.tar.gz"
   sha256 "ec1705b1e969b83a9f073144ec806151db88127f5e40fe5a94cb6c8fa48996a0"
   license "GPL-3.0-or-later"
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/gettext@0.22-icu4c.72.1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5518bb058ca74c3c184d44b0bc6df1195620924b7e3c5b2da23c728caa3e71df"
-    sha256 cellar: :any_skip_relocation, ventura:       "1facb507483ffd7063dd074c9eba98cb83b31edc62580c1167d27690407c3358"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e174ac768390f210eaa1a87dab4b74d3d5e791ee15e3f46bf3d67e9e3329265a"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "4c8f4579d011d47f7e08840abf345114ee210c91f428d62fac77990bfbe8554b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "48a392af338fb364c9eabe7c34c124c5b708a2f2d6ebfc8ba6d075ec983d7d06"
+    sha256 cellar: :any_skip_relocation, ventura:       "6078727c9a0d60e2a34651f84eda799a2693bda5441d4815ea8aa8ad6f4d89c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81d1560c6905e70003d787b9b81cc5b4f1ede14117ebc9044d6ce3415f92679c"
   end
 
   #uses_from_macos "libxml2"

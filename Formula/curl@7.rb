@@ -4,13 +4,13 @@ class CurlAT7 < Formula
   url "https://curl.haxx.se/download/curl-7.79.1.tar.bz2"
   mirror "http://curl.mirror.anstey.ca/curl-7.79.1.tar.bz2"
   sha256 "de62c4ab9a9316393962e8b94777a570bb9f71feb580fb4475e412f2f9387851"
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/curl@7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c00d4074176551ab4c7447f26225d342092e65f4205f7481f43fb26cac4ebde8"
-    sha256 cellar: :any_skip_relocation, ventura:       "85afbdbf2b004bab337bcd1f695f205f399f0a6ac6c5324de2a51debbec27fc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fdf04bef43f32f562232ed9f17094ac7ef804e8b6c177ae44741693aca62329"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "189e57304314dffe72052dd145652a64309c41785c34a06c9e9592fee5e2e8b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "08252b6c4d621e2fa9b4440f125470e5c4444ea71b5d20bdc026e4750f967484"
+    sha256 cellar: :any_skip_relocation, ventura:       "2df20a102f829bb1c2e0343f81dcc6f1add621cf13b08bf089ac43ce0ef28fe3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75fe919b157d5c1694bb41cd06269ac606c00d01275d724d4fc202e57323f741"
   end
 
   pour_bottle? do

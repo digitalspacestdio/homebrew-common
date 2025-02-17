@@ -4,6 +4,7 @@ class LibxsltAT110Icu4c721 < Formula
     url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.39.tar.xz"
     sha256 "2a20ad621148339b0759c4d4e96719362dee64c9a096dbba625ba053846349f0"
     license "X11"
+    revision 100
   
     # We use a common regex because libxslt doesn't use GNOME's "even-numbered
     # minor is stable" version scheme.
@@ -14,10 +15,9 @@ class LibxsltAT110Icu4c721 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxslt@1.10-icu4c.72.1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c93239afddd649d6ad67d83c000deed20ddfd62102d5ddff6c1f68e1e107a519"
-    sha256 cellar: :any_skip_relocation, ventura:       "3c6c146a664b04191d04840fa0f408dd05052997bc9932b6bedbd40a287fd676"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8104bf1c7f477500bcf2275012c83fb78a59920813fc90533cbaede67f9517bf"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "950b71a32aa4cd156009be2ac3905fb6f83cac509eea511a3818dffec70f5f5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e38376b5e466ccd0e67fe8ee7fc1f3202a1f8824c7b743222d2a46ac7d6da7c0"
+    sha256 cellar: :any_skip_relocation, ventura:       "c39624fb977c8773159ac322f278694929e6b24a93238aaa0469a4a71bf41301"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49ed15e51b2b3afc1bf0cd87c7f4d93c8e91f79dec10827e2f9bc14500631044"
   end
   
     head do

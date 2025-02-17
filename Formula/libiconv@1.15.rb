@@ -4,11 +4,12 @@ class LibiconvAT115 < Formula
   url "https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz"
   mirror "https://ftpmirror.gnu.org/libiconv/libiconv-1.15.tar.gz"
   sha256 "ccf536620a45458d26ba83887a983b96827001e92a13847b45e4925cc8913178"
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libiconv@1.15"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b11375041c450191f59b2fbd71b4adf3d371ef42019cef6b68f264a02012a06c"
-    sha256 cellar: :any_skip_relocation, ventura:       "59a05a76656e8845af4cbe6f3576bb514e3fb1c22698fb7574725ec1941321a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "76f589b23df7925087ac2af516e4796ba800192552596ccf731324b5195fe63a"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b69496bccad3474b2ca4e37a9a0c9cec389396daa00451adba86ae6e2f10f98"
   end
 
   keg_only :versioned_formula

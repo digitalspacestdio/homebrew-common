@@ -4,6 +4,7 @@ class V8js < Formula
   # Track V8 version from Chrome stable: https://omahaproxy.appspot.com
   url "https://github.com/v8/v8/archive/7.5.288.22.tar.gz"
   sha256 "df12222ebdb9538f62434785ea246f1d27f198b5d674e0577dd1487ffe53b6e2"
+  revision 100
 
   depends_on "ninja" => :build
   # depends_on "llvm" if MacOS.version < :mojave

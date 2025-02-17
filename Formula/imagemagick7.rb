@@ -4,7 +4,7 @@ class Imagemagick7 < Formula
   url "https://imagemagick.org/archive/releases/ImageMagick-7.1.1-43.tar.xz"
   sha256 "fa79401342b409b9b7f7d3146bd6595787373811e72be1669c39b58d1489da4f"
   license "ImageMagick"
-  revision 3
+  revision 100
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -14,8 +14,9 @@ class Imagemagick7 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/imagemagick7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b15052eaa8a6f6c5e4c7b2def42db514f8ba706577fd5267a8b855014d2748ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "d36b480ae2b5d9c37a0457cc0f19bde2c56a6a02915efdf34ba1da4b20c5d6a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b2f086014e3a3d2bdbd7f3399456a1de8fded68480a96bd1affba71f63a40d5"
+    sha256 cellar: :any_skip_relocation, ventura:       "03dd5395c0168a99649682f4998e21359fbbe919ceb9d480cf6fb75e3fa59fee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cb3b3c82309a82a06cb262225899b109b53a4d5bb354e09902736f4f3992541"
   end
 
   depends_on "pkg-config" => :build

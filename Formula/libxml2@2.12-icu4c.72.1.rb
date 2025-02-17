@@ -4,6 +4,7 @@ class Libxml2AT212Icu4c721 < Formula
   url "https://download.gnome.org/sources/libxml2/2.12/libxml2-2.12.6.tar.xz"
   sha256 "889c593a881a3db5fdd96cc9318c87df34eb648edfc458272ad46fd607353fbb"
   license "MIT"
+  revision 100
 
   # We use a common regex because libxml2 doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -14,10 +15,9 @@ class Libxml2AT212Icu4c721 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxml2@2.12-icu4c.72.1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f3ba8c6218601c79bb6a5d5bad6689094ddb6e9f378953dbd249a5da53ed15d"
-    sha256 cellar: :any_skip_relocation, ventura:       "0e66d5347fc2b6678dba3f5ccfe8915c5ffa82d9a418297eda312068e29e9d15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f335c9abf3c3a97ede2bd85324f9ca725e42309e31e1b5a6fc29dd7a481a5bb"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "32d8b9a9a6e4b439f3f5c7732007c4c1144b0e5719d6b6ff949a21dab238d88c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d5662d7bb01c724a48df661223e54170b0bc5dbfe3723ca6bf8a6c3a3affe950"
+    sha256 cellar: :any_skip_relocation, ventura:       "e05208e47c1be1d1f2e7b79c3c05b95bfae46fa8d022ba2ef033eb80cd2be694"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "488cf74a8f335eda1bacb2304c14cffc688c60555debd37ee5bf22f65ab0cbc7"
   end
 
   head do

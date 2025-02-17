@@ -5,13 +5,13 @@ class Icu4cAT732 < Formula
   version "73.2"
   sha256 "818a80712ed3caacd9b652305e01afc7fa167e6f2e94996da44b90c2ab604ce1"
   license "ICU"
+  revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/icu4c@73.2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf6b5b7a146198e179afa731862af4300eb61077f1f7b22d4aafd19271fb0f59"
-    sha256 cellar: :any_skip_relocation, ventura:       "6aed94e848abe462d56e5a6b57a36c2b9b1843b780ff8182f8ed25a9d12a01f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01962b951dde2766a7e25ae78414be43b53de857e345516298e4c815c6418abb"
-    sha256 cellar: :any_skip_relocation, aarch64_linux: "f09dddf78e205992a9603b8efe0a77a65697ba385afa654931e88aa493419af6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ca3d0b583625a508cad025585aecaa717cf823d6f351363052a82ea33d4d476"
+    sha256 cellar: :any_skip_relocation, ventura:       "bc9753272ef64499f91ed60ed9fe9edf4366e7f971d307acaaa73a3c74eab7ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46bcc5b49abaa009522b25d88752a5847772f20d0d8bfd2563558e664212bfb6"
   end
 
   keg_only :versioned_formula
