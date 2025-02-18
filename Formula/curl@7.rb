@@ -4,7 +4,7 @@ class CurlAT7 < Formula
   url "https://curl.haxx.se/download/curl-7.79.1.tar.bz2"
   mirror "http://curl.mirror.anstey.ca/curl-7.79.1.tar.bz2"
   sha256 "de62c4ab9a9316393962e8b94777a570bb9f71feb580fb4475e412f2f9387851"
-  revision 100
+  revision 101
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/curl@7"
