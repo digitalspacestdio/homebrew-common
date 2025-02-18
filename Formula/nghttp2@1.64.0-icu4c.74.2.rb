@@ -5,6 +5,11 @@ class Nghttp2AT1640Icu4c742 < Formula
     mirror "http://fresh-center.net/linux/www/nghttp2-1.64.0.tar.gz"
     sha256 "20e73f3cf9db3f05988996ac8b3a99ed529f4565ca91a49eb0550498e10621e8"
     license "MIT"
+
+  bottle do
+    root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/nghttp2@1.64.0-icu4c.74.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e2f6fe9de55eac5909c75aeb1ab7f0f78dfdcee9510a8bbca5cba0fb28288de6"
+  end
   
     head do
       url "https://github.com/nghttp2/nghttp2.git", branch: "master"
@@ -13,6 +18,8 @@ class Nghttp2AT1640Icu4c742 < Formula
       depends_on "automake" => :build
       depends_on "libtool" => :build
     end
+
+    keg_only :versioned_formula
   
     depends_on "pkgconf" => :build
     depends_on "c-ares"
