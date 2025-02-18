@@ -8,7 +8,7 @@ class Nghttp2AT1640Icu4c742 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/nghttp2@1.64.0-icu4c.74.2"
-    sha256 cellar: :any_skip_relocation, ventura:      "7fe89cd8823d5e48fde2abf5335c509b27ac006626c478068c42e1e742ef5884"
+    sha256 cellar: :any_skip_relocation, ventura:      "74123e60c4a64d3b9fb6ecb26de70c27aabf8ae1ff807fecb0e907b9d54c1793"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "81fffe61b15360da9401627fb5473ef2be603bc03d9ca3d6c85107b6b5034168"
   end
   
