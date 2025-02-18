@@ -15,7 +15,8 @@ class Openssl111w < Formula
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/openssl111w"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f34e838fb9b2b1da541089f0e81e67080b9a7fcc36fe27929291ec815e8ed15d"
     sha256 cellar: :any_skip_relocation, ventura:       "5f6f3a3486e9c054d87627c92970879a32b67f0d10fbbcd39659dec647642c5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8d718874c0cecdcd161159b72df519f923597045d9b7a37186c0b5788baf113"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc114e60e14f816ac1eb34768866c1b0f8bb960afced1aad856784d045078b04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6edb00a2ce2f73197948aa39bc4d36cf846b2e12d73b09547c8c29e9bc42e59d"
   end
 
   keg_only :versioned_formula
