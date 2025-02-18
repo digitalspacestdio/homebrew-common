@@ -8,6 +8,7 @@ class Autoconf269 < Formula
       "GPL-3.0-or-later",
       "GPL-3.0-or-later" => { with: "Autoconf-exception-3.0" },
     ]
+    revision 100
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/autoconf269"
