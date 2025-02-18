@@ -49,7 +49,7 @@ class CurlAT7 < Formula
   depends_on "openssl111w"
   depends_on "pkg-config" => :build
   depends_on "libssh2"
-  depends_on "nghttp2"
+  depends_on "nghttp2@1.64.0-icu4c.74.2"
 
   depends_on "c-ares" => :optional
   depends_on "rtmpdump" => :optional

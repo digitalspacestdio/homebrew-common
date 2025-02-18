@@ -1,0 +1,80 @@
+class Nghttp2AT1640Icu4c742 < Formula
+    desc "HTTP/2 C Library"
+    homepage "https://nghttp2.org/"
+    url "https://github.com/nghttp2/nghttp2/releases/download/v1.64.0/nghttp2-1.64.0.tar.gz"
+    mirror "http://fresh-center.net/linux/www/nghttp2-1.64.0.tar.gz"
+    sha256 "20e73f3cf9db3f05988996ac8b3a99ed529f4565ca91a49eb0550498e10621e8"
+    license "MIT"
+  
+    head do
+      url "https://github.com/nghttp2/nghttp2.git", branch: "master"
+  
+      depends_on "autoconf" => :build
+      depends_on "automake" => :build
+      depends_on "libtool" => :build
+    end
+  
+    depends_on "pkgconf" => :build
+    depends_on "c-ares"
+    depends_on "jemalloc"
+    depends_on "libev"
+    depends_on "libnghttp2"
+    depends_on "openssl@3"
+  
+    uses_from_macos "libxml2@2.12-icu4c.74.2"
+    uses_from_macos "zlib"
+  
+    on_macos do
+      # macOS 12 or older
+      depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
+    end
+  
+    on_linux do
+      depends_on "gcc"
+    end
+  
+    fails_with :clang do
+      build 1400
+      cause "Requires C++20 support"
+    end
+  
+    fails_with :gcc do
+      version "11"
+      cause "Requires C++20 support"
+    end
+  
+    def install
+      ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1400
+  
+      # fix for clang not following C++14 behaviour
+      # https://github.com/macports/macports-ports/commit/54d83cca9fc0f2ed6d3f873282b6dd3198635891
+      inreplace "src/shrpx_client_handler.cc", "return dconn;", "return std::move(dconn);"
+  
+      # Don't build nghttp2 library - use the previously built one.
+      inreplace "Makefile.in", /(SUBDIRS =) lib/, "\\1"
+      inreplace Dir["**/Makefile.in"] do |s|
+        # These don't exist in all files, hence audit_result being false.
+        s.gsub!(%r{^(LDADD = )\$[({]top_builddir[)}]/lib/libnghttp2\.la}, "\\1-lnghttp2", audit_result: false)
+        s.gsub!(%r{\$[({]top_builddir[)}]/lib/libnghttp2\.la}, "", audit_result: false)
+      end
+  
+      args = %w[
+        --disable-silent-rules
+        --enable-app
+        --disable-examples
+        --disable-hpack-tools
+        --disable-python-bindings
+        --without-systemd
+      ]
+  
+      system "autoreconf", "--force", "--install", "--verbose" if build.head?
+      system "./configure", *args, *std_configure_args
+      system "make"
+      system "make", "install"
+    end
+  
+    test do
+      system bin/"nghttp", "-nv", "https://nghttp2.org"
+      refute_path_exists lib
+    end
+  end
