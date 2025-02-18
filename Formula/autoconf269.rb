@@ -12,7 +12,7 @@ class Autoconf269 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/autoconf269"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c3c5615c95b302ca85df30cf76a9567a0ca74165209f4f61f81ca64d5c4e0177"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f9c9ef32dda0a64d3bc864182df24dca5e5589f0f766ae463755b358e47cbf42"
   end
   
     keg_only :versioned_formula
