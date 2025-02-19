@@ -12,6 +12,7 @@ class Autoconf269 < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/autoconf269"
+    sha256 cellar: :any_skip_relocation, ventura:      "5fd4e4bf0941d0883e12ea81b449f5a933d58cee0246da69c9797e31bdf60706"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "f9c9ef32dda0a64d3bc864182df24dca5e5589f0f766ae463755b358e47cbf42"
   end
   
