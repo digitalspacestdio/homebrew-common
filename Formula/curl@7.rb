@@ -4,13 +4,13 @@ class CurlAT7 < Formula
   url "https://curl.haxx.se/download/curl-7.79.1.tar.bz2"
   mirror "http://curl.mirror.anstey.ca/curl-7.79.1.tar.bz2"
   sha256 "de62c4ab9a9316393962e8b94777a570bb9f71feb580fb4475e412f2f9387851"
-  revision 100
+  revision 101
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/curl@7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "08252b6c4d621e2fa9b4440f125470e5c4444ea71b5d20bdc026e4750f967484"
-    sha256 cellar: :any_skip_relocation, ventura:       "2df20a102f829bb1c2e0343f81dcc6f1add621cf13b08bf089ac43ce0ef28fe3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75fe919b157d5c1694bb41cd06269ac606c00d01275d724d4fc202e57323f741"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f859e942122ab3a33860ce9b85c74dd4fb665c9bd138f2e5ae19e2d6cc90667e"
+    sha256 cellar: :any_skip_relocation, ventura:       "a74590a45eb749dd949dd4828be53b0ff3ba7113cdc80a51ca103fd73cf167e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b68c276e30ed6e07317e146e9b1221bd74be09e42c7302474064cdd42d1596a"
   end
 
   pour_bottle? do
@@ -49,7 +49,7 @@ class CurlAT7 < Formula
   depends_on "openssl111w"
   depends_on "pkg-config" => :build
   depends_on "libssh2"
-  depends_on "nghttp2"
+  depends_on "nghttp2@1.64.0-icu4c.74.2"
 
   depends_on "c-ares" => :optional
   depends_on "rtmpdump" => :optional
