@@ -34,7 +34,7 @@ class Nghttp2AT1640Icu4c742 < Formula
   
     on_macos do
       # macOS 12 or older
-      depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1400
+      depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
     end
   
     on_linux do
@@ -52,7 +52,7 @@ class Nghttp2AT1640Icu4c742 < Formula
     end
   
     def install
-      ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1400
+      ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
   
       # fix for clang not following C++14 behaviour
       # https://github.com/macports/macports-ports/commit/54d83cca9fc0f2ed6d3f873282b6dd3198635891
