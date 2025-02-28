@@ -105,7 +105,7 @@ class Openssl111w < Formula
   end
 
   def openssldir
-    etc/"openssl@1.1"
+    etc/"openssl111w"
   end
 
   def post_install
