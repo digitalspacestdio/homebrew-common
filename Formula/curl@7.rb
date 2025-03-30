@@ -10,6 +10,7 @@ class CurlAT7 < Formula
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/curl@7"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f859e942122ab3a33860ce9b85c74dd4fb665c9bd138f2e5ae19e2d6cc90667e"
     sha256 cellar: :any_skip_relocation, ventura:       "a74590a45eb749dd949dd4828be53b0ff3ba7113cdc80a51ca103fd73cf167e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d160bd65fe296aa8a4cd668c572d16f6c2db052a51a65dc6710507b64c4130dd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b68c276e30ed6e07317e146e9b1221bd74be09e42c7302474064cdd42d1596a"
   end
 

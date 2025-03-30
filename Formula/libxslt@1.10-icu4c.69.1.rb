@@ -17,6 +17,7 @@ class LibxsltAT110Icu4c691 < Formula
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxslt@1.10-icu4c.69.1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1bba5b292602cf370914bc47b6e525610881295169e13d595f165142f6878363"
     sha256 cellar: :any_skip_relocation, ventura:       "c7c90a771f2d8fa0edce9253853a3b7908eac6b18519b28344ef14e577023e75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "471c3cf10ee6ef2f8670f316575d798411588cb36c7d78202a512310fc62d9ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "878404ca2151445f8c77a3ad2b4a7f055a230c2381ee831d2f779a7e2eb5ce34"
   end
   

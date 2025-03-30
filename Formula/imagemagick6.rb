@@ -15,6 +15,7 @@ class Imagemagick6 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "793c510b6d2d8177bc3a23019196afe744c02e6ed88d5ccdd771bc8df54d731b"
     sha256 cellar: :any_skip_relocation, ventura:       "2afe0fd477e0063a88dfca1dc285d57aa677f5b2c87c512261804ca8cf61d932"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8eb85caf6f3f8eb5dd9f6b5fc39b719c84af4dda4c09e2fd6d01ae050d0d69b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60e83302b5d72808772c325dbbff23717b3f69331e22f151d9b257e104009661"
   end
 
   keg_only :versioned_formula

@@ -13,6 +13,7 @@ class GettextAT022Icu4c742 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4415345aa83d04a61f56381385e7b9517a2fc39a3e6ee14073aad3b00b78f0c3"
     sha256 cellar: :any_skip_relocation, ventura:       "16394a4453a35d0906cdbbd93537997c79cc212c113ac468762fb3124bb0dabd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "33fd11757966af161aaebeca00690cbd39e1d389eb62ce9871810e9c037715e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d239340eb6344fe085f73bc129ca33437fe004c30c7c24d3709145058fdc0549"
   end
 
   #uses_from_macos "libxml2"

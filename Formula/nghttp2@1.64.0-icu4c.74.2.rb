@@ -10,6 +10,7 @@ class Nghttp2AT1640Icu4c742 < Formula
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/nghttp2@1.64.0-icu4c.74.2"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "744633e6a73ac23ce8b78db4bf8e3754cb4936289cbf606c6fc1a7859917c4dc"
     sha256 cellar: :any_skip_relocation, ventura:       "74123e60c4a64d3b9fb6ecb26de70c27aabf8ae1ff807fecb0e907b9d54c1793"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2063f2743e96b8a82e977fac5b7aaae35763c9bc31cdc28713e31042901a3823"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "81fffe61b15360da9401627fb5473ef2be603bc03d9ca3d6c85107b6b5034168"
   end
   

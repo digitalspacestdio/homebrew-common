@@ -18,7 +18,7 @@ class Libxml2AT212Icu4c742 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c74bcca7538b5276c911484fb600666210b7fdc2f2d7834c5eae4a40757163d4"
     sha256 cellar: :any_skip_relocation, ventura:       "4157f7d3872b0adab21ef363d472d6511fd6577c968ead5768261cf1e26f923d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd3c5041efcbff90bde732ce535ed409488589100e3f895f239319032cba2b85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc16a0d856ecc8d49ba7f08e5ef840a3856e6eb9c29ce40cf4abe15e2aeb8038"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b57914033885ca8e8d4d8edce82304893bd1a4b54843594fe9280506d9912cc2"
   end
 
   head do
