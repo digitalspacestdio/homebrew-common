@@ -17,6 +17,7 @@ class Libxml2AT212Icu4c691 < Formula
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libxml2@2.12-icu4c.69.1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dddaf0f04a9568acaf6ef30b8e4d05542caba785fa57932823b74a9bb7c15a03"
     sha256 cellar: :any_skip_relocation, ventura:       "6536e17bb9b11566b04f86b15c1c6342751506148d831d58ce663f5fbcf0cc7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2814810f19962ee44f50744b14785a8640c180153ec6f86e349f4ff76c303dd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "968e1ab80ebf882f243e848d8c2f706986924c7324b154cd28db21aaa99765b1"
   end
 
