@@ -15,6 +15,7 @@ class LibpqAT162Icu4c742 < Formula
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libpq@16.2-icu4c.74.2"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3c47e0aa24e476264bc7b6b6858ca690fbbf93e61ea6a1de0872090808b37751"
     sha256 cellar: :any_skip_relocation, ventura:       "97be19f4874fcbc1c05fb1cdfb9254117a7ef4547855ff424c0a15517370ed06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08036f4ac1d503c25c4731b50a80e2a91ce826abfa2cb4d5e182075756e7b04e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8ba229715a98d016663e00a592aaea4a8fd5b5026af744ca113334ad29461f2"
   end
 
