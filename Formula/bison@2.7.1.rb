@@ -11,6 +11,7 @@ class BisonAT271 < Formula
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/bison@2.7.1"
     sha256 cellar: :any_skip_relocation, ventura:      "51ebc7520fd777c2a71f33cd9608ecf9ac3a58fb50e117706510ea78a56a886c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "53e026e421e9683293c511db0f171283c9f19848f20c9ceda655b48410712c96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "0a0246cb15db72af672ba8515e5f6ee227d564b34ab241f3c21f8adb3d6ca5ab"
   end
   
     keg_only :versioned_formula
