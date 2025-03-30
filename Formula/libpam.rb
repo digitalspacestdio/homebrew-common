@@ -11,6 +11,7 @@ class Libpam < Formula
 
   bottle do
     root_url "https://pub-7d898cd296ae4a92a616d2e2c17cdb9e.r2.dev/common/libpam"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c62d0e9b4a91261da7339ed0db02cdfdcf1854b683f37861021ac49fee89f482"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "10221038271a116950754d1c6f902351412afa90abf90b3fa53682c9673eca4c"
   end
 
